@@ -1,0 +1,244 @@
+﻿@model PPI.Plugin.Survey.Models.NwkRelationshipDemo
+           @using PPI.Plugin.Survey.Properties;
+@section AddToHead{
+<link href="../../Content/bootstrap3/bootstrap-switch.css" rel="stylesheet">
+<link href="../../Content/docs.css" rel="stylesheet">
+<link href="../../Content/main.css" rel="stylesheet">
+
+}
+@{
+    ViewBag.Title = @Resources_Survey_Web.RelationshipDemo_Index_Title;
+}
+@using (Html.BeginForm("Save", "RelationshipDemo", FormMethod.Post, new { @id = "formsubmit", @class = "margint10 paddinglr20" }))
+{
+    <div>
+        <p>@Resources_Survey_Web.RelationShipDemo_Index_Paragraph</p>
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(m => m.ParticipantID)
+        <table class="table table-striped">
+            <tr>
+                <th class="col-md-1">
+                    @Resources_Survey_Web.NetworkRelationShip_Index_ContactName
+                </th>
+                <th class="col-md-1">
+                    @Resources_Survey_Web.RelationShipDemo_Index_RelationShip
+                </th>
+                <th class="col-md-1">
+                    @Resources_Survey_Web.RelationShipDemo_Index_FunctionArea
+                </th>
+                <th class="col-md-1">
+                    @Resources_Survey_Web.RelationShipDemo_Index_BusinessUnit
+                </th>
+                <th class="col-md-1">
+                    @Resources_Survey_Web.RelationShipDemo_Index_Firm
+                </th>
+                <th class="col-md-1">
+                    @Resources_Survey_Web.RelationShipDemo_Index_Gender
+                </th>
+                <th class="col-md-1">
+                    @Resources_Survey_Web.RelationShipDemo_Index_RegionFrom
+                </th>
+                <th class="col-md-1">
+                    @Resources_Survey_Web.RelationShipDemo_Index_Language
+                </th>
+                <th class="col-md-1">
+                    @Resources_Survey_Web.RelationShipDemo_Index_AgeGroup
+                </th>
+            </tr>
+            @{ int i = 0; }
+            @foreach (var item in Model.RelationshipDemo)
+            {
+                <tr>
+                    <td nowrap style="padding-right:2px; padding-left:2px;">
+                        <input type="text" id="RelDemo[@i].UserID" name="RelDemo[@i].UserID" hidden="hidden" value="@item.ParticipantId">
+                        <input type="text" id="RelDemo[@i].ID" name="RelDemo[@i].ID" hidden="hidden" value="@item.Id">
+                        <input type="text" id="RelDemo[@i].NetworkContactID" name="RelDemo[@i].NetworkContactID" hidden="hidden" value="@item.NetworkContactID">
+                        <input type="text" id="RelDemo[@i].ContactName" name="RelDemo[@i].ContactName" hidden="hidden" value="@item.ContactName">
+                        <input type="text" id="RelDemo[@i].Createdby" name="RelDemo[@i].Createdby" hidden="hidden" value="@item.CreaterBy">
+                        <input type="text" id="RelDemo[@i].CreatedOn" name="RelDemo[@i].CreatedOn" hidden="hidden" value="@item.CreatedOn">
+                        <label>@item.ContactName</label>
+
+                    </td>
+                    <td style="padding-right:2px; padding-left:2px;">
+                        <span class="field-validation-valid text-danger" data-valmsg-for="RelDemo[@i].relation" data-valmsg-replace="true"></span>
+                        <select id="RelDemo[@i].relation" name="RelDemo[@i].relation" class="form-control" data-val="true" data-val-required="Required" style="width:140px;">
+                            <option selected disabled>-- Select --</option>
+                            @foreach (var rel in (SelectList)ViewBag.RelationshipType)
+                            {
+                                if (item.RelationshipID == int.Parse(rel.Value))
+                                {
+                                    <option value="@rel.Value" selected="selected">@rel.Text</option>
+                                }
+                                else
+                                {
+                                    <option value="@rel.Value">@rel.Text</option>
+                                }
+                            }
+
+                        </select>
+                    </td>
+                    <td style="padding-right:2px; padding-left:2px;">
+                        <input id="RelDemo[@i].DiffFuncArea" name="RelDemo[@i].DiffFuncArea" type="checkbox" checked="@item.DiffFuncArea" data-on-text="Same as me" data-off-text="Different from me" data-size="small" style="width:140px;">
+                    </td>
+                    <td style="padding-right:2px; padding-left:2px;">
+                        <input id="RelDemo[@i].DiffBsnUnit" name="RelDemo[@i].DiffBsnUnit" type="checkbox" checked="@item.DiffBsnUnit" data-on-text="Same as me" data-off-text="Different from me" data-size="small" style="width:140px;">
+                    </td>
+                    <td style="padding-right:2px; padding-left:2px;">
+                        <input id="RelDemo[@i].DiffFirm" name="RelDemo[@i].DiffFirm" type="checkbox" checked="@item.DiffFirm" data-on-text="Same as me" data-off-text="Different from me" data-size="small" style="width:140px;">
+                    </td>
+                    <td style="padding-right:2px; padding-left:2px;">
+                        <span class="field-validation-valid text-danger" data-valmsg-for="RelDemo[@i].Gender" data-valmsg-replace="true"></span>
+                        <select id="RelDemo[@i].Gender" name="RelDemo[@i].Gender" class="form-control" data-val="true" data-val-required="Required" style="width:140px;">
+                            <option selected disabled>-- Select --</option>
+                            @foreach (var rel in (SelectList)ViewBag.Gender)
+                            {
+                                if (item.Gender == int.Parse(rel.Value))
+                                {
+                                    <option value="@rel.Value" selected="selected">@rel.Text</option>
+                                }
+                                else
+                                {
+                                    <option value="@rel.Value">@rel.Text</option>
+                                }
+                            }
+                        </select>
+                    </td>
+                    <td style="padding-right:2px; padding-left:2px;">
+                        <span class="field-validation-valid text-danger" data-valmsg-for="RelDemo[@i].Region" data-valmsg-replace="true"></span>
+                        <select id="RelDemo[@i].Region" name="RelDemo[@i].Region" class="form-control" data-val="true" data-val-required="Required" style="width:140px;">
+                            <option selected disabled>-- Select --</option>
+                            @foreach (var rel in (SelectList)ViewBag.Region)
+                            {
+                                if (item.Region == int.Parse(rel.Value))
+                                {
+                                    <option value="@rel.Value" selected="selected">@rel.Text</option>
+                                }
+                                else
+                                {
+                                    <option value="@rel.Value">@rel.Text</option>
+                                }
+                            }
+                        </select>
+                    </td>
+                    <td style="padding-right:2px; padding-left:2px;">
+                        <input id="RelDemo[@i].SameNativeLang" name="RelDemo[@i].SameNativeLang" type="checkbox" checked="@item.SameNativeLang" data-on-text="Same as me" data-off-text="Different from me" data-size="small" style="width:140px;">
+                    </td>
+                    <td>
+                        <span class="field-validation-valid text-danger" data-valmsg-for="RelDemo[@i].AgeGroup" data-valmsg-replace="true"></span>
+                        <select id="RelDemo[@i].AgeGroup" name="RelDemo[@i].AgeGroup" class="form-control" data-val="true" data-val-required="Required" style="width:140px;">
+                            <option selected disabled>-- Select --</option>
+                            @foreach (var rel in (SelectList)ViewBag.AgeGroup)
+                            {
+                                if (item.AgeGroup == int.Parse(rel.Value))
+                                {
+                                    <option value="@rel.Value" selected="selected">@rel.Text</option>
+                                }
+                                else
+                                {
+                                    <option value="@rel.Value">@rel.Text</option>
+                                }
+                            }
+
+                        </select>
+                    </td>
+                </tr>
+                            i++;
+            }
+        </table>
+    </div>
+    <input type="text" id="rowcount" name="RowCount" hidden="hidden" value="@i">
+    @Html.Hidden("Direction")
+    <div class="form-group">
+        <div class="col-md-6"></div>
+        @if (Model.SurveyReadOnly)
+        {
+            <div class="col-md-6 text-right margint10">
+                <a class="btn btn-default btn200 AdminButton" role="button" href="@Url.Action("Index", "NetworkRelationship", new { id = @Model.ParticipantID, admin = "True" })"><span class=" glyphicon glyphicon-menu-left"></span>Admin @Resources_Survey_Web.View_Actions_Previous</a>
+                <a class="btn btn-primary btn200 AdminButton" role="button" href="@Url.Action("Index", "RelDensity", new { id = @Model.ParticipantID, admin = "True" })">Admin @Resources_Survey_Web.View_Actions_Next <span class=" glyphicon glyphicon-menu-right"></span></a>
+            </div>
+        }
+        else
+        {
+            <div class="col-md-6 text-right margint10">
+                <a class="btn btn-default btn200 buttonsubmit" id="buttonPrev" role="button"><span class=" glyphicon glyphicon-menu-left"></span> @Resources_Survey_Web.View_Actions_Previous</a>
+                <a class="btn btn-primary btn200 buttonsubmit" id="buttonNext" role="button"> @Resources_Survey_Web.View_Actions_Next <span class=" glyphicon glyphicon-menu-right"></span></a>
+            </div>
+        }
+        
+    </div>
+
+    <!-- Continue Alert Pop Up -->
+    <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon glyphicon-alert" aria-hidden="true"></span> Alert</h4>
+          </div>
+          <div class="modal-body">
+            <h3>@Resources_Survey_Web.RelationShipDemo_Index_NextMessage</h3>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              <button type="button" id="SubmitForm" class="btn btn-primary">Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Continue Alert Pop Up -->
+
+}
+@section scripts {
+<script type="text/javascript">
+
+    var canExit = false;
+
+    $(window).on('beforeunload', function () {
+        if (canExit) {
+
+        }
+        else {
+            return "*** INCOMPLETE SURVEY ***\n\nYou have not completed the survey. If you leave your survey, it will retain the status of ‘In Progress’ and it will not be marked as ‘Complete’. If you wish to leave the page, click ‘Leave this Page’. If you want to stay and complete the survey, click ‘Stay on this Page’.” ";
+        }
+    });
+
+    $(".AdminButton").click(function (e) {
+        canExit = true;
+        return;
+    });
+
+    $(".buttonsubmit").click(function () {
+        var direction = $(this).attr("ID");
+        $("#Direction").val(direction);
+        var Form = $("#formsubmit");
+        if (direction === 'buttonNext') {            
+            if (Form.valid()) {
+                $("#basicModal").modal('show');
+            }
+            else {
+                $("#basicModal").modal('hide');
+            }
+        } else {
+            if (Form.valid()) {
+                canExit = true;
+                $("#formsubmit").submit();
+            }           
+        }
+
+        $("#SubmitForm").click(function (evt) {
+            evt.preventDefault();
+            var Form = $("#formsubmit");
+            canExit = true;
+            Form.submit();
+        });
+
+    });
+</script>
+
+<script src="~/Scripts/highlight.js"></script>
+<script src="~/Scripts/bootstrap-switch.js"></script>
+<script src="~/Scripts/main.js"></script>
+
+
+
+}

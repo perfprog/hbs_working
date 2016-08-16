@@ -1,0 +1,170 @@
+﻿@using PPI.Plugin.Report.Properties
+@using PPI.Platform.Mvc.HtmlHelpers
+@using PPI.Platform.Mvc.HtmlHelpers.Model
+@model PPI.Plugin.Report.Models.ReportIndexViewModel
+@{
+    ViewBag.Title = Resources_Report_Web.Report_Index_Title;
+    var meta = Model.SurveyGroupParticipants.FirstOrDefault().GroupParticipant.Group;   
+}
+
+@Html.Partial("_ValidationSummary", ViewData.ModelState)
+
+@using (Html.BeginForm("Index"))
+{ 
+    <div class="row marginb10">
+        <div class="col-md-6">
+            <div class="form-inline">                
+                @Html.DropDownList("programsearch", (SelectList)ViewBag.GroupListId, Resources_Report_Web.Report_Index_SearchDropDown, new { @class = "form-control" })
+                <a class="btn btn-sm btn-primary" role="button" href="@Url.Action("Index", new {group="clear" })">
+                    <span class="glyphicon glyphicon glyphicon-stop" aria-hidden="true">
+                    </span> Clear
+                </a>
+            </div>
+        </div>
+    </div>
+}
+<div class="row">
+    <div class="col-lg-12">
+        @using (Html.BeginForm("ExportType", "Report", FormMethod.Post, new { id = "SubmitForm" }))        
+        {
+        <div class="table-responsive">
+            <table class="tablesorter table table-bordered table-hover table-striped" id="reporttable">
+                <thead>
+                    <tr>
+                        <th>
+                            <div class="checkbox-nice">
+                                <input type="checkbox" class="" id="checkAll" )>
+                                <label for="checkAll"></label>
+                            </div>
+                        </th>
+                        <th class="col-md-3">@Html.DisplayNameFor(m => meta.Name)</th>
+                        <th class="col-md-3">@Html.DisplayNameFor(m => meta.GroupParticipants.FirstOrDefault().Participant.Person.First_Name)</th>
+                        <th class="col-md-3">@Html.DisplayNameFor(m => meta.GroupParticipants.FirstOrDefault().Participant.Person.Last_Name)</th>
+                        <th class="col-md-2">@Html.DisplayNameFor(m => meta.GroupParticipants.FirstOrDefault().Participant.Person.Email)</th>
+                        <th class="col-md-1">
+                            @Html.DisplayNameFor(m => meta.GroupParticipants.FirstOrDefault()
+                            .Participant.Person.PersonGroupEmails.FirstOrDefault().SendDate)
+                        </th>
+                        <th class="col-md-1">@Resources_Report_Web.View_Actions_Label</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.SurveyGroupParticipants)
+                    {
+                        if (item.GroupParticipant.Participant == null)
+                        { continue; }
+                        <tr>
+                            <td>
+                                @if (item.StatusGenericTypeValueId == 1009) //completed
+                                {
+                                    <div class="checkbox-nice">
+                                        <input type="checkbox" data-value="@item.GroupParticipant.ParticipantId" class="checkGroupParticipant" value="@item.GroupParticipant.ParticipantId" name="participantIds" id="checkGroupParticipant-@item.Id">
+                                        <label for="checkGroupParticipant-@item.Id"></label>
+                                    </div>
+                                }
+                                else
+                                { 
+                                    
+                                }
+                                
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m => item.GroupParticipant.Group.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m => item.GroupParticipant.Participant.Person.First_Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m => item.GroupParticipant.Participant.Person.Last_Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m => item.GroupParticipant.Participant.Person.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m => item.GroupParticipant.Participant.Person.PersonGroupEmails.LastOrDefault().SendDate)
+                            </td>                            
+                            <td>
+                                @if (item.StatusGenericTypeValueId == 1009) //completed
+{
+    <a class="btn btn-sm btn-default" role="button" aria-label="Left Align" href="@Url.Action("GenerateNetworkSegmentReport","Report",new { participantId =@item.GroupParticipant.ParticipantId})" alt="View Participant Report" title="View Participant Report">
+        <span class="glyphicon glyphicon glyphicon-stats" aria-hidden="true" data-toggle="modal" data-target="#reportsModal"></span>
+    </a>
+}
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+            @Html.Hidden("ExportType")
+        }
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8 margint10">
+        <!--Widget Paging-->
+        @Html.Partial("_PagingPartial", Model.PagingInfo)
+
+        <!--End Widget Paging-->
+    </div>
+    <div class="col-md-4 text-right">
+        <a class="btn btn-sm btn-primary btn300 buttonsubmit" role="button" id="Download">
+            <span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> Download Network Diagnostic Reports
+        </a>        
+        <a class="btn btn-sm btn-primary btn200 buttonsubmit" role="button" id="Export" @(Model.LockExportButton ? "" : "disabled")>
+            <span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> Facilitator Data Export
+        </a>
+
+        <!--
+        <a class="btn btn-sm btn-primary btn200" href="#" role="button" id="GenerateComposite">
+            <span class="glyphicon glyphicon glyphicon-file" aria-hidden="true"></span> Generate Composite
+        </a>
+            -->
+    </div>
+</div>
+
+@section scripts{
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+
+    <script>
+        $(function ($) {
+
+            $("#reporttable").tablesorter({
+                headers: {
+                    0: {
+                        sorter: false
+                    }
+                }
+            });
+
+            $("#checkAll").click(function () {
+                $(".checkGroupParticipant").prop('checked', $(this).prop('checked'));
+            });
+
+            $("#programsearch").change(function () {
+                var _self = $(this);
+                var current = _self.val();
+                _self.find("option:selected").val("GroupParticipant.GroupId=" + current);
+                _self.attr('name', 'search');
+                $(this).closest('form').submit();
+            });
+           
+            $('.buttonsubmit').click(function () {
+                var members = $("#reporttable input:checkbox:checked").map(function () {
+                    return $(this).attr("data-value");
+                }).get();
+                $("#ExportType").val($(this).attr("id"));                
+                if (members.length > 0) {
+                    alert("Your reports will be generated and an email with a download link will be sent to you once they are completed.")
+                    $('#SubmitForm').submit();
+                }
+                else { alert("Please Select At Least One Record")}
+               
+
+            });
+        });
+
+    
+     </script>
+    }

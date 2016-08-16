@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugin", "Plugin", "{DC5C6F50-3AF5-468A-B2CC-04104CD2DFBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPI.Plugin.Report", "PPI.Plugin.Report\PPI.Plugin.Report.csproj", "{D6850CFD-FD5D-40B6-B15C-AB8AE59AE7CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{9772BE56-8D50-489E-9D19-ECA4C3C99860}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{269EE559-3C07-4C5C-9C19-B7EEB12ACEED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPI.Plugin.Report.Core", "PPI.Plugin.Report.Core\PPI.Plugin.Report.Core.csproj", "{447EC964-4B28-42A4-8F62-78FA0A35A6C3}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PPI.Plugin.Report.Database", "PPI.Plugin.Report.Database\PPI.Plugin.Report.Database.sqlproj", "{9F226550-584C-477F-B228-1E42030116FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6850CFD-FD5D-40B6-B15C-AB8AE59AE7CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6850CFD-FD5D-40B6-B15C-AB8AE59AE7CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6850CFD-FD5D-40B6-B15C-AB8AE59AE7CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6850CFD-FD5D-40B6-B15C-AB8AE59AE7CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{447EC964-4B28-42A4-8F62-78FA0A35A6C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{447EC964-4B28-42A4-8F62-78FA0A35A6C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{447EC964-4B28-42A4-8F62-78FA0A35A6C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{447EC964-4B28-42A4-8F62-78FA0A35A6C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F226550-584C-477F-B228-1E42030116FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F226550-584C-477F-B228-1E42030116FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F226550-584C-477F-B228-1E42030116FC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9F226550-584C-477F-B228-1E42030116FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F226550-584C-477F-B228-1E42030116FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F226550-584C-477F-B228-1E42030116FC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D6850CFD-FD5D-40B6-B15C-AB8AE59AE7CA} = {DC5C6F50-3AF5-468A-B2CC-04104CD2DFBB}
+		{447EC964-4B28-42A4-8F62-78FA0A35A6C3} = {9772BE56-8D50-489E-9D19-ECA4C3C99860}
+		{9F226550-584C-477F-B228-1E42030116FC} = {269EE559-3C07-4C5C-9C19-B7EEB12ACEED}
+	EndGlobalSection
+EndGlobal

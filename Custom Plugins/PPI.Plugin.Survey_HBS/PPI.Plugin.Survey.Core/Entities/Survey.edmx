@@ -1,0 +1,984 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="NetworkInfoContacts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ParticipantId" Type="int" Nullable="false" />
+          <Property Name="ContactName1" Type="nvarchar" MaxLength="150" />
+          <Property Name="ContactName2" Type="nvarchar" MaxLength="150" />
+          <Property Name="ContactName3" Type="nvarchar" MaxLength="150" />
+          <Property Name="ContactName4" Type="nvarchar" MaxLength="150" />
+          <Property Name="ContactName5" Type="nvarchar" MaxLength="150" />
+          <Property Name="ContactName6" Type="nvarchar" MaxLength="150" />
+          <Property Name="ContactName7" Type="nvarchar" MaxLength="150" />
+          <Property Name="ContactName8" Type="nvarchar" MaxLength="150" />
+          <Property Name="JobContactName1" Type="nvarchar" MaxLength="150" />
+          <Property Name="JobContactName2" Type="nvarchar" MaxLength="150" />
+          <Property Name="JobContactName3" Type="nvarchar" MaxLength="150" />
+          <Property Name="JobContactName4" Type="nvarchar" MaxLength="150" />
+          <Property Name="JobContactName5" Type="nvarchar" MaxLength="150" />
+          <Property Name="JobContactName6" Type="nvarchar" MaxLength="150" />
+          <Property Name="JobContactName7" Type="nvarchar" MaxLength="150" />
+          <Property Name="JobContactName8" Type="nvarchar" MaxLength="150" />
+          <Property Name="CrrContactName1" Type="nvarchar" MaxLength="150" />
+          <Property Name="CrrContactName2" Type="nvarchar" MaxLength="150" />
+          <Property Name="CrrContactName3" Type="nvarchar" MaxLength="150" />
+          <Property Name="CrrContactName4" Type="nvarchar" MaxLength="150" />
+          <Property Name="CrrContactName5" Type="nvarchar" MaxLength="150" />
+          <Property Name="CrrContactName6" Type="nvarchar" MaxLength="150" />
+          <Property Name="CrrContactName7" Type="nvarchar" MaxLength="150" />
+          <Property Name="CrrContactName8" Type="nvarchar" MaxLength="150" />
+          <Property Name="AllowNewContacts" Type="bit" />
+          <Property Name="CreaterBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="NetworkRelationship">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ParticipantId" Type="int" Nullable="false" />
+          <Property Name="NetworkContactID" Type="int" Nullable="false" />
+          <Property Name="ContactName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="VeryClose" Type="bit" />
+          <Property Name="Close" Type="bit" />
+          <Property Name="NotVeryClose" Type="bit" />
+          <Property Name="Distant" Type="bit" />
+          <Property Name="CreaterBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="NetworkRelationshipDemo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ParticipantId" Type="int" Nullable="false" />
+          <Property Name="NetworkContactID" Type="int" Nullable="false" />
+          <Property Name="ContactName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="RelationshipID" Type="int" Nullable="false" />
+          <Property Name="DiffFuncArea" Type="bit" />
+          <Property Name="DiffBsnUnit" Type="bit" />
+          <Property Name="DiffFirm" Type="bit" />
+          <Property Name="Gender" Type="int" />
+          <Property Name="Region" Type="int" />
+          <Property Name="SameNativeLang" Type="bit" />
+          <Property Name="AgeGroup" Type="int" />
+          <Property Name="CreaterBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="ParticipantProfile">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NetworkContactID" Type="int" Nullable="false" />
+          <Property Name="ParticipantID" Type="int" Nullable="false" />
+          <Property Name="GenderId" Type="int" />
+          <Property Name="AgeGroupId" Type="int" />
+          <Property Name="RegionId" Type="int" />
+          <Property Name="WorkRegionId" Type="int" />
+          <Property Name="NativeLang" Type="int" />
+          <Property Name="NetworkPercentId" Type="int" />
+          <Property Name="CreaterBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="RelationshipDensity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ParticipantId" Type="int" Nullable="false" />
+          <Property Name="NetworkContactID" Type="int" Nullable="false" />
+          <Property Name="ContactName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="MapContactName2" Type="nvarchar" MaxLength="150" />
+          <Property Name="MapContactName3" Type="nvarchar" MaxLength="150" />
+          <Property Name="MapContactName4" Type="nvarchar" MaxLength="150" />
+          <Property Name="MapContactName5" Type="nvarchar" MaxLength="150" />
+          <Property Name="MapContactName6" Type="nvarchar" MaxLength="150" />
+          <Property Name="MapContactName7" Type="nvarchar" MaxLength="150" />
+          <Property Name="MapContactName8" Type="nvarchar" MaxLength="150" />
+          <Property Name="MapContactName9" Type="nvarchar" MaxLength="150" />
+          <Property Name="MapContactName10" Type="nvarchar" MaxLength="150" />
+          <Property Name="MapContactName11" Type="nvarchar" MaxLength="150" />
+          <Property Name="MapContactName12" Type="nvarchar" MaxLength="150" />
+          <Property Name="MapContactName13" Type="nvarchar" MaxLength="150" />
+          <Property Name="MapContactName14" Type="nvarchar" MaxLength="150" />
+          <Property Name="MapContactName15" Type="nvarchar" MaxLength="150" />
+          <Property Name="MapContactName16" Type="nvarchar" MaxLength="150" />
+          <Property Name="MapContactName17" Type="nvarchar" MaxLength="150" />
+          <Property Name="MapContactName18" Type="nvarchar" MaxLength="150" />
+          <Property Name="MapContactName19" Type="nvarchar" MaxLength="150" />
+          <Property Name="MapContactName20" Type="nvarchar" MaxLength="150" />
+          <Property Name="MapContactName21" Type="nvarchar" MaxLength="150" />
+          <Property Name="MapContactName22" Type="nvarchar" MaxLength="150" />
+          <Property Name="MapContactName23" Type="nvarchar" MaxLength="150" />
+          <Property Name="DensitySelected1" Type="bit" />
+          <Property Name="DensitySelected2" Type="bit" />
+          <Property Name="DensitySelected3" Type="bit" />
+          <Property Name="DensitySelected4" Type="bit" />
+          <Property Name="DensitySelected5" Type="bit" />
+          <Property Name="DensitySelected6" Type="bit" />
+          <Property Name="DensitySelected7" Type="bit" />
+          <Property Name="DensitySelected8" Type="bit" />
+          <Property Name="DensitySelected9" Type="bit" />
+          <Property Name="DensitySelected10" Type="bit" />
+          <Property Name="DensitySelected11" Type="bit" />
+          <Property Name="DensitySelected12" Type="bit" />
+          <Property Name="DensitySelected13" Type="bit" />
+          <Property Name="DensitySelected14" Type="bit" />
+          <Property Name="DensitySelected15" Type="bit" />
+          <Property Name="DensitySelected16" Type="bit" />
+          <Property Name="DensitySelected17" Type="bit" />
+          <Property Name="DensitySelected18" Type="bit" />
+          <Property Name="DensitySelected19" Type="bit" />
+          <Property Name="DensitySelected20" Type="bit" />
+          <Property Name="DensitySelected21" Type="bit" />
+          <Property Name="DensitySelected22" Type="bit" />
+          <Property Name="DensitySelected23" Type="bit" />
+          <Property Name="CreaterBy" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" />
+          <Property Name="ModifiedOn" Type="datetime2" Precision="7" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'D:\NMYERS\DOCUMENTS\PLATFORM.MDF.survey.NetworkContacts_V' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="NetworkContacts_V">
+          <Key>
+            
+            
+            <PropertyRef Name="Pkey" />
+          </Key>
+          <Property Name="Pkey" Type="nvarchar" MaxLength="210" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ParticipantId" Type="int" Nullable="false" />
+          <Property Name="ContactName" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'D:\NMYERS\DOCUMENTS\PLATFORM.MDF.survey.vCompositeReport' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vCompositeReport">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="StartDate" />
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="First Name" />
+            <PropertyRef Name="Last Name" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="StartDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="First Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Last Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="MaxDensity" Type="int" />
+          <Property Name="CurrentDensity" Type="int" />
+          <Property Name="TotalParticipants" Type="int" />
+          <Property Name="TotalSurveysCompleted" Type="int" />
+          <Property Name="Yield" Type="numeric" Precision="24" Scale="12" />
+          <Property Name="Gender" Type="nvarchar(max)" />
+          <Property Name="AgeGroup" Type="nvarchar(max)" />
+          <Property Name="Region" Type="nvarchar(max)" />
+          <Property Name="WorkRegion" Type="nvarchar(max)" />
+          <Property Name="NativeLanguage" Type="nvarchar(max)" />
+          <Property Name="NetworkPercentage" Type="nvarchar(max)" />
+          <Property Name="Contacts" Type="int" />
+          <Property Name="StategicContacts" Type="int" />
+          <Property Name="OperationalContacts" Type="int" />
+          <Property Name="DevelopmentalContacts" Type="int" />
+          <Property Name="FEMALE" Type="int" />
+          <Property Name="MALE" Type="int" />
+          <Property Name="RFAsia" Type="int" />
+          <Property Name="RFAfrica" Type="int" />
+          <Property Name="RFCentral" Type="int" />
+          <Property Name="RFEurope" Type="int" />
+          <Property Name="RFMiddleEast" Type="int" />
+          <Property Name="RFNorthAmerica" Type="int" />
+          <Property Name="RFOceania" Type="int" />
+          <Property Name="RFSouthAmerica" Type="int" />
+          <Property Name="SameCompany" Type="int" />
+          <Property Name="SameFunction" Type="int" />
+          <Property Name="SameBusinessUnit" Type="int" />
+          <Property Name="SameLang" Type="int" />
+          <Property Name="Senior" Type="int" />
+          <Property Name="Peer" Type="int" />
+          <Property Name="Junior" Type="int" />
+          <Property Name="Other" Type="int" />
+          <Property Name="18_24" Type="int" />
+          <Property Name="25_34" Type="int" />
+          <Property Name="35_44" Type="int" />
+          <Property Name="45_54" Type="int" />
+          <Property Name="55_64" Type="int" />
+          <Property Name="65+" Type="int" />
+          <Property Name="VeryClose" Type="int" />
+          <Property Name="Close" Type="int" />
+          <Property Name="Distant" Type="int" />
+          <Property Name="NotVeryClose" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'D:\NMYERS\DOCUMENTS\PLATFORM.MDF.survey.vWhoKnowWho' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vWhoKnowWho">
+          <Key>
+            
+            
+            
+            <PropertyRef Name="Pkey" />
+          </Key>
+          <Property Name="Pkey" Type="nvarchar" MaxLength="330" Nullable="false" />
+          <Property Name="ContactA" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContactB" Type="nvarchar" MaxLength="150" />
+          <Property Name="ParticipantId" Type="int" Nullable="false" />
+          <Property Name="Networks" Type="nvarchar" MaxLength="20" />
+          <Property Name="SameOrganization" Type="bit" />
+          <Property Name="RelationshipID" Type="int" />
+          <Property Name="Order" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_NetworkRelationship_NetworkInfoContacts">
+          <End Role="NetworkInfoContacts" Type="Self.NetworkInfoContacts" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NetworkRelationship" Type="Self.NetworkRelationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NetworkInfoContacts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NetworkRelationship">
+              <PropertyRef Name="NetworkContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NetworkRelationshipDemo__NetworkInfoContacts">
+          <End Role="NetworkInfoContacts" Type="Self.NetworkInfoContacts" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="NetworkRelationshipDemo" Type="Self.NetworkRelationshipDemo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NetworkInfoContacts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NetworkRelationshipDemo">
+              <PropertyRef Name="NetworkContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ParticipantProfile_NetworkInfoContacts">
+          <End Role="NetworkInfoContacts" Type="Self.NetworkInfoContacts" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ParticipantProfile" Type="Self.ParticipantProfile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NetworkInfoContacts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ParticipantProfile">
+              <PropertyRef Name="NetworkContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RelationshipDensity_NetworkInfoContacts">
+          <End Role="NetworkInfoContacts" Type="Self.NetworkInfoContacts" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="RelationshipDensity" Type="Self.RelationshipDensity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NetworkInfoContacts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RelationshipDensity">
+              <PropertyRef Name="NetworkContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="NetworkInfoContacts" EntityType="Self.NetworkInfoContacts" Schema="survey" store:Type="Tables" />
+          <EntitySet Name="NetworkRelationship" EntityType="Self.NetworkRelationship" Schema="survey" store:Type="Tables" />
+          <EntitySet Name="NetworkRelationshipDemo" EntityType="Self.NetworkRelationshipDemo" Schema="survey" store:Type="Tables" />
+          <EntitySet Name="ParticipantProfile" EntityType="Self.ParticipantProfile" Schema="survey" store:Type="Tables" />
+          <EntitySet Name="RelationshipDensity" EntityType="Self.RelationshipDensity" Schema="survey" store:Type="Tables" />
+          <EntitySet Name="NetworkContacts_V" EntityType="Self.NetworkContacts_V" store:Type="Views" store:Schema="survey">
+            <DefiningQuery>SELECT 
+    [NetworkContacts_V].[Pkey] AS [Pkey], 
+    [NetworkContacts_V].[ID] AS [ID], 
+    [NetworkContacts_V].[ParticipantId] AS [ParticipantId], 
+    [NetworkContacts_V].[ContactName] AS [ContactName]
+    FROM [survey].[NetworkContacts_V] AS [NetworkContacts_V]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vCompositeReport" EntityType="Self.vCompositeReport" store:Type="Views" store:Schema="survey">
+            <DefiningQuery>SELECT 
+    [vCompositeReport].[Name] AS [Name], 
+    [vCompositeReport].[StartDate] AS [StartDate], 
+    [vCompositeReport].[Id] AS [Id], 
+    [vCompositeReport].[First Name] AS [First Name], 
+    [vCompositeReport].[Last Name] AS [Last Name], 
+    [vCompositeReport].[MaxDensity] AS [MaxDensity], 
+    [vCompositeReport].[CurrentDensity] AS [CurrentDensity], 
+    [vCompositeReport].[TotalParticipants] AS [TotalParticipants], 
+    [vCompositeReport].[TotalSurveysCompleted] AS [TotalSurveysCompleted], 
+    [vCompositeReport].[Yield] AS [Yield], 
+    [vCompositeReport].[Gender] AS [Gender], 
+    [vCompositeReport].[AgeGroup] AS [AgeGroup], 
+    [vCompositeReport].[Region] AS [Region], 
+    [vCompositeReport].[WorkRegion] AS [WorkRegion], 
+    [vCompositeReport].[NativeLanguage] AS [NativeLanguage], 
+    [vCompositeReport].[NetworkPercentage] AS [NetworkPercentage], 
+    [vCompositeReport].[Contacts] AS [Contacts], 
+    [vCompositeReport].[StategicContacts] AS [StategicContacts], 
+    [vCompositeReport].[OperationalContacts] AS [OperationalContacts], 
+    [vCompositeReport].[DevelopmentalContacts] AS [DevelopmentalContacts], 
+    [vCompositeReport].[FEMALE] AS [FEMALE], 
+    [vCompositeReport].[MALE] AS [MALE], 
+    [vCompositeReport].[RFAsia] AS [RFAsia], 
+    [vCompositeReport].[RFAfrica] AS [RFAfrica], 
+    [vCompositeReport].[RFCentral] AS [RFCentral], 
+    [vCompositeReport].[RFEurope] AS [RFEurope], 
+    [vCompositeReport].[RFMiddleEast] AS [RFMiddleEast], 
+    [vCompositeReport].[RFNorthAmerica] AS [RFNorthAmerica], 
+    [vCompositeReport].[RFOceania] AS [RFOceania], 
+    [vCompositeReport].[RFSouthAmerica] AS [RFSouthAmerica], 
+    [vCompositeReport].[SameCompany] AS [SameCompany], 
+    [vCompositeReport].[SameFunction] AS [SameFunction], 
+    [vCompositeReport].[SameBusinessUnit] AS [SameBusinessUnit], 
+    [vCompositeReport].[SameLang] AS [SameLang], 
+    [vCompositeReport].[Senior] AS [Senior], 
+    [vCompositeReport].[Peer] AS [Peer], 
+    [vCompositeReport].[Junior] AS [Junior], 
+    [vCompositeReport].[Other] AS [Other], 
+    [vCompositeReport].[18_24] AS [18_24], 
+    [vCompositeReport].[25_34] AS [25_34], 
+    [vCompositeReport].[35_44] AS [35_44], 
+    [vCompositeReport].[45_54] AS [45_54], 
+    [vCompositeReport].[55_64] AS [55_64], 
+    [vCompositeReport].[65+] AS [65+], 
+    [vCompositeReport].[VeryClose] AS [VeryClose], 
+    [vCompositeReport].[Close] AS [Close], 
+    [vCompositeReport].[Distant] AS [Distant], 
+    [vCompositeReport].[NotVeryClose] AS [NotVeryClose]
+    FROM [survey].[vCompositeReport] AS [vCompositeReport]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vWhoKnowWho" EntityType="Self.vWhoKnowWho" store:Type="Views" store:Schema="survey">
+            <DefiningQuery>SELECT 
+    [vWhoKnowWho].[Pkey] AS [Pkey], 
+    [vWhoKnowWho].[ContactA] AS [ContactA], 
+    [vWhoKnowWho].[ContactB] AS [ContactB], 
+    [vWhoKnowWho].[ParticipantId] AS [ParticipantId], 
+    [vWhoKnowWho].[Networks] AS [Networks], 
+    [vWhoKnowWho].[SameOrganization] AS [SameOrganization], 
+    [vWhoKnowWho].[RelationshipID] AS [RelationshipID], 
+    [vWhoKnowWho].[Order] AS [Order]
+    FROM [survey].[vWhoKnowWho] AS [vWhoKnowWho]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_NetworkRelationship_NetworkInfoContacts" Association="Self.FK_NetworkRelationship_NetworkInfoContacts">
+            <End Role="NetworkInfoContacts" EntitySet="NetworkInfoContacts" />
+            <End Role="NetworkRelationship" EntitySet="NetworkRelationship" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NetworkRelationshipDemo__NetworkInfoContacts" Association="Self.FK_NetworkRelationshipDemo__NetworkInfoContacts">
+            <End Role="NetworkInfoContacts" EntitySet="NetworkInfoContacts" />
+            <End Role="NetworkRelationshipDemo" EntitySet="NetworkRelationshipDemo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ParticipantProfile_NetworkInfoContacts" Association="Self.FK_ParticipantProfile_NetworkInfoContacts">
+            <End Role="NetworkInfoContacts" EntitySet="NetworkInfoContacts" />
+            <End Role="ParticipantProfile" EntitySet="ParticipantProfile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RelationshipDensity_NetworkInfoContacts" Association="Self.FK_RelationshipDensity_NetworkInfoContacts">
+            <End Role="NetworkInfoContacts" EntitySet="NetworkInfoContacts" />
+            <End Role="RelationshipDensity" EntitySet="RelationshipDensity" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SurveyEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="NetworkContacts_V" EntityType="Model.NetworkContacts_V" />
+          <EntitySet Name="NetworkInfoContacts" EntityType="Model.NetworkInfoContact" />
+          <EntitySet Name="NetworkRelationships" EntityType="Model.NetworkRelationship" />
+          <EntitySet Name="RelationshipDensities" EntityType="Model.RelationshipDensity" />
+          <AssociationSet Name="FK_NetworkRelationship_NetworkInfoContacts" Association="Model.FK_NetworkRelationship_NetworkInfoContacts">
+            <End Role="NetworkInfoContact" EntitySet="NetworkInfoContacts" />
+            <End Role="NetworkRelationship" EntitySet="NetworkRelationships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RelationshipDensity_NetworkInfoContacts" Association="Model.FK_RelationshipDensity_NetworkInfoContacts">
+            <End Role="NetworkInfoContact" EntitySet="NetworkInfoContacts" />
+            <End Role="RelationshipDensity" EntitySet="RelationshipDensities" />
+          </AssociationSet>
+          <EntitySet Name="ParticipantProfiles" EntityType="Model.ParticipantProfile" />
+          <AssociationSet Name="FK_ParticipantProfile_NetworkInfoContacts" Association="Model.FK_ParticipantProfile_NetworkInfoContacts">
+            <End Role="NetworkInfoContact" EntitySet="NetworkInfoContacts" />
+            <End Role="ParticipantProfile" EntitySet="ParticipantProfiles" />
+          </AssociationSet>
+          <EntitySet Name="vWhoKnowWhoes" EntityType="Model.vWhoKnowWho" />
+          <EntitySet Name="NetworkRelationshipDemoes" EntityType="Model.NetworkRelationshipDemo" />
+          <AssociationSet Name="FK_NetworkRelationshipDemo__NetworkInfoContacts" Association="Model.FK_NetworkRelationshipDemo__NetworkInfoContacts">
+            <End Role="NetworkInfoContact" EntitySet="NetworkInfoContacts" />
+            <End Role="NetworkRelationshipDemo" EntitySet="NetworkRelationshipDemoes" />
+          </AssociationSet>
+          <EntitySet Name="vCompositeReports" EntityType="Model.vCompositeReport" />
+        </EntityContainer>
+        <EntityType Name="NetworkContacts_V">
+          <Key>
+            <PropertyRef Name="Pkey" />
+          </Key>
+          <Property Name="Pkey" Type="String" MaxLength="210" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ParticipantId" Type="Int32" Nullable="false" />
+          <Property Name="ContactName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NetworkInfoContact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ParticipantId" Type="Int32" Nullable="false" />
+          <Property Name="ContactName1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ContactName2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ContactName3" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ContactName4" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ContactName5" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ContactName6" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ContactName7" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ContactName8" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="JobContactName1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="JobContactName2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="JobContactName3" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="JobContactName4" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="JobContactName5" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="JobContactName6" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="JobContactName7" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="JobContactName8" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CrrContactName1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CrrContactName2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CrrContactName3" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CrrContactName4" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CrrContactName5" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CrrContactName6" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CrrContactName7" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CrrContactName8" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CreaterBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="NetworkRelationships" Relationship="Model.FK_NetworkRelationship_NetworkInfoContacts" FromRole="NetworkInfoContact" ToRole="NetworkRelationship" />
+          <NavigationProperty Name="RelationshipDensities" Relationship="Model.FK_RelationshipDensity_NetworkInfoContacts" FromRole="NetworkInfoContact" ToRole="RelationshipDensity" />
+          <NavigationProperty Name="ParticipantProfiles" Relationship="Model.FK_ParticipantProfile_NetworkInfoContacts" FromRole="NetworkInfoContact" ToRole="ParticipantProfile" />
+          <NavigationProperty Name="NetworkRelationshipDemoes" Relationship="Model.FK_NetworkRelationshipDemo__NetworkInfoContacts" FromRole="NetworkInfoContact" ToRole="NetworkRelationshipDemo" />
+          <Property Name="AllowNewContacts" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="NetworkRelationship">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ParticipantId" Type="Int32" Nullable="false" />
+          <Property Name="NetworkContactID" Type="Int32" Nullable="false" />
+          <Property Name="ContactName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="VeryClose" Type="Boolean" />
+          <Property Name="Close" Type="Boolean" />
+          <Property Name="NotVeryClose" Type="Boolean" />
+          <Property Name="Distant" Type="Boolean" />
+          <Property Name="CreaterBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="NetworkInfoContact" Relationship="Model.FK_NetworkRelationship_NetworkInfoContacts" FromRole="NetworkRelationship" ToRole="NetworkInfoContact" />
+        </EntityType>
+        <EntityType Name="RelationshipDensity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ParticipantId" Type="Int32" Nullable="false" />
+          <Property Name="NetworkContactID" Type="Int32" Nullable="false" />
+          <Property Name="ContactName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MapContactName2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MapContactName3" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MapContactName4" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MapContactName5" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MapContactName6" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MapContactName7" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MapContactName8" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MapContactName9" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MapContactName10" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MapContactName11" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MapContactName12" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MapContactName13" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MapContactName14" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MapContactName15" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MapContactName16" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MapContactName17" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MapContactName18" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MapContactName19" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MapContactName20" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MapContactName21" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MapContactName22" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MapContactName23" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DensitySelected1" Type="Boolean" />
+          <Property Name="DensitySelected2" Type="Boolean" />
+          <Property Name="DensitySelected3" Type="Boolean" />
+          <Property Name="DensitySelected4" Type="Boolean" />
+          <Property Name="DensitySelected5" Type="Boolean" />
+          <Property Name="DensitySelected6" Type="Boolean" />
+          <Property Name="DensitySelected7" Type="Boolean" />
+          <Property Name="DensitySelected8" Type="Boolean" />
+          <Property Name="DensitySelected9" Type="Boolean" />
+          <Property Name="DensitySelected10" Type="Boolean" />
+          <Property Name="DensitySelected11" Type="Boolean" />
+          <Property Name="DensitySelected12" Type="Boolean" />
+          <Property Name="DensitySelected13" Type="Boolean" />
+          <Property Name="DensitySelected14" Type="Boolean" />
+          <Property Name="DensitySelected15" Type="Boolean" />
+          <Property Name="DensitySelected16" Type="Boolean" />
+          <Property Name="DensitySelected17" Type="Boolean" />
+          <Property Name="DensitySelected18" Type="Boolean" />
+          <Property Name="DensitySelected19" Type="Boolean" />
+          <Property Name="DensitySelected20" Type="Boolean" />
+          <Property Name="DensitySelected21" Type="Boolean" />
+          <Property Name="DensitySelected22" Type="Boolean" />
+          <Property Name="DensitySelected23" Type="Boolean" />
+          <Property Name="CreaterBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="NetworkInfoContact" Relationship="Model.FK_RelationshipDensity_NetworkInfoContacts" FromRole="RelationshipDensity" ToRole="NetworkInfoContact" />
+        </EntityType>
+        <Association Name="FK_NetworkRelationship_NetworkInfoContacts">
+          <End Type="Model.NetworkInfoContact" Role="NetworkInfoContact" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.NetworkRelationship" Role="NetworkRelationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NetworkInfoContact">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NetworkRelationship">
+              <PropertyRef Name="NetworkContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RelationshipDensity_NetworkInfoContacts">
+          <End Type="Model.NetworkInfoContact" Role="NetworkInfoContact" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.RelationshipDensity" Role="RelationshipDensity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NetworkInfoContact">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RelationshipDensity">
+              <PropertyRef Name="NetworkContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ParticipantProfile">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NetworkContactID" Type="Int32" Nullable="false" />
+          <Property Name="ParticipantID" Type="Int32" Nullable="false" />
+          <Property Name="NativeLang" Type="Int32" />
+          <Property Name="CreaterBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="NetworkInfoContact" Relationship="Model.FK_ParticipantProfile_NetworkInfoContacts" FromRole="ParticipantProfile" ToRole="NetworkInfoContact" />
+          <Property Name="GenderId" Type="Int32" />
+          <Property Name="AgeGroupId" Type="Int32" />
+          <Property Name="RegionId" Type="Int32" />
+          <Property Name="NetworkPercentId" Type="Int32" />
+          <Property Name="WorkRegionId" Type="Int32" />
+        </EntityType>
+        <Association Name="FK_ParticipantProfile_NetworkInfoContacts">
+          <End Type="Model.NetworkInfoContact" Role="NetworkInfoContact" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.ParticipantProfile" Role="ParticipantProfile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NetworkInfoContact">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ParticipantProfile">
+              <PropertyRef Name="NetworkContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="vWhoKnowWho">
+          <Key>
+            <PropertyRef Name="Pkey" />
+          </Key>
+          <Property Name="Pkey" Type="String" MaxLength="330" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContactA" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ContactB" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ParticipantId" Type="Int32" Nullable="false" />
+          <Property Name="Networks" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SameOrganization" Type="Boolean" />
+          <Property Name="RelationshipID" Type="Int32" />
+          <Property Name="Order" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NetworkRelationshipDemo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ParticipantId" Type="Int32" Nullable="false" />
+          <Property Name="NetworkContactID" Type="Int32" Nullable="false" />
+          <Property Name="ContactName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="RelationshipID" Type="Int32" Nullable="false" />
+          <Property Name="DiffFuncArea" Type="Boolean" />
+          <Property Name="DiffBsnUnit" Type="Boolean" />
+          <Property Name="DiffFirm" Type="Boolean" />
+          <Property Name="Gender" Type="Int32" />
+          <Property Name="Region" Type="Int32" />
+          <Property Name="SameNativeLang" Type="Boolean" />
+          <Property Name="AgeGroup" Type="Int32" />
+          <Property Name="CreaterBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="NetworkInfoContact" Relationship="Model.FK_NetworkRelationshipDemo__NetworkInfoContacts" FromRole="NetworkRelationshipDemo" ToRole="NetworkInfoContact" />
+        </EntityType>
+        <Association Name="FK_NetworkRelationshipDemo__NetworkInfoContacts">
+          <End Type="Model.NetworkInfoContact" Role="NetworkInfoContact" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Model.NetworkRelationshipDemo" Role="NetworkRelationshipDemo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NetworkInfoContact">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="NetworkRelationshipDemo">
+              <PropertyRef Name="NetworkContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="vCompositeReport">
+          <Key>
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="StartDate" />
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="First_Name" />
+            <PropertyRef Name="Last_Name" />
+          </Key>
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="First_Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MaxDensity" Type="Int32" />
+          <Property Name="CurrentDensity" Type="Int32" />
+          <Property Name="TotalParticipants" Type="Int32" />
+          <Property Name="TotalSurveysCompleted" Type="Int32" />
+          <Property Name="Yield" Type="Decimal" Precision="24" Scale="12" />
+          <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AgeGroup" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Region" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WorkRegion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NativeLanguage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NetworkPercentage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Contacts" Type="Int32" />
+          <Property Name="StategicContacts" Type="Int32" />
+          <Property Name="OperationalContacts" Type="Int32" />
+          <Property Name="DevelopmentalContacts" Type="Int32" />
+          <Property Name="FEMALE" Type="Int32" />
+          <Property Name="MALE" Type="Int32" />
+          <Property Name="RFAsia" Type="Int32" />
+          <Property Name="RFAfrica" Type="Int32" />
+          <Property Name="RFCentral" Type="Int32" />
+          <Property Name="RFEurope" Type="Int32" />
+          <Property Name="RFMiddleEast" Type="Int32" />
+          <Property Name="RFNorthAmerica" Type="Int32" />
+          <Property Name="RFOceania" Type="Int32" />
+          <Property Name="RFSouthAmerica" Type="Int32" />
+          <Property Name="SameCompany" Type="Int32" />
+          <Property Name="SameFunction" Type="Int32" />
+          <Property Name="SameBusinessUnit" Type="Int32" />
+          <Property Name="SameLang" Type="Int32" />
+          <Property Name="Senior" Type="Int32" />
+          <Property Name="Peer" Type="Int32" />
+          <Property Name="Junior" Type="Int32" />
+          <Property Name="Other" Type="Int32" />
+          <Property Name="C18_24" Type="Int32" />
+          <Property Name="C25_34" Type="Int32" />
+          <Property Name="C35_44" Type="Int32" />
+          <Property Name="C45_54" Type="Int32" />
+          <Property Name="C55_64" Type="Int32" />
+          <Property Name="C65_" Type="Int32" />
+          <Property Name="VeryClose" Type="Int32" />
+          <Property Name="Close" Type="Int32" />
+          <Property Name="Distant" Type="Int32" />
+          <Property Name="NotVeryClose" Type="Int32" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="SurveyEntities" >
+          <EntitySetMapping Name="NetworkContacts_V">
+            <EntityTypeMapping TypeName="Model.NetworkContacts_V">
+              <MappingFragment StoreEntitySet="NetworkContacts_V">
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="ParticipantId" ColumnName="ParticipantId" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Pkey" ColumnName="Pkey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NetworkInfoContacts">
+            <EntityTypeMapping TypeName="Model.NetworkInfoContact">
+              <MappingFragment StoreEntitySet="NetworkInfoContacts">
+                <ScalarProperty Name="AllowNewContacts" ColumnName="AllowNewContacts" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreaterBy" ColumnName="CreaterBy" />
+                <ScalarProperty Name="CrrContactName8" ColumnName="CrrContactName8" />
+                <ScalarProperty Name="CrrContactName7" ColumnName="CrrContactName7" />
+                <ScalarProperty Name="CrrContactName6" ColumnName="CrrContactName6" />
+                <ScalarProperty Name="CrrContactName5" ColumnName="CrrContactName5" />
+                <ScalarProperty Name="CrrContactName4" ColumnName="CrrContactName4" />
+                <ScalarProperty Name="CrrContactName3" ColumnName="CrrContactName3" />
+                <ScalarProperty Name="CrrContactName2" ColumnName="CrrContactName2" />
+                <ScalarProperty Name="CrrContactName1" ColumnName="CrrContactName1" />
+                <ScalarProperty Name="JobContactName8" ColumnName="JobContactName8" />
+                <ScalarProperty Name="JobContactName7" ColumnName="JobContactName7" />
+                <ScalarProperty Name="JobContactName6" ColumnName="JobContactName6" />
+                <ScalarProperty Name="JobContactName5" ColumnName="JobContactName5" />
+                <ScalarProperty Name="JobContactName4" ColumnName="JobContactName4" />
+                <ScalarProperty Name="JobContactName3" ColumnName="JobContactName3" />
+                <ScalarProperty Name="JobContactName2" ColumnName="JobContactName2" />
+                <ScalarProperty Name="JobContactName1" ColumnName="JobContactName1" />
+                <ScalarProperty Name="ContactName8" ColumnName="ContactName8" />
+                <ScalarProperty Name="ContactName7" ColumnName="ContactName7" />
+                <ScalarProperty Name="ContactName6" ColumnName="ContactName6" />
+                <ScalarProperty Name="ContactName5" ColumnName="ContactName5" />
+                <ScalarProperty Name="ContactName4" ColumnName="ContactName4" />
+                <ScalarProperty Name="ContactName3" ColumnName="ContactName3" />
+                <ScalarProperty Name="ContactName2" ColumnName="ContactName2" />
+                <ScalarProperty Name="ContactName1" ColumnName="ContactName1" />
+                <ScalarProperty Name="ParticipantId" ColumnName="ParticipantId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NetworkRelationships">
+            <EntityTypeMapping TypeName="Model.NetworkRelationship">
+              <MappingFragment StoreEntitySet="NetworkRelationship">
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreaterBy" ColumnName="CreaterBy" />
+                <ScalarProperty Name="Distant" ColumnName="Distant" />
+                <ScalarProperty Name="NotVeryClose" ColumnName="NotVeryClose" />
+                <ScalarProperty Name="Close" ColumnName="Close" />
+                <ScalarProperty Name="VeryClose" ColumnName="VeryClose" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="NetworkContactID" ColumnName="NetworkContactID" />
+                <ScalarProperty Name="ParticipantId" ColumnName="ParticipantId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RelationshipDensities">
+            <EntityTypeMapping TypeName="Model.RelationshipDensity">
+              <MappingFragment StoreEntitySet="RelationshipDensity">
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreaterBy" ColumnName="CreaterBy" />
+                <ScalarProperty Name="DensitySelected23" ColumnName="DensitySelected23" />
+                <ScalarProperty Name="DensitySelected22" ColumnName="DensitySelected22" />
+                <ScalarProperty Name="DensitySelected21" ColumnName="DensitySelected21" />
+                <ScalarProperty Name="DensitySelected20" ColumnName="DensitySelected20" />
+                <ScalarProperty Name="DensitySelected19" ColumnName="DensitySelected19" />
+                <ScalarProperty Name="DensitySelected18" ColumnName="DensitySelected18" />
+                <ScalarProperty Name="DensitySelected17" ColumnName="DensitySelected17" />
+                <ScalarProperty Name="DensitySelected16" ColumnName="DensitySelected16" />
+                <ScalarProperty Name="DensitySelected15" ColumnName="DensitySelected15" />
+                <ScalarProperty Name="DensitySelected14" ColumnName="DensitySelected14" />
+                <ScalarProperty Name="DensitySelected13" ColumnName="DensitySelected13" />
+                <ScalarProperty Name="DensitySelected12" ColumnName="DensitySelected12" />
+                <ScalarProperty Name="DensitySelected11" ColumnName="DensitySelected11" />
+                <ScalarProperty Name="DensitySelected10" ColumnName="DensitySelected10" />
+                <ScalarProperty Name="DensitySelected9" ColumnName="DensitySelected9" />
+                <ScalarProperty Name="DensitySelected8" ColumnName="DensitySelected8" />
+                <ScalarProperty Name="DensitySelected7" ColumnName="DensitySelected7" />
+                <ScalarProperty Name="DensitySelected6" ColumnName="DensitySelected6" />
+                <ScalarProperty Name="DensitySelected5" ColumnName="DensitySelected5" />
+                <ScalarProperty Name="DensitySelected4" ColumnName="DensitySelected4" />
+                <ScalarProperty Name="DensitySelected3" ColumnName="DensitySelected3" />
+                <ScalarProperty Name="DensitySelected2" ColumnName="DensitySelected2" />
+                <ScalarProperty Name="DensitySelected1" ColumnName="DensitySelected1" />
+                <ScalarProperty Name="MapContactName23" ColumnName="MapContactName23" />
+                <ScalarProperty Name="MapContactName22" ColumnName="MapContactName22" />
+                <ScalarProperty Name="MapContactName21" ColumnName="MapContactName21" />
+                <ScalarProperty Name="MapContactName20" ColumnName="MapContactName20" />
+                <ScalarProperty Name="MapContactName19" ColumnName="MapContactName19" />
+                <ScalarProperty Name="MapContactName18" ColumnName="MapContactName18" />
+                <ScalarProperty Name="MapContactName17" ColumnName="MapContactName17" />
+                <ScalarProperty Name="MapContactName16" ColumnName="MapContactName16" />
+                <ScalarProperty Name="MapContactName15" ColumnName="MapContactName15" />
+                <ScalarProperty Name="MapContactName14" ColumnName="MapContactName14" />
+                <ScalarProperty Name="MapContactName13" ColumnName="MapContactName13" />
+                <ScalarProperty Name="MapContactName12" ColumnName="MapContactName12" />
+                <ScalarProperty Name="MapContactName11" ColumnName="MapContactName11" />
+                <ScalarProperty Name="MapContactName10" ColumnName="MapContactName10" />
+                <ScalarProperty Name="MapContactName9" ColumnName="MapContactName9" />
+                <ScalarProperty Name="MapContactName8" ColumnName="MapContactName8" />
+                <ScalarProperty Name="MapContactName7" ColumnName="MapContactName7" />
+                <ScalarProperty Name="MapContactName6" ColumnName="MapContactName6" />
+                <ScalarProperty Name="MapContactName5" ColumnName="MapContactName5" />
+                <ScalarProperty Name="MapContactName4" ColumnName="MapContactName4" />
+                <ScalarProperty Name="MapContactName3" ColumnName="MapContactName3" />
+                <ScalarProperty Name="MapContactName2" ColumnName="MapContactName2" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="NetworkContactID" ColumnName="NetworkContactID" />
+                <ScalarProperty Name="ParticipantId" ColumnName="ParticipantId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ParticipantProfiles">
+            <EntityTypeMapping TypeName="Model.ParticipantProfile">
+              <MappingFragment StoreEntitySet="ParticipantProfile">
+                <ScalarProperty Name="WorkRegionId" ColumnName="WorkRegionId" />
+                <ScalarProperty Name="NetworkPercentId" ColumnName="NetworkPercentId" />
+                <ScalarProperty Name="RegionId" ColumnName="RegionId" />
+                <ScalarProperty Name="AgeGroupId" ColumnName="AgeGroupId" />
+                <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreaterBy" ColumnName="CreaterBy" />
+                <ScalarProperty Name="NativeLang" ColumnName="NativeLang" />
+                <ScalarProperty Name="ParticipantID" ColumnName="ParticipantID" />
+                <ScalarProperty Name="NetworkContactID" ColumnName="NetworkContactID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vWhoKnowWhoes">
+            <EntityTypeMapping TypeName="Model.vWhoKnowWho">
+              <MappingFragment StoreEntitySet="vWhoKnowWho">
+                <ScalarProperty Name="Order" ColumnName="Order" />
+                <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+                <ScalarProperty Name="SameOrganization" ColumnName="SameOrganization" />
+                <ScalarProperty Name="Networks" ColumnName="Networks" />
+                <ScalarProperty Name="ParticipantId" ColumnName="ParticipantId" />
+                <ScalarProperty Name="ContactB" ColumnName="ContactB" />
+                <ScalarProperty Name="ContactA" ColumnName="ContactA" />
+                <ScalarProperty Name="Pkey" ColumnName="Pkey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NetworkRelationshipDemoes">
+            <EntityTypeMapping TypeName="Model.NetworkRelationshipDemo">
+              <MappingFragment StoreEntitySet="NetworkRelationshipDemo">
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreaterBy" ColumnName="CreaterBy" />
+                <ScalarProperty Name="AgeGroup" ColumnName="AgeGroup" />
+                <ScalarProperty Name="SameNativeLang" ColumnName="SameNativeLang" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DiffFirm" ColumnName="DiffFirm" />
+                <ScalarProperty Name="DiffBsnUnit" ColumnName="DiffBsnUnit" />
+                <ScalarProperty Name="DiffFuncArea" ColumnName="DiffFuncArea" />
+                <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="NetworkContactID" ColumnName="NetworkContactID" />
+                <ScalarProperty Name="ParticipantId" ColumnName="ParticipantId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vCompositeReports">
+            <EntityTypeMapping TypeName="Model.vCompositeReport">
+              <MappingFragment StoreEntitySet="vCompositeReport">
+                <ScalarProperty Name="NotVeryClose" ColumnName="NotVeryClose" />
+                <ScalarProperty Name="Distant" ColumnName="Distant" />
+                <ScalarProperty Name="Close" ColumnName="Close" />
+                <ScalarProperty Name="VeryClose" ColumnName="VeryClose" />
+                <ScalarProperty Name="C65_" ColumnName="65+" />
+                <ScalarProperty Name="C55_64" ColumnName="55_64" />
+                <ScalarProperty Name="C45_54" ColumnName="45_54" />
+                <ScalarProperty Name="C35_44" ColumnName="35_44" />
+                <ScalarProperty Name="C25_34" ColumnName="25_34" />
+                <ScalarProperty Name="C18_24" ColumnName="18_24" />
+                <ScalarProperty Name="Other" ColumnName="Other" />
+                <ScalarProperty Name="Junior" ColumnName="Junior" />
+                <ScalarProperty Name="Peer" ColumnName="Peer" />
+                <ScalarProperty Name="Senior" ColumnName="Senior" />
+                <ScalarProperty Name="SameLang" ColumnName="SameLang" />
+                <ScalarProperty Name="SameBusinessUnit" ColumnName="SameBusinessUnit" />
+                <ScalarProperty Name="SameFunction" ColumnName="SameFunction" />
+                <ScalarProperty Name="SameCompany" ColumnName="SameCompany" />
+                <ScalarProperty Name="RFSouthAmerica" ColumnName="RFSouthAmerica" />
+                <ScalarProperty Name="RFOceania" ColumnName="RFOceania" />
+                <ScalarProperty Name="RFNorthAmerica" ColumnName="RFNorthAmerica" />
+                <ScalarProperty Name="RFMiddleEast" ColumnName="RFMiddleEast" />
+                <ScalarProperty Name="RFEurope" ColumnName="RFEurope" />
+                <ScalarProperty Name="RFCentral" ColumnName="RFCentral" />
+                <ScalarProperty Name="RFAfrica" ColumnName="RFAfrica" />
+                <ScalarProperty Name="RFAsia" ColumnName="RFAsia" />
+                <ScalarProperty Name="MALE" ColumnName="MALE" />
+                <ScalarProperty Name="FEMALE" ColumnName="FEMALE" />
+                <ScalarProperty Name="DevelopmentalContacts" ColumnName="DevelopmentalContacts" />
+                <ScalarProperty Name="OperationalContacts" ColumnName="OperationalContacts" />
+                <ScalarProperty Name="StategicContacts" ColumnName="StategicContacts" />
+                <ScalarProperty Name="Contacts" ColumnName="Contacts" />
+                <ScalarProperty Name="NetworkPercentage" ColumnName="NetworkPercentage" />
+                <ScalarProperty Name="NativeLanguage" ColumnName="NativeLanguage" />
+                <ScalarProperty Name="WorkRegion" ColumnName="WorkRegion" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="AgeGroup" ColumnName="AgeGroup" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Yield" ColumnName="Yield" />
+                <ScalarProperty Name="TotalSurveysCompleted" ColumnName="TotalSurveysCompleted" />
+                <ScalarProperty Name="TotalParticipants" ColumnName="TotalParticipants" />
+                <ScalarProperty Name="CurrentDensity" ColumnName="CurrentDensity" />
+                <ScalarProperty Name="MaxDensity" ColumnName="MaxDensity" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
+                <ScalarProperty Name="First_Name" ColumnName="First Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,319 @@
+﻿@model PPI.Plugin.Survey.Models.NwkRelDensity
+@using PPI.Plugin.Survey.Properties;
+@{
+    ViewBag.Title = @Resources_Survey_Web.RelDensity_Index_Title;
+}
+@using (Html.BeginForm("Save", "RelDensity", FormMethod.Post,new {@id = "formsubmit", @class="margint10 paddinglr20" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group"><p>@Resources_Survey_Web.RelDensity_Index_Paragraph</p></div>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th></th>
+                @{ int i = 0;}
+                @foreach (var item in Model.RelDensity.ToList().OrderBy(m => m.ContactName))
+                {
+                if (item.MapContactName2 != null)
+                {
+            <th class="text-center">@item.MapContactName2 <input type="text" id="RelDen.MapContactName2" name="RelDen.MapContactName2" hidden="hidden" value="@item.MapContactName2"></th>}
+
+                if (item.MapContactName3 != null)
+                {
+            <th class="text-center">@item.MapContactName3 <input type="text" id="RelDen.MapContactName3" name="RelDen.MapContactName3" hidden="hidden" value="@item.MapContactName3"></th>}
+
+                if (item.MapContactName4 != null)
+                {
+            <th class="text-center">@item.MapContactName4 <input type="text" id="RelDen.MapContactName4" name="RelDen.MapContactName4" hidden="hidden" value="@item.MapContactName4"></th>}
+
+                if (item.MapContactName5 != null)
+                {
+            <th class="text-center">@item.MapContactName5 <input type="text" id="RelDen.MapContactName5" name="RelDen.MapContactName5" hidden="hidden" value="@item.MapContactName5"></th>}
+
+                if (item.MapContactName6 != null)
+                {
+            <th class="text-center">@item.MapContactName6 <input type="text" id="RelDen.MapContactName6" name="RelDen.MapContactName6" hidden="hidden" value="@item.MapContactName6"></th>}
+                if (item.MapContactName7 != null)
+                {
+            <th class="text-center">@item.MapContactName7 <input type="text" id="RelDen.MapContactName7" name="RelDen.MapContactName7" hidden="hidden" value="@item.MapContactName7"></th>}
+                if (item.MapContactName8 != null)
+                {
+            <th class="text-center">@item.MapContactName8 <input type="text" id="RelDen.MapContactName8" name="RelDen.MapContactName8" hidden="hidden" value="@item.MapContactName8"></th>}
+                if (item.MapContactName9 != null)
+                {
+            <th class="text-center">@item.MapContactName9 <input type="text" id="RelDen.MapContactName9" name="RelDen.MapContactName9" hidden="hidden" value="@item.MapContactName9"></th>}
+                if (item.MapContactName10 != null)
+                {
+            <th class="text-center">@item.MapContactName10 <input type="text" id="RelDen.MapContactName10" name="RelDen.MapContactName10" hidden="hidden" value="@item.MapContactName10"></th>}
+                if (item.MapContactName11 != null)
+                {
+            <th class="text-center">@item.MapContactName11 <input type="text" id="RelDen.MapContactName11" name="RelDen.MapContactName11" hidden="hidden" value="@item.MapContactName11"></th>}
+                if (item.MapContactName12 != null)
+                {
+            <th class="text-center">@item.MapContactName12 <input type="text" id="RelDen.MapContactName12" name="RelDen.MapContactName12" hidden="hidden" value="@item.MapContactName12"></th>}
+                if (item.MapContactName13 != null)
+                {
+            <th class="text-center">@item.MapContactName13 <input type="text" id="RelDen.MapContactName13" name="RelDen.MapContactName13" hidden="hidden" value="@item.MapContactName13"></th>}
+                if (item.MapContactName14 != null)
+                {
+            <th class="text-center">@item.MapContactName14 <input type="text" id="RelDen.MapContactName14" name="RelDen.MapContactName14" hidden="hidden" value="@item.MapContactName14"></th>}
+                if (item.MapContactName15 != null)
+                {
+            <th class="text-center">@item.MapContactName15 <input type="text" id="RelDen.MapContactName15" name="RelDen.MapContactName15" hidden="hidden" value="@item.MapContactName15"></th>}
+                if (item.MapContactName16 != null)
+                {
+            <th class="text-center">@item.MapContactName16 <input type="text" id="RelDen.MapContactName16" name="RelDen.MapContactName16" hidden="hidden" value="@item.MapContactName16"></th>}
+                if (item.MapContactName17 != null)
+                {
+            <th class="text-center">@item.MapContactName17 <input type="text" id="RelDen.MapContactName17" name="RelDen.MapContactName17" hidden="hidden" value="@item.MapContactName17"></th>}
+                if (item.MapContactName18 != null)
+                {
+            <th class="text-center">@item.MapContactName18 <input type="text" id="RelDen.MapContactName18" name="RelDen.MapContactName18" hidden="hidden" value="@item.MapContactName18"></th>}
+                if (item.MapContactName19 != null)
+                {
+            <th class="text-center">@item.MapContactName19 <input type="text" id="RelDen.MapContactName19" name="RelDen.MapContactName19" hidden="hidden" value="@item.MapContactName19"></th>}
+                if (item.MapContactName20 != null)
+                {
+            <th class="text-center">@item.MapContactName20 <input type="text" id="RelDen.MapContactName20" name="RelDen.MapContactName20" hidden="hidden" value="@item.MapContactName20"></th>}
+                if (item.MapContactName21 != null)
+                {
+            <th class="text-center">@item.MapContactName21 <input type="text" id="RelDen.MapContactName21" name="RelDen.MapContactName21" hidden="hidden" value="@item.MapContactName21"></th>}
+                if (item.MapContactName22 != null)
+                {
+            <th class="text-center">@item.MapContactName22 <input type="text" id="RelDen.MapContactName22" name="RelDen.MapContactName22" hidden="hidden" value="@item.MapContactName22"></th>}
+                if (item.MapContactName23 != null)
+                {
+            <th class="text-center">@item.MapContactName23 <input type="text" id="RelDen.MapContactName23" name="RelDen.MapContactName23" hidden="hidden" value="@item.MapContactName23"></th>}
+                break;
+            }
+            </tr>
+        
+        @foreach (var item in Model.RelDensity.ToList().OrderBy(m => m.ContactName))
+        {
+        <tr>
+            <td>
+                <strong>@item.ContactName</strong>
+                <input type="text" id="RelDen[@i].ParticipantID" name="RelDen[@i].ParticipantID" hidden="hidden" value="@item.ParticipantId">
+                <input type="text" id="RelDen[@i].ID" name="RelDen[@i].ID" hidden="hidden" value="@item.Id">
+                <input type="text" id="RelDen[@i].NetworkContactID" name="RelDen[@i].NetworkContactID" hidden="hidden" value="@item.NetworkContactID">
+                <input type="text" id="RelDen[@i].ContactName" name="RelDen[@i].ContactName" hidden="hidden" value="@item.ContactName">
+                <input type="text" id="RelDen[@i].Createdby" name="RelDen[@i].Createdby" hidden="hidden" value="@item.CreaterBy">
+                <input type="text" id="RelDen[@i].CreatedOn" name="RelDen[@i].CreatedOn" hidden="hidden" value="@item.CreatedOn">
+            </td>
+
+            @if (item.MapContactName2 != null && (i + 1) < 2)
+                {
+                <td  align="center"><input id="RelDen[@i].DensitySelected2" name="RelDen[@i].DensitySelected2" type="checkbox" checked="@item.DensitySelected2" value="on" /></td>
+                }
+            else if (item.MapContactName2 != null)
+                {
+                    <td align="center" class="nooption"></td>
+                }
+            @if (item.MapContactName3 != null && (i + 1) < 3)
+                {
+                <td  align="center"><input id="RelDen[@i].DensitySelected3" name="RelDen[@i].DensitySelected3" type="checkbox" checked="@item.DensitySelected3" value="on" /></td>}
+            else if (item.MapContactName3 != null)
+                {
+                <td align="center" class="nooption"></td>}
+            @if (item.MapContactName4 != null && (i + 1) < 4)
+                {
+                <td  align="center"><input id="RelDen[@i].DensitySelected4" name="RelDen[@i].DensitySelected4" type="checkbox" checked="@item.DensitySelected4" value="on" /></td>}
+            else if (item.MapContactName4 != null)
+                {
+                <td align="center" class="nooption"></td>}
+            @if (item.MapContactName5 != null && (i + 1) < 5)
+                {
+                <td  align="center"><input id="RelDen[@i].DensitySelected5" name="RelDen[@i].DensitySelected5" type="checkbox" checked="@item.DensitySelected5" value="on" /></td>}
+            else if (item.MapContactName5 != null)
+                {
+                <td align="center" class="nooption"></td>}
+            @if (item.MapContactName6 != null && (i + 1) < 6)
+                {
+                <td  align="center"><input id="RelDen[@i].DensitySelected6" name="RelDen[@i].DensitySelected6" type="checkbox" checked="@item.DensitySelected6" value="on" /></td>}
+            else if (item.MapContactName6 != null)
+                {
+                <td align="center" class="nooption"></td>}
+            @if (item.MapContactName7 != null && (i + 1) < 7)
+                {
+                <td  align="center"><input id="RelDen[@i].DensitySelected7" name="RelDen[@i].DensitySelected7" type="checkbox" checked="@item.DensitySelected7" value="on" /></td>}
+            else if (item.MapContactName7 != null)
+                {
+                <td align="center" class="nooption"></td>}
+            @if (item.MapContactName8 != null && (i + 1) < 8)
+                {
+                <td  align="center"><input id="RelDen[@i].DensitySelected8" name="RelDen[@i].DensitySelected8" type="checkbox" checked="@item.DensitySelected8" value="on" /></td>}
+            else if (item.MapContactName8 != null)
+                {
+                <td align="center" class="nooption"></td>}
+            @if (item.MapContactName9 != null && (i + 1) < 9)
+                {
+                <td  align="center"><input id="RelDen[@i].DensitySelected9" name="RelDen[@i].DensitySelected9" type="checkbox" checked="@item.DensitySelected9" value="on" /></td>}
+            else if (item.MapContactName9 != null)
+                {
+                <td align="center" class="nooption"></td>}
+            @if (item.MapContactName10 != null && (i + 1) < 10)
+                {
+                <td  align="center"><input id="RelDen[@i].DensitySelected10" name="RelDen[@i].DensitySelected10" type="checkbox" checked="@item.DensitySelected10" value="on" /></td>}
+            else if (item.MapContactName10 != null)
+                {
+                <td align="center" class="nooption"></td>}
+
+            @if (item.MapContactName11 != null && (i + 1) < 11)
+                {
+                <td  align="center"><input id="RelDen[@i].DensitySelected11" name="RelDen[@i].DensitySelected11" type="checkbox" checked="@item.DensitySelected11" value="on" /></td>}
+            else if (item.MapContactName11 != null)
+                {
+                <td align="center" class="nooption"></td>}
+
+            @if (item.MapContactName12 != null && (i + 1) < 12)
+                {
+                <td  align="center"><input id="RelDen[@i].DensitySelected12" name="RelDen[@i].DensitySelected12" type="checkbox" checked="@item.DensitySelected12" value="on" /></td>}
+            else if (item.MapContactName12 != null)
+                {
+                <td align="center" class="nooption"></td>}
+
+            @if (item.MapContactName13 != null && (i + 1) < 13)
+                {
+
+                <td  align="center"><input id="RelDen[@i].DensitySelected13" name="RelDen[@i].DensitySelected13" type="checkbox" checked="@item.DensitySelected13" value="on" /></td>}
+            else if (item.MapContactName13 != null)
+                {
+                <td align="center" class="nooption"></td>}
+
+            @if (item.MapContactName14 != null && (i + 1) < 14)
+                {
+
+                <td  align="center"><input id="RelDen[@i].DensitySelected14" name="RelDen[@i].DensitySelected14" type="checkbox" checked="@item.DensitySelected14" value="on" /></td>}
+            else if (item.MapContactName14 != null)
+                {
+                <td align="center" class="nooption"></td>}
+
+            @if (item.MapContactName15 != null && (i + 1) < 15)
+                {
+
+                <td  align="center"><input id="RelDen[@i].DensitySelected15" name="RelDen[@i].DensitySelected15" type="checkbox" checked="@item.DensitySelected15" value="on" /></td>}
+            else if (item.MapContactName15 != null)
+                {
+                <td align="center" class="nooption"></td>}
+
+            @if (item.MapContactName16 != null && (i + 1) < 16)
+                {
+
+                <td  align="center"><input id="RelDen[@i].DensitySelected16" name="RelDen[@i].DensitySelected16" type="checkbox" checked="@item.DensitySelected16" value="on" /></td>}
+            else if (item.MapContactName16 != null)
+                {
+                <td align="center" class="nooption"></td>}
+
+            @if (item.MapContactName17 != null && (i + 1) < 17)
+                {
+
+                <td  align="center"><input id="RelDen[@i].DensitySelected17" name="RelDen[@i].DensitySelected17" type="checkbox" checked="@item.DensitySelected17" value="on" /></td>}
+            else if (item.MapContactName17 != null)
+                {
+                <td align="center" class="nooption"></td>}
+
+            @if (item.MapContactName18 != null && (i + 1) < 18)
+                {
+
+                <td  align="center"><input id="RelDen[@i].DensitySelected18" name="RelDen[@i].DensitySelected18" type="checkbox" checked="@item.DensitySelected18" value="on" /></td>}
+            else if (item.MapContactName18 != null)
+                {
+                <td align="center" class="nooption"></td>}
+
+            @if (item.MapContactName19 != null && (i + 1) < 19)
+                {
+
+                <td  align="center"><input id="RelDen[@i].DensitySelected19" name="RelDen[@i].DensitySelected19" type="checkbox" checked="@item.DensitySelected19" value="on" /></td>}
+            else if (item.MapContactName19 != null)
+                {
+                <td align="center" class="nooption"></td>}
+
+            @if (item.MapContactName20 != null && (i + 1) < 20)
+                {
+
+                <td  align="center"><input id="RelDen[@i].DensitySelected20" name="RelDen[@i].DensitySelected20" type="checkbox" checked="@item.DensitySelected20" value="on" /></td>}
+            else if (item.MapContactName20 != null)
+                {
+                <td align="center" class="nooption"></td>}
+
+            @if (item.MapContactName21 != null && (i + 1) < 21)
+                {
+
+                <td  align="center"><input id="RelDen[@i].DensitySelected21" name="RelDen[@i].DensitySelected21" type="checkbox" checked="@item.DensitySelected21" value="on" /></td>}
+            else if (item.MapContactName21 != null)
+                {
+                <td align="center" class="nooption"></td>}
+
+            @if (item.MapContactName22 != null && (i + 1) < 22)
+                {
+
+                <td  align="center"><input id="RelDen[@i].DensitySelected22" name="RelDen[@i].DensitySelected22" type="checkbox" checked="@item.DensitySelected22" value="on" /></td>}
+            else if (item.MapContactName22 != null)
+                {
+                <td align="center" class="nooption"></td>}
+
+            @if (item.MapContactName23 != null && (i + 1) < 23)
+                {
+
+                <td  align="center"><input id="RelDen[@i].DensitySelected23" name="RelDen[@i].DensitySelected23" type="checkbox" checked="@item.DensitySelected23" value="on" /></td>}
+            else if (item.MapContactName23 != null)
+                {
+                <td align="center" class="nooption"></td>}
+        </tr>
+                i++;
+                @Html.Hidden("Direction")
+        }
+
+        </table>
+    </div>
+    
+    <input type="text" id="rowcount" name="RowCount" hidden="hidden" value="@i">
+    <div class="row">
+        <div class="col-md-6"></div>        
+        @if (Model.SurveyReadOnly)
+        {
+            <div class="col-md-6 text-right margint10">
+                <a class="btn btn-default btn200 AdminButton" href="@Url.Action("Index", "RelationshipDemo", new { id = @Model.ParticipantID, admin = "True" })" role="button"><span class=" glyphicon glyphicon-menu-left"></span>Admin @Resources_Survey_Web.View_Actions_Previous</a>
+                <a class="btn btn-primary btn200 AdminButton" href="@Url.Action("Index", "Profile", new { id = @Model.ParticipantID, admin="True" })" role="button">Admin @Resources_Survey_Web.View_Actions_Next <span class=" glyphicon glyphicon-menu-right"></span></a>
+            </div>
+        }
+        else
+        {
+            <div class="col-md-6 text-right margint10">
+                <a class="btn btn-default btn200 buttonsubmit" id="buttonPrev" role="button"><span class=" glyphicon glyphicon-menu-left"></span> @Resources_Survey_Web.View_Actions_Previous</a>
+                <a class="btn btn-primary btn200 buttonsubmit" id="buttonNext" role="button">@Resources_Survey_Web.View_Actions_Next <span class=" glyphicon glyphicon-menu-right"></span></a>
+            </div>
+        }
+        
+    </div>
+}
+
+
+@section scripts{
+<script type="text/javascript">
+
+    var canExit = false;
+
+    $(window).on('beforeunload', function () {
+        if (canExit) {
+
+        }
+        else {
+            return "*** INCOMPLETE SURVEY ***\n\nYou have not completed the survey. If you leave your survey, it will retain the status of ‘In Progress’ and it will not be marked as ‘Complete’. If you wish to leave the page, click ‘Leave this Page’. If you want to stay and complete the survey, click ‘Stay on this Page’.” ";
+        }
+    });
+
+    $(".AdminButton").click(function (e) {
+        canExit = true;
+        return;
+    });
+
+    $(".buttonsubmit").click(function () {
+        $("#Direction").val($(this).attr("ID"));
+        canExit = true;
+        $("#formsubmit").submit();
+    });
+
+
+</script>    
+}

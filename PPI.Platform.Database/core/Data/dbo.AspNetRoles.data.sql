@@ -1,0 +1,7 @@
+﻿INSERT INTO [dbo].[AspNetRoles] ([Id], [Name]) VALUES (N'3', N'Admin')
+INSERT INTO [dbo].[AspNetRoles] ([Id], [Name]) VALUES (N'5', N'GroupAdmin')
+INSERT INTO [dbo].[AspNetRoles] ([Id], [Name]) VALUES (N'6', N'Participant')
+INSERT INTO [dbo].[AspNetRoles] ([Id], [Name]) VALUES (N'7', N'Rater')
+INSERT INTO [dbo].[AspNetRoles] ([Id], [Name]) VALUES (N'4', N'SiteAdmin')
+INSERT INTO [dbo].[AspNetRoles] ([Id], [Name]) VALUES (N'2', N'SuperAdmin')
+INSERT INTO [dbo].[AspNetRoles] ([Id], [Name]) VALUES (N'1', N'SystemIT')

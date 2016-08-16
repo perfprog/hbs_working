@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie6"><![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"><![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class=""><!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=9;IE=edge;chrome=1" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/bundles/styles")
+    @if (IsSectionDefined("AddToHead"))
+    {
+        @RenderSection("AddToHead", required: false)
+    }
+
+    <!--Google Fonts-->
+    <link href="~/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+        <script src="~/Scripts/html5shiv.js"></script>
+        <script src="~/Scripts/respond.js"></script>
+    <![endif]-->
+
+
+
+</head>
+<body>
+    <div id="browsermessage">
+        <div style="padding: 5px;">
+            <div id="browser-inner-message" class="alert alert-warning">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>You are using an unsupported version of Internet Explorer:</strong>&nbsp;&nbsp;If you continue you will likely see errors or will not be able to use certain features.  We recommend using <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie" target="_blank">Internet Explorer 11</a>, <a href="https://www.mozilla.org/en-US/" target="_blank">Mozilla Firefox</a>, <a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank">Google Chrome</a> or <a href="https://support.apple.com/downloads/safari" target="_blank">Apple Safari</a>.
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            @RenderBody()
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/scripts")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+<script>
+    (function ($) {
+        "use strict";
+
+        // Detecting IE
+        var oldIE;
+        if ($('html').is('.ie6, .ie7, .ie8')) {
+            oldIE = true;
+        }
+
+        if (oldIE) {
+            $(".alert").show();
+        } else {
+            $(".alert").hide();
+        }
+
+    }(jQuery));    
+</script>

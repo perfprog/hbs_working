@@ -1,0 +1,441 @@
+﻿@model PPI.Plugin.Survey.Models.NetworkViewModel
+@using PPI.Plugin.Survey.Properties;
+@{
+    ViewBag.Title = @Resources_Survey_Web.Network_Index_Title;
+}
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <p>
+                In this section, please identify the people who are in your network. For each set of questions, you can list up to eight individuals. You may list individuals more than once.
+                We realize you may wish to list more than eight individuals; however, for the purpose of this assessment, please think about the key individuals who represent your core network.  These are the individuals you rely on most consistently.
+            </p>
+        </div>
+    </div>
+    <div class="col-md-12">
+        @using (Html.BeginForm("Next", "Network", FormMethod.Post, new { @class = "margint10 paddinglr20", @id = "formsubmit" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(model => model.NetworkInfoContact.ParticipantId)
+            @Html.HiddenFor(model => model.NetworkInfoContact.CreaterBy)
+            @Html.HiddenFor(model => model.NetworkInfoContact.CreatedOn)
+            @Html.HiddenFor(model => model.NetworkInfoContact.ModifiedBy)
+            @Html.HiddenFor(model => model.NetworkInfoContact.ModifiedOn)
+            @Html.HiddenFor(model => model.NetworkInfoContact.Id)
+
+            <div class="form-group">
+                <label>@Resources_Survey_Web.Network_Paragraph1_Title</label>
+                <p>@Resources_Survey_Web.Network_Paragraph1</p>
+                <div class="row">
+
+                    <div class="col-lg-3">
+                        @if (Model.NetworkInfoContact.AllowNewContacts == false)
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.ContactName1, new { htmlAttributes = new { @class = "form-control margint10", @readonly = "readonly" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.ContactName1, new { htmlAttributes = new { @class = "form-control margint10" } })
+                        }
+                        @Html.ValidationMessageFor(model => model.NetworkInfoContact.ContactName1, "", new { @class = "text-danger" })
+
+                        @if (Model.NetworkInfoContact.AllowNewContacts == false)
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.ContactName2, new { htmlAttributes = new { @class = "form-control margint10", @readonly = "readonly" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.ContactName2, new { htmlAttributes = new { @class = "form-control margint10" } })
+                        }
+
+                        @Html.ValidationMessageFor(model => model.NetworkInfoContact.ContactName2, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-lg-3">
+
+                        @if (Model.NetworkInfoContact.AllowNewContacts == false)
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.ContactName3, new { htmlAttributes = new { @class = "form-control margint10", @readonly = "readonly" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.ContactName3, new { htmlAttributes = new { @class = "form-control margint10" } })
+                        }
+                        @Html.ValidationMessageFor(model => model.NetworkInfoContact.ContactName3, "", new { @class = "text-danger" })
+
+
+                        @if (Model.NetworkInfoContact.AllowNewContacts == false)
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.ContactName4, new { htmlAttributes = new { @class = "form-control margint10", @readonly = "readonly" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.ContactName4, new { htmlAttributes = new { @class = "form-control margint10" } })
+                        }
+                        @Html.ValidationMessageFor(model => model.NetworkInfoContact.ContactName4, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-lg-3">
+
+                        @if (Model.NetworkInfoContact.AllowNewContacts == false)
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.ContactName5, new { htmlAttributes = new { @class = "form-control margint10", @readonly = "readonly" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.ContactName5, new { htmlAttributes = new { @class = "form-control margint10" } })
+                        }
+                        @Html.ValidationMessageFor(model => model.NetworkInfoContact.ContactName5, "", new { @class = "text-danger" })
+
+
+                        @if (Model.NetworkInfoContact.AllowNewContacts == false)
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.ContactName6, new { htmlAttributes = new { @class = "form-control margint10", @readonly = "readonly" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.ContactName6, new { htmlAttributes = new { @class = "form-control margint10" } })
+                        }
+                        @Html.ValidationMessageFor(model => model.NetworkInfoContact.ContactName6, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-lg-3">
+
+                        @if (Model.NetworkInfoContact.AllowNewContacts == false)
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.ContactName7, new { htmlAttributes = new { @class = "form-control margint10", @readonly = "readonly" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.ContactName7, new { htmlAttributes = new { @class = "form-control margint10" } })
+                        }
+                        @Html.ValidationMessageFor(model => model.NetworkInfoContact.ContactName7, "", new { @class = "text-danger" })
+
+
+                        @if (Model.NetworkInfoContact.AllowNewContacts == false)
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.ContactName8, new { htmlAttributes = new { @class = "form-control margint10", @readonly = "readonly" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.ContactName8, new { htmlAttributes = new { @class = "form-control margint10" } })
+                        }
+                        @Html.ValidationMessageFor(model => model.NetworkInfoContact.ContactName8, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>@Resources_Survey_Web.Network_Paragraph2_Title</label>
+                <p>@Resources_Survey_Web.Network_Paragraph2</p>
+                <div class="row">
+
+                    <div class="col-lg-3">
+
+                        @if (Model.NetworkInfoContact.AllowNewContacts == false)
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.JobContactName1, new { htmlAttributes = new { @class = "form-control margint10", @readonly = "readonly" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.JobContactName1, new { htmlAttributes = new { @class = "form-control margint10" } })
+                        }
+                        @Html.ValidationMessageFor(model => model.NetworkInfoContact.JobContactName1, "", new { @class = "text-danger" })
+
+
+                        @if (Model.NetworkInfoContact.AllowNewContacts == false)
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.JobContactName2, new { htmlAttributes = new { @class = "form-control margint10", @readonly = "readonly" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.JobContactName2, new { htmlAttributes = new { @class = "form-control margint10" } })
+                        }
+                        @Html.ValidationMessageFor(model => model.NetworkInfoContact.JobContactName2, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-lg-3">
+
+                        @if (Model.NetworkInfoContact.AllowNewContacts == false)
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.JobContactName3, new { htmlAttributes = new { @class = "form-control margint10", @readonly = "readonly" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.JobContactName3, new { htmlAttributes = new { @class = "form-control margint10" } })
+                        }
+                        @Html.ValidationMessageFor(model => model.NetworkInfoContact.JobContactName3, "", new { @class = "text-danger" })
+
+
+                        @if (Model.NetworkInfoContact.AllowNewContacts == false)
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.JobContactName4, new { htmlAttributes = new { @class = "form-control margint10", @readonly = "readonly" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.JobContactName4, new { htmlAttributes = new { @class = "form-control margint10" } })
+                        }
+                        @Html.ValidationMessageFor(model => model.NetworkInfoContact.JobContactName4, "", new { @class = "text-danger" })
+
+                    </div>
+                    <div class="col-lg-3">
+
+                        @if (Model.NetworkInfoContact.AllowNewContacts == false)
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.JobContactName5, new { htmlAttributes = new { @class = "form-control margint10", @readonly = "readonly" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.JobContactName5, new { htmlAttributes = new { @class = "form-control margint10" } })
+                        }
+                        @Html.ValidationMessageFor(model => model.NetworkInfoContact.JobContactName5, "", new { @class = "text-danger" })
+
+
+                        @if (Model.NetworkInfoContact.AllowNewContacts == false)
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.JobContactName6, new { htmlAttributes = new { @class = "form-control margint10", @readonly = "readonly" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.JobContactName6, new { htmlAttributes = new { @class = "form-control margint10" } })
+                        }
+                        @Html.ValidationMessageFor(model => model.NetworkInfoContact.JobContactName6, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-lg-3">
+
+                        @if (Model.NetworkInfoContact.AllowNewContacts == false)
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.JobContactName7, new { htmlAttributes = new { @class = "form-control margint10", @readonly = "readonly" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.JobContactName7, new { htmlAttributes = new { @class = "form-control margint10" } })
+                        }
+                        @Html.ValidationMessageFor(model => model.NetworkInfoContact.JobContactName7, "", new { @class = "text-danger" })
+
+
+                        @if (Model.NetworkInfoContact.AllowNewContacts == false)
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.JobContactName8, new { htmlAttributes = new { @class = "form-control margint10", @readonly = "readonly" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.JobContactName8, new { htmlAttributes = new { @class = "form-control margint10" } })
+                        }
+                        @Html.ValidationMessageFor(model => model.NetworkInfoContact.JobContactName8, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>@Resources_Survey_Web.Network_Paragraph3_Title</label>
+                <p>@Resources_Survey_Web.Network_Paragraph3</p>
+                <div class="row">
+
+                    <div class="col-lg-3">
+
+                        @if (Model.NetworkInfoContact.AllowNewContacts == false)
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.CrrContactName1, new { htmlAttributes = new { @class = "form-control margint10", @readonly = "readonly" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.CrrContactName1, new { htmlAttributes = new { @class = "form-control margint10" } })
+                        }
+                        @Html.ValidationMessageFor(model => model.NetworkInfoContact.CrrContactName1, "", new { @class = "text-danger" })
+
+
+                        @if (Model.NetworkInfoContact.AllowNewContacts == false)
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.CrrContactName2, new { htmlAttributes = new { @class = "form-control margint10", @readonly = "readonly" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.CrrContactName2, new { htmlAttributes = new { @class = "form-control margint10" } })
+                        }
+                        @Html.ValidationMessageFor(model => model.NetworkInfoContact.CrrContactName2, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-lg-3">
+
+                        @if (Model.NetworkInfoContact.AllowNewContacts == false)
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.CrrContactName3, new { htmlAttributes = new { @class = "form-control margint10", @readonly = "readonly" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.CrrContactName3, new { htmlAttributes = new { @class = "form-control margint10" } })
+                        }
+                        @Html.ValidationMessageFor(model => model.NetworkInfoContact.CrrContactName3, "", new { @class = "text-danger" })
+
+
+                        @if (Model.NetworkInfoContact.AllowNewContacts == false)
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.CrrContactName4, new { htmlAttributes = new { @class = "form-control margint10", @readonly = "readonly" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.CrrContactName4, new { htmlAttributes = new { @class = "form-control margint10" } })
+                        }
+                        @Html.ValidationMessageFor(model => model.NetworkInfoContact.CrrContactName4, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-lg-3">
+
+                        @if (Model.NetworkInfoContact.AllowNewContacts == false)
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.CrrContactName5, new { htmlAttributes = new { @class = "form-control margint10", @readonly = "readonly" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.CrrContactName5, new { htmlAttributes = new { @class = "form-control margint10" } })
+                        }
+                        @Html.ValidationMessageFor(model => model.NetworkInfoContact.CrrContactName5, "", new { @class = "text-danger" })
+
+
+                        @if (Model.NetworkInfoContact.AllowNewContacts == false)
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.CrrContactName6, new { htmlAttributes = new { @class = "form-control margint10", @readonly = "readonly" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.CrrContactName6, new { htmlAttributes = new { @class = "form-control margint10" } })
+                        }
+                        @Html.ValidationMessageFor(model => model.NetworkInfoContact.CrrContactName6, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-lg-3">
+
+                        @if (Model.NetworkInfoContact.AllowNewContacts == false)
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.CrrContactName7, new { htmlAttributes = new { @class = "form-control margint10", @readonly = "readonly" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.CrrContactName7, new { htmlAttributes = new { @class = "form-control margint10" } })
+                        }
+                        @Html.ValidationMessageFor(model => model.NetworkInfoContact.CrrContactName7, "", new { @class = "text-danger" })
+
+
+                        @if (Model.NetworkInfoContact.AllowNewContacts == false)
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.CrrContactName8, new { htmlAttributes = new { @class = "form-control margint10", @readonly = "readonly" } })
+                        }
+                        else
+                        {
+                            @Html.EditorFor(model => model.NetworkInfoContact.CrrContactName8, new { htmlAttributes = new { @class = "form-control margint10" } })
+                        }
+                        @Html.ValidationMessageFor(model => model.NetworkInfoContact.CrrContactName8, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<div class="row">
+    @using (Html.BeginForm("Clear", "Network", FormMethod.Post, new { ID = "FormClear" }))
+    {
+        <div class=" col-md-6">
+            @Html.AntiForgeryToken()
+            @Html.Hidden("participantId",@Model.NetworkInfoContact.ParticipantId)
+            @if (!Model.SurveyReadOnly)
+            {
+            <a role="button" class=" btn btn-info btn200" data-toggle="modal" data-target="#basicModal">
+                @Resources_Survey_Web.Network_Index_Clear
+            </a>
+            }
+        </div>
+        if (Model.SurveyReadOnly)
+        {
+            <div class="col-md-12 text-right margint10">
+                <a class="btn btn-primary btn200 " id="adminNext" href="@Url.Action("Index", "NetworkRelationship", new { id = @Model.NetworkInfoContact.ParticipantId, admin = "True" })" role="button">
+                    Admin @Resources_Survey_Web.View_Actions_Next
+                    <span class="glyphicon glyphicon-menu-right"></span>
+                </a>
+            </div>
+        }
+        else
+        {
+            <div class="col-md-6 text-right margint10">
+                <a class="btn btn-primary btn200" id="formButtonSubmit" role="button">
+                    @Resources_Survey_Web.View_Actions_Next
+                    <span class="glyphicon glyphicon-menu-right"></span>
+                </a>
+            </div>            
+        }
+    }
+</div>
+
+<!-- Start Over Alert Pop Up -->
+<div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon glyphicon-alert" aria-hidden="true"></span> Alert</h4>
+            </div>
+            <div class="modal-body">
+                <h3>@Resources_Survey_Web.Network_Index_ClearMessage<br /></h3>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="formButtonClear">@Resources_Survey_Web.Network_Index_Clear</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Start Over Alert Pop Up -->
+<!-- Start Up Pop UP-->
+<div class="modal fade" id="StartModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon glyphicon-book" aria-hidden="true"></span> Introduction</h4>
+            </div>
+            <div class="modal-body">
+                <h3>
+                    Network Diagnostic Survey Instructions
+                </h3>
+                <p>
+                    The goal of this network diagnostic tool is to help you evaluate your network.
+                    When responding to the following questions, please consider your network to include people both inside and outside your organization.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Start Up Pop UP-->
+@section scripts{
+    <script>
+        var canExit = false;
+
+        $(window).on('beforeunload', function () {
+            if (canExit) {
+
+            }
+            else {
+                return "*** INCOMPLETE SURVEY ***\n\nYou have not completed the survey. If you leave your survey, it will retain the status of ‘In Progress’ and it will not be marked as ‘Complete’. If you wish to leave the page, click ‘Leave this Page’. If you want to stay and complete the survey, click ‘Stay on this Page’.” ";
+            }
+        });
+
+        $("#adminNext").click(function (e) {
+            canExit = true;
+            return;
+        });
+
+        $("#formButtonSubmit").click(function (e) {
+            canExit = true;
+            $("#formsubmit").submit();
+        });
+
+        $("#formButtonClear").click(function () {
+            canExit = true;
+            $("#FormClear").submit();
+        });
+
+        $(window).load(function () {
+            $('#StartModal').modal('show');
+        });
+
+    </script>
+}

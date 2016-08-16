@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="d3f45882-4361-486b-aa0c-5221844facfc" ChangeDateTime="02/07/2015 21:55:19">
+    <Property Name="ElementName" Value="[core].[Dashboard].[RegisteredPlugins]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[core].[Dashboard]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="RegisteredPluginsId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8b33878b-227d-4997-82c9-4643a892bada" ChangeDateTime="02/07/2015 22:32:43">
+    <Property Name="ElementName" Value="[core].[FK_Dashboard_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[core].[Dashboard]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_Dashboard_RegisteredPlugins]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c4f4ca70-3ee0-425d-b6aa-cf3538e931d9" ChangeDateTime="02/09/2015 15:02:52">
+    <Property Name="ElementName" Value="[core].[Participant].[Name]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[core].[Participant]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="First Name" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ddd8d8da-9ea9-441e-82bf-22805a8e3b7b" ChangeDateTime="02/09/2015 15:10:30">
+    <Property Name="ElementName" Value="[core].[Person].[AspNetUsers]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[core].[Person]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="AspNetUsersId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a793318f-5f17-4383-8bad-654c2f77c7ea" ChangeDateTime="02/11/2015 20:19:47">
+    <Property Name="ElementName" Value="[core].[Dashboard].[HtmlContent]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[core].[Dashboard]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PartialViewName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="04ec3a64-6213-4248-9463-dc689e5649a0" ChangeDateTime="02/11/2015 22:36:44">
+    <Property Name="ElementName" Value="[core].[Group].[OwnerName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[core].[Group]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Administrator" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d508e755-d156-4ee2-95e8-53b4844682a7" ChangeDateTime="02/11/2015 23:05:54">
+    <Property Name="ElementName" Value="[core].[GenericTypeValue].[Name]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[core].[GenericTypeValue]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ResourceId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="84d41926-00bd-4bd3-83e6-b91d949fe3de" ChangeDateTime="02/11/2015 23:07:23">
+    <Property Name="ElementName" Value="[core].[FK_GenericTypeValue_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[core].[GenericTypeValue]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_GenericTypeValue_GenericType]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="cefc3718-9918-4243-bd4a-1bf27daa4682" ChangeDateTime="02/11/2015 23:08:53">
+    <Property Name="ElementName" Value="[core].[FK_GenericTypeValue_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[core].[GenericTypeValue]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_GenericTypeValue_Resource]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="97e0b0f9-c52b-4233-91ed-5e0e9e3f1027" ChangeDateTime="02/11/2015 23:09:37">
+    <Property Name="ElementName" Value="[core].[FK_ResourceValue_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[core].[ResourceValue]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_ResourceValue_Culture]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="4f07a0bc-cd78-4942-b21e-1e8ba350304e" ChangeDateTime="02/11/2015 23:10:23">
+    <Property Name="ElementName" Value="[core].[FK_ResourceValue_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[core].[ResourceValue]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_ResourceValue_Resource]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="54fb7887-29c2-45d1-b928-672231ad62f5" ChangeDateTime="02/17/2015 23:51:38">
+    <Property Name="ElementName" Value="[core].[Email].[EmailGenericTypeId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[core].[Email]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="EmailGenericTypeValueId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b863aad6-ab59-46f8-871b-a640075a259f" ChangeDateTime="02/17/2015 23:51:50">
+    <Property Name="ElementName" Value="[core].[Group].[StatusGenericTypeId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[core].[Group]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="StatusGenericTypeValueId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1a10624c-4894-42c8-96c2-6e9419b8e0fb" ChangeDateTime="02/17/2015 23:51:54">
+    <Property Name="ElementName" Value="[core].[Group].[TypeGenericTypeId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[core].[Group]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TypeGenericTypeValueId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9e299a46-b37d-42c6-905f-33eecbe5aa5e" ChangeDateTime="02/17/2015 23:52:10">
+    <Property Name="ElementName" Value="[core].[PluginAction].[ActionGenericTypeId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[core].[PluginAction]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ActionGenericTypeIValueId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2d8be498-8f92-486e-a2b3-eb8acb224c80" ChangeDateTime="02/23/2015 20:58:15">
+    <Property Name="ElementName" Value="[core].[SurveyParticipant].[ParticipantId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[core].[SurveyParticipant]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="GroupParticipantId" />
+  </Operation>
+</Operations>

@@ -1,0 +1,195 @@
+2016-08-11 13:01:10.8390  INFO Logger Is Active
+2016-08-11 13:01:10.8590 TRACE Start Register Plugins
+2016-08-11 13:01:10.8590 TRACE PPI.Platform.Mvc.Views.PlugInViewEngine..ctor: Enter
+2016-08-11 13:01:10.8590 TRACE PPI.Platform.Mvc.Views.PlugInViewEngine..ctor: Completion in 1 milliseconds
+2016-08-11 13:01:12.6212  WARN Non-async command used: SELECT     [Extent1].[Id] AS [Id],     [Extent1].[Name] AS [Name],     [Extent1].[Version] AS [Version],     [Extent1].[Custom] AS [Custom],     [Extent1].[Description] AS [Description],     [Extent1].[InstallationDate] AS [InstallationDate],     [Extent1].[FullPath] AS [FullPath]    FROM [core].[RegisteredPlugins] AS [Extent1]    WHERE N'Core' <> [Extent1].[Name] parameters: 
+2016-08-11 13:01:13.3412  INFO Saving WebConfig Changes from Plugins
+2016-08-11 13:01:13.4022 TRACE PPI.Platform.Web.Startup..ctor: Enter
+2016-08-11 13:01:13.4022 TRACE PPI.Platform.Web.Startup..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:13.4172 TRACE PPI.Platform.Web.Startup.Configuration: Enter
+2016-08-11 13:01:13.4172 TRACE PPI.Platform.Web.Startup.ConfigureAuth: Enter
+2016-08-11 13:01:13.4482 TRACE PPI.Platform.Web.Startup.ConfigureAuth: Completion in 26 milliseconds
+2016-08-11 13:01:13.4482 TRACE PPI.Platform.Web.Startup.Configuration: Completion in 33 milliseconds
+2016-08-11 13:01:13.5962 TRACE PPI.Platform.Web.Models.ApplicationDbContext.Create: Enter
+2016-08-11 13:01:13.6252  WARN Non-async command used: IF db_id(N'Platform_HBS') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'Platform_HBS' parameters: 
+2016-08-11 13:01:14.1892 TRACE PPI.Platform.Web.Models.ApplicationDbContext..ctor: Enter
+2016-08-11 13:01:14.1892 TRACE PPI.Platform.Web.Models.ApplicationDbContext..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:14.1892 TRACE PPI.Platform.Web.Models.ApplicationDbContext.Create: Completion in 593 milliseconds
+2016-08-11 13:01:14.1962 TRACE PPI.Platform.Web.ApplicationUserManager.Create: Enter
+2016-08-11 13:01:14.1962 TRACE PPI.Platform.Web.ApplicationUserManager..ctor: Enter
+2016-08-11 13:01:14.2102 TRACE PPI.Platform.Web.ApplicationUserManager..ctor: Completion in 1 milliseconds
+2016-08-11 13:01:14.2102 TRACE PPI.Platform.Web.EmailService..ctor: Enter
+2016-08-11 13:01:14.2102 TRACE PPI.Platform.Web.EmailService..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:14.2102 TRACE PPI.Platform.Web.SmsService..ctor: Enter
+2016-08-11 13:01:14.2102 TRACE PPI.Platform.Web.SmsService..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:14.2102 TRACE PPI.Platform.Web.ApplicationUserManager.Create: Completion in 20 milliseconds
+2016-08-11 13:01:14.2102 TRACE PPI.Platform.Web.ApplicationSignInManager.Create: Enter
+2016-08-11 13:01:14.2102 TRACE PPI.Platform.Web.ApplicationSignInManager..ctor: Enter
+2016-08-11 13:01:14.2102 TRACE PPI.Platform.Web.ApplicationSignInManager..ctor: Completion in 1 milliseconds
+2016-08-11 13:01:14.2102 TRACE PPI.Platform.Web.ApplicationSignInManager.Create: Completion in 3 milliseconds
+2016-08-11 13:01:14.3973 TRACE PPI.Platform.Mvc.Controller.BaseController..ctor: Enter
+2016-08-11 13:01:14.3973 TRACE PPI.Platform.Mvc.Controller.BaseController..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:14.3973 TRACE PPI.Platform.Web.Controllers.HomeController..ctor: Enter
+2016-08-11 13:01:14.3973 TRACE PPI.Platform.Web.Controllers.HomeController..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:14.3973 TRACE PPI.Platform.Mvc.Controller.BaseController.BeginExecute: Enter
+2016-08-11 13:01:14.3973 TRACE PPI.Platform.Mvc.Utility.Cookies.GetCookie: Enter
+2016-08-11 13:01:14.3973 TRACE PPI.Platform.Mvc.Utility.Cookies.GetCookie: Completion in 0 milliseconds
+2016-08-11 13:01:14.4613  WARN Non-async command used: SELECT TOP (1)     [Extent1].[Id] AS [Id],     [Extent1].[Value] AS [Value]    FROM [core].[Culture] AS [Extent1]    WHERE [Extent1].[Value] = @p__linq__0 parameters: @0:[en-US] 
+2016-08-11 13:01:14.5873  INFO checking Browser Language settings: en-US
+2016-08-11 13:01:14.5873 TRACE PPI.Platform.Mvc.Utility.Cookies.SetCookie: Enter
+2016-08-11 13:01:14.6433 TRACE PPI.Platform.Mvc.Utility.Cookies.SetCookie: Completion in 53 milliseconds
+2016-08-11 13:01:14.6433 TRACE PPI.Platform.Mvc.Controller.BaseController.set_CurrentCulture: Enter
+2016-08-11 13:01:14.6433 TRACE PPI.Platform.Mvc.Controller.BaseController.set_CurrentCulture: Completion in 0 milliseconds
+2016-08-11 13:01:14.6433 TRACE PPI.Platform.Mvc.Utility.Cookies.GetCookie: Enter
+2016-08-11 13:01:14.6483 TRACE PPI.Platform.Mvc.Utility.Cookies.GetCookie: Completion in 1 milliseconds
+2016-08-11 13:01:14.6483 TRACE PPI.Platform.Mvc.Controller.BaseController.set_CurrentPageSize: Enter
+2016-08-11 13:01:14.6483 TRACE PPI.Platform.Mvc.Controller.BaseController.set_CurrentPageSize: Completion in 0 milliseconds
+2016-08-11 13:01:14.6483 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentPageSize: Enter
+2016-08-11 13:01:14.6483 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentPageSize: Completion in 0 milliseconds
+2016-08-11 13:01:14.6483 TRACE PPI.Platform.Mvc.Controller.BaseController.set_CurrentPageSize: Enter
+2016-08-11 13:01:14.6483 TRACE PPI.Platform.Mvc.Controller.BaseController.set_CurrentPageSize: Completion in 0 milliseconds
+2016-08-11 13:01:14.6483 TRACE PPI.Platform.Mvc.Utility.Cookies.SetCookie: Enter
+2016-08-11 13:01:14.6483 TRACE PPI.Platform.Mvc.Utility.Cookies.SetCookie: Completion in 1 milliseconds
+2016-08-11 13:01:14.6483 TRACE PPI.Platform.Mvc.Utility.Cookies.GetCookie: Enter
+2016-08-11 13:01:14.6483 TRACE PPI.Platform.Mvc.Utility.Cookies.GetCookie: Completion in 0 milliseconds
+2016-08-11 13:01:14.6483 TRACE PPI.Platform.Mvc.Utility.Cookies.SetCookie: Enter
+2016-08-11 13:01:14.6483 TRACE PPI.Platform.Mvc.Utility.Cookies.SetCookie: Completion in 1 milliseconds
+2016-08-11 13:01:14.6483 TRACE PPI.Platform.Mvc.Controller.BaseController.set_CurrentProgram: Enter
+2016-08-11 13:01:14.6483 TRACE PPI.Platform.Mvc.Controller.BaseController.set_CurrentProgram: Completion in 1 milliseconds
+2016-08-11 13:01:14.6623 TRACE PPI.Platform.Mvc.Controller.BaseController.BeginExecuteCore: Enter
+2016-08-11 13:01:14.6623 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentCulture: Enter
+2016-08-11 13:01:14.6623 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentCulture: Completion in 1 milliseconds
+2016-08-11 13:01:14.6813 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentPageSize: Enter
+2016-08-11 13:01:14.6813 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentPageSize: Completion in 0 milliseconds
+2016-08-11 13:01:14.6813 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentProgram: Enter
+2016-08-11 13:01:14.6813 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentProgram: Completion in 0 milliseconds
+2016-08-11 13:01:14.6813 TRACE PPI.Platform.Mvc.Controller.BaseController.set_CurrentUserId: Enter
+2016-08-11 13:01:14.6813 TRACE PPI.Platform.Mvc.Controller.BaseController.set_CurrentUserId: Completion in 0 milliseconds
+2016-08-11 13:01:14.6813 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentUserId: Enter
+2016-08-11 13:01:14.6813 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentUserId: Completion in 0 milliseconds
+2016-08-11 13:01:14.6813  WARN   CurrentUserId is Null
+2016-08-11 13:01:14.6813 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentCulture: Enter
+2016-08-11 13:01:14.6813 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentCulture: Completion in 0 milliseconds
+2016-08-11 13:01:14.6813 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentPageSize: Enter
+2016-08-11 13:01:14.6813 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentPageSize: Completion in 0 milliseconds
+2016-08-11 13:01:14.6813 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentUserId: Enter
+2016-08-11 13:01:14.6813 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentUserId: Completion in 0 milliseconds
+2016-08-11 13:01:14.6933  INFO   Current Controler Settings: culture:1  PageSize:10  UserId:
+2016-08-11 13:01:14.7473 TRACE PPI.Platform.Mvc.Controller.BaseController.BeginExecuteCore: Completion in 80 milliseconds
+2016-08-11 13:01:14.7473 TRACE PPI.Platform.Mvc.Controller.BaseController.BeginExecute: Completion in 345 milliseconds
+2016-08-11 13:01:14.7903 TRACE PPI.Platform.Web.Models.ApplicationDbContext.Create: Enter
+2016-08-11 13:01:14.7903  WARN Non-async command used: IF db_id(N'Platform_HBS') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'Platform_HBS' parameters: 
+2016-08-11 13:01:14.7903 TRACE PPI.Platform.Web.Models.ApplicationDbContext..ctor: Enter
+2016-08-11 13:01:14.7903 TRACE PPI.Platform.Web.Models.ApplicationDbContext..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:14.7903 TRACE PPI.Platform.Web.Models.ApplicationDbContext.Create: Completion in 3 milliseconds
+2016-08-11 13:01:14.7903 TRACE PPI.Platform.Web.ApplicationUserManager.Create: Enter
+2016-08-11 13:01:14.7903 TRACE PPI.Platform.Web.ApplicationUserManager..ctor: Enter
+2016-08-11 13:01:14.7903 TRACE PPI.Platform.Web.ApplicationUserManager..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:14.7903 TRACE PPI.Platform.Web.EmailService..ctor: Enter
+2016-08-11 13:01:14.7903 TRACE PPI.Platform.Web.EmailService..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:14.7903 TRACE PPI.Platform.Web.SmsService..ctor: Enter
+2016-08-11 13:01:14.7903 TRACE PPI.Platform.Web.SmsService..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:14.7903 TRACE PPI.Platform.Web.ApplicationUserManager.Create: Completion in 3 milliseconds
+2016-08-11 13:01:14.7903 TRACE PPI.Platform.Web.ApplicationSignInManager.Create: Enter
+2016-08-11 13:01:14.7903 TRACE PPI.Platform.Web.ApplicationSignInManager..ctor: Enter
+2016-08-11 13:01:14.7903 TRACE PPI.Platform.Web.ApplicationSignInManager..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:14.7903 TRACE PPI.Platform.Web.ApplicationSignInManager.Create: Completion in 1 milliseconds
+2016-08-11 13:01:14.8063 TRACE PPI.Platform.Mvc.Controller.BaseController..ctor: Enter
+2016-08-11 13:01:14.8063 TRACE PPI.Platform.Mvc.Controller.BaseController..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:14.8063 TRACE PPI.Platform.Web.Controllers.AccountController..ctor: Enter
+2016-08-11 13:01:14.8063 TRACE PPI.Platform.Web.Controllers.AccountController..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:14.8063 TRACE PPI.Platform.Mvc.Controller.BaseController.BeginExecute: Enter
+2016-08-11 13:01:14.8063 TRACE PPI.Platform.Mvc.Utility.Cookies.GetCookie: Enter
+2016-08-11 13:01:14.8533 TRACE PPI.Platform.Mvc.Utility.Cookies.GetCookie: Completion in 44 milliseconds
+2016-08-11 13:01:14.8533 TRACE PPI.Platform.Mvc.Controller.BaseController.set_CurrentCulture: Enter
+2016-08-11 13:01:14.8533 TRACE PPI.Platform.Mvc.Controller.BaseController.set_CurrentCulture: Completion in 1 milliseconds
+2016-08-11 13:01:14.8533 TRACE PPI.Platform.Mvc.Utility.Cookies.GetCookie: Enter
+2016-08-11 13:01:14.8533 TRACE PPI.Platform.Mvc.Utility.Cookies.GetCookie: Completion in 1 milliseconds
+2016-08-11 13:01:14.8533 TRACE PPI.Platform.Mvc.Controller.BaseController.set_CurrentPageSize: Enter
+2016-08-11 13:01:14.8533 TRACE PPI.Platform.Mvc.Controller.BaseController.set_CurrentPageSize: Completion in 1 milliseconds
+2016-08-11 13:01:14.8533 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentPageSize: Enter
+2016-08-11 13:01:14.8533 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentPageSize: Completion in 0 milliseconds
+2016-08-11 13:01:14.8533 TRACE PPI.Platform.Mvc.Utility.Cookies.GetCookie: Enter
+2016-08-11 13:01:14.8533 TRACE PPI.Platform.Mvc.Utility.Cookies.GetCookie: Completion in 0 milliseconds
+2016-08-11 13:01:14.8533 TRACE PPI.Platform.Mvc.Utility.Cookies.SetCookie: Enter
+2016-08-11 13:01:14.8653 TRACE PPI.Platform.Mvc.Utility.Cookies.SetCookie: Completion in 2 milliseconds
+2016-08-11 13:01:14.8653 TRACE PPI.Platform.Mvc.Controller.BaseController.set_CurrentProgram: Enter
+2016-08-11 13:01:14.8653 TRACE PPI.Platform.Mvc.Controller.BaseController.set_CurrentProgram: Completion in 1 milliseconds
+2016-08-11 13:01:14.8653 TRACE PPI.Platform.Mvc.Controller.BaseController.BeginExecuteCore: Enter
+2016-08-11 13:01:14.8653 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentCulture: Enter
+2016-08-11 13:01:14.8653 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentCulture: Completion in 0 milliseconds
+2016-08-11 13:01:14.8653 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentPageSize: Enter
+2016-08-11 13:01:14.8653 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentPageSize: Completion in 0 milliseconds
+2016-08-11 13:01:14.8653 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentProgram: Enter
+2016-08-11 13:01:14.8653 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentProgram: Completion in 0 milliseconds
+2016-08-11 13:01:14.8653 TRACE PPI.Platform.Mvc.Controller.BaseController.set_CurrentUserId: Enter
+2016-08-11 13:01:14.8653 TRACE PPI.Platform.Mvc.Controller.BaseController.set_CurrentUserId: Completion in 0 milliseconds
+2016-08-11 13:01:14.8813 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentUserId: Enter
+2016-08-11 13:01:14.8813 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentUserId: Completion in 1 milliseconds
+2016-08-11 13:01:14.8813  WARN   CurrentUserId is Null
+2016-08-11 13:01:14.8813 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentCulture: Enter
+2016-08-11 13:01:14.8813 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentCulture: Completion in 1 milliseconds
+2016-08-11 13:01:14.8813 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentPageSize: Enter
+2016-08-11 13:01:14.8813 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentPageSize: Completion in 0 milliseconds
+2016-08-11 13:01:14.8813 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentUserId: Enter
+2016-08-11 13:01:14.8963 TRACE PPI.Platform.Mvc.Controller.BaseController.get_CurrentUserId: Completion in 0 milliseconds
+2016-08-11 13:01:14.8963  INFO   Current Controler Settings: culture:1  PageSize:10  UserId:
+2016-08-11 13:01:14.8963 TRACE PPI.Platform.Mvc.Attributes.RestoreModelStateFromTempDataAttribute..ctor: Enter
+2016-08-11 13:01:14.8963 TRACE PPI.Platform.Mvc.Attributes.RestoreModelStateFromTempDataAttribute..ctor: Completion in 1 milliseconds
+2016-08-11 13:01:14.9923 TRACE PPI.Platform.Mvc.Attributes.RestoreModelStateFromTempDataAttribute.OnActionExecuting: Enter
+2016-08-11 13:01:14.9923 TRACE PPI.Platform.Mvc.Attributes.RestoreModelStateFromTempDataAttribute.OnActionExecuting: Completion in 0 milliseconds
+2016-08-11 13:01:14.9923 TRACE PPI.Platform.Mvc.Controller.BaseController.BeginExecuteCore: Completion in 126 milliseconds
+2016-08-11 13:01:14.9923 TRACE PPI.Platform.Mvc.Controller.BaseController.BeginExecute: Completion in 188 milliseconds
+2016-08-11 13:01:15.0393 TRACE PPI.Platform.Web.Controllers.AccountController.Login: Enter
+2016-08-11 13:01:15.0393 TRACE PPI.Platform.Web.Controllers.AccountController.Login: Completion in 3 milliseconds
+2016-08-11 13:01:17.4434 TRACE PPI.Platform.Web.Models.ApplicationDbContext.Create: Enter
+2016-08-11 13:01:17.4434  WARN Non-async command used: IF db_id(N'Platform_HBS') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'Platform_HBS' parameters: 
+2016-08-11 13:01:17.4644 TRACE PPI.Platform.Web.Models.ApplicationDbContext.Create: Enter
+2016-08-11 13:01:17.4644  WARN Non-async command used: IF db_id(N'Platform_HBS') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'Platform_HBS' parameters: 
+2016-08-11 13:01:17.4714 TRACE PPI.Platform.Web.Models.ApplicationDbContext..ctor: Enter
+2016-08-11 13:01:17.4714 TRACE PPI.Platform.Web.Models.ApplicationDbContext..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:17.4714 TRACE PPI.Platform.Web.Models.ApplicationDbContext.Create: Completion in 29 milliseconds
+2016-08-11 13:01:17.4714 TRACE PPI.Platform.Web.ApplicationUserManager.Create: Enter
+2016-08-11 13:01:17.4714 TRACE PPI.Platform.Web.ApplicationUserManager..ctor: Enter
+2016-08-11 13:01:17.4714 TRACE PPI.Platform.Web.ApplicationUserManager..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:17.4714 TRACE PPI.Platform.Web.EmailService..ctor: Enter
+2016-08-11 13:01:17.4714 TRACE PPI.Platform.Web.EmailService..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:17.4714 TRACE PPI.Platform.Web.SmsService..ctor: Enter
+2016-08-11 13:01:17.4714 TRACE PPI.Platform.Web.SmsService..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:17.4714 TRACE PPI.Platform.Web.ApplicationUserManager.Create: Completion in 3 milliseconds
+2016-08-11 13:01:17.4714 TRACE PPI.Platform.Web.ApplicationSignInManager.Create: Enter
+2016-08-11 13:01:17.4714 TRACE PPI.Platform.Web.ApplicationSignInManager..ctor: Enter
+2016-08-11 13:01:17.4714 TRACE PPI.Platform.Web.ApplicationSignInManager..ctor: Completion in 1 milliseconds
+2016-08-11 13:01:17.4714 TRACE PPI.Platform.Web.ApplicationSignInManager.Create: Completion in 2 milliseconds
+2016-08-11 13:01:17.4924 TRACE PPI.Platform.Web.Models.ApplicationDbContext..ctor: Enter
+2016-08-11 13:01:17.4924 TRACE PPI.Platform.Web.Models.ApplicationDbContext..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:17.4924 TRACE PPI.Platform.Web.Models.ApplicationDbContext.Create: Completion in 30 milliseconds
+2016-08-11 13:01:17.4924 TRACE PPI.Platform.Web.ApplicationUserManager.Create: Enter
+2016-08-11 13:01:17.4924 TRACE PPI.Platform.Web.ApplicationUserManager..ctor: Enter
+2016-08-11 13:01:17.4924 TRACE PPI.Platform.Web.ApplicationUserManager..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:17.4924 TRACE PPI.Platform.Web.EmailService..ctor: Enter
+2016-08-11 13:01:17.4924 TRACE PPI.Platform.Web.EmailService..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:17.4924 TRACE PPI.Platform.Web.SmsService..ctor: Enter
+2016-08-11 13:01:17.5034 TRACE PPI.Platform.Web.SmsService..ctor: Completion in 4 milliseconds
+2016-08-11 13:01:17.5034 TRACE PPI.Platform.Web.ApplicationUserManager.Create: Completion in 10 milliseconds
+2016-08-11 13:01:17.5034 TRACE PPI.Platform.Web.ApplicationSignInManager.Create: Enter
+2016-08-11 13:01:17.5034 TRACE PPI.Platform.Web.ApplicationSignInManager..ctor: Enter
+2016-08-11 13:01:17.5034 TRACE PPI.Platform.Web.ApplicationSignInManager..ctor: Completion in 3 milliseconds
+2016-08-11 13:01:17.5034 TRACE PPI.Platform.Web.ApplicationSignInManager.Create: Completion in 6 milliseconds
+2016-08-11 13:01:19.2475 TRACE PPI.Platform.Web.Models.ApplicationDbContext.Create: Enter
+2016-08-11 13:01:19.2485  WARN Non-async command used: IF db_id(N'Platform_HBS') IS NOT NULL SELECT 1 ELSE SELECT Count(*) FROM sys.databases WHERE [name]=N'Platform_HBS' parameters: 
+2016-08-11 13:01:19.2485 TRACE PPI.Platform.Web.Models.ApplicationDbContext..ctor: Enter
+2016-08-11 13:01:19.2485 TRACE PPI.Platform.Web.Models.ApplicationDbContext..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:19.2485 TRACE PPI.Platform.Web.Models.ApplicationDbContext.Create: Completion in 5 milliseconds
+2016-08-11 13:01:19.2485 TRACE PPI.Platform.Web.ApplicationUserManager.Create: Enter
+2016-08-11 13:01:19.2485 TRACE PPI.Platform.Web.ApplicationUserManager..ctor: Enter
+2016-08-11 13:01:19.2485 TRACE PPI.Platform.Web.ApplicationUserManager..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:19.2485 TRACE PPI.Platform.Web.EmailService..ctor: Enter
+2016-08-11 13:01:19.2485 TRACE PPI.Platform.Web.EmailService..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:19.2485 TRACE PPI.Platform.Web.SmsService..ctor: Enter
+2016-08-11 13:01:19.2485 TRACE PPI.Platform.Web.SmsService..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:19.2485 TRACE PPI.Platform.Web.ApplicationUserManager.Create: Completion in 4 milliseconds
+2016-08-11 13:01:19.2485 TRACE PPI.Platform.Web.ApplicationSignInManager.Create: Enter
+2016-08-11 13:01:19.2485 TRACE PPI.Platform.Web.ApplicationSignInManager..ctor: Enter
+2016-08-11 13:01:19.2485 TRACE PPI.Platform.Web.ApplicationSignInManager..ctor: Completion in 0 milliseconds
+2016-08-11 13:01:19.2485 TRACE PPI.Platform.Web.ApplicationSignInManager.Create: Completion in 1 milliseconds

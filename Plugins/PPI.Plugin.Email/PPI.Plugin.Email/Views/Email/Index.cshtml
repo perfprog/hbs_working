@@ -1,0 +1,48 @@
+﻿@using PPI.Plugin.Email.Properties
+@using PPI.Plugin.Email.Models
+@model PPI.Plugin.Email.Models.EmailIndexViewModel
+@{
+    ViewBag.Title = Resources_Email_Web.Email_Index_Title;
+    var meta = Model.GroupEmails.Select(m => m.Group).FirstOrDefault();
+}
+
+@Html.Partial("_ValidationSummary", ViewData.ModelState)
+
+<div class="row marginb10">
+    <div class="col-md-6"></div>    
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                    <tr>                        
+                        <th class="col-md-4">@Html.DisplayNameFor(m => meta.Name)</th>
+                        <th class="col-md-4">@Html.DisplayNameFor(m => meta.Administrator)</th>
+                        <th class="col-md-3">@Resources_Email_Web.Email_Index_EmailTypes</th>
+                        <th class="col-md-1">@Resources_Email_Web.View_Actions_Label</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.GroupEmails)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(m => item.Group.Name)</td>
+                            <td>@Html.DisplayFor(m => item.Group.Administrator)</td>                            
+                            <td>
+                                @Html.DisplayFor(m => item.EmailTypes)
+                            </td>
+                            <td>
+                                <a class="btn btn-sm btn-default" role="button" aria-label="Left Align" href="@Url.Action("Edit","Email", new {@groupid = item.Group.Id})" alt="Edit Email Content" title="Edit Email Content">
+                                    <span class="glyphicon glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                </a>   
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("_PagingPartial",Model.PagingInfo)

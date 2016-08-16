@@ -1,0 +1,5 @@
+﻿@model PPI.Plugin.Email.Models.EmailSendEmailPartialViewModel
+<div class="alert alert-success @(@Model.Sent != 0?String.Empty:"hide")" role="alert" id="success"><strong>@Model.Sent</strong> Email sent successfully!</div>
+<div class="alert alert-danger @(@Model.Failed != 0?String.Empty:"hide")" role="alert"><strong>Error! @Model.Failed</strong> Email failed.  Please contact a system administrator.</div>
+
+

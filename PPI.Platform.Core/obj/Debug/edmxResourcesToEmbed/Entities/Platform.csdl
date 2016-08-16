@@ -1,0 +1,696 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PlatformModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="PlatformEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cultures" EntityType="PlatformModel.Culture" />
+    <EntitySet Name="Dashboards" EntityType="PlatformModel.Dashboard" />
+    <EntitySet Name="Emails" EntityType="PlatformModel.Email" />
+    <EntitySet Name="GenericTypes" EntityType="PlatformModel.GenericType" />
+    <EntitySet Name="GenericTypeValues" EntityType="PlatformModel.GenericTypeValue" />
+    <EntitySet Name="Groups" EntityType="PlatformModel.Group" />
+    <EntitySet Name="GroupEmails" EntityType="PlatformModel.GroupEmail" />
+    <EntitySet Name="GroupParticipants" EntityType="PlatformModel.GroupParticipant" />
+    <EntitySet Name="Participants" EntityType="PlatformModel.Participant" />
+    <EntitySet Name="People" EntityType="PlatformModel.Person" />
+    <EntitySet Name="PersonGroupEmails" EntityType="PlatformModel.PersonGroupEmail" />
+    <EntitySet Name="PluginActions" EntityType="PlatformModel.PluginAction" />
+    <EntitySet Name="Programs" EntityType="PlatformModel.Program" />
+    <EntitySet Name="Raters" EntityType="PlatformModel.Rater" />
+    <EntitySet Name="RegisteredPlugins" EntityType="PlatformModel.RegisteredPlugin" />
+    <EntitySet Name="Resources" EntityType="PlatformModel.Resource" />
+    <EntitySet Name="ResourceValues" EntityType="PlatformModel.ResourceValue" />
+    <EntitySet Name="Sites" EntityType="PlatformModel.Site" />
+    <EntitySet Name="Surveys" EntityType="PlatformModel.Survey" />
+    <EntitySet Name="SurveyGroupParticipants" EntityType="PlatformModel.SurveyGroupParticipant" />
+    <AssociationSet Name="FK_ResourceValue_Culture" Association="PlatformModel.FK_ResourceValue_Culture">
+      <End Role="Culture" EntitySet="Cultures" />
+      <End Role="ResourceValue" EntitySet="ResourceValues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dashboard_RegisteredPlugins" Association="PlatformModel.FK_Dashboard_RegisteredPlugins">
+      <End Role="RegisteredPlugin" EntitySet="RegisteredPlugins" />
+      <End Role="Dashboard" EntitySet="Dashboards" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Email_EmailGenericTypeValue" Association="PlatformModel.FK_Email_EmailGenericTypeValue">
+      <End Role="GenericTypeValue" EntitySet="GenericTypeValues" />
+      <End Role="Email" EntitySet="Emails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GroupEmail_Email" Association="PlatformModel.FK_GroupEmail_Email">
+      <End Role="Email" EntitySet="Emails" />
+      <End Role="GroupEmail" EntitySet="GroupEmails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GenericTypeValue_GenericType" Association="PlatformModel.FK_GenericTypeValue_GenericType">
+      <End Role="GenericType" EntitySet="GenericTypes" />
+      <End Role="GenericTypeValue" EntitySet="GenericTypeValues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Email_SendStatusGenericTypeValue" Association="PlatformModel.FK_Email_SendStatusGenericTypeValue">
+      <End Role="GenericTypeValue" EntitySet="GenericTypeValues" />
+      <End Role="PersonGroupEmail" EntitySet="PersonGroupEmails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GenericTypeValue_Resource" Association="PlatformModel.FK_GenericTypeValue_Resource">
+      <End Role="Resource" EntitySet="Resources" />
+      <End Role="GenericTypeValue" EntitySet="GenericTypeValues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Action" Association="PlatformModel.FK_Group_Action">
+      <End Role="GenericTypeValue" EntitySet="GenericTypeValues" />
+      <End Role="PluginAction" EntitySet="PluginActions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Status" Association="PlatformModel.FK_Group_Status">
+      <End Role="GenericTypeValue" EntitySet="GenericTypeValues" />
+      <End Role="Group" EntitySet="Groups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Type" Association="PlatformModel.FK_Group_Type">
+      <End Role="GenericTypeValue" EntitySet="GenericTypeValues" />
+      <End Role="Group" EntitySet="Groups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SurveyGroupParticipant_GenericTypeValue" Association="PlatformModel.FK_SurveyGroupParticipant_GenericTypeValue">
+      <End Role="GenericTypeValue" EntitySet="GenericTypeValues" />
+      <End Role="SurveyGroupParticipant" EntitySet="SurveyGroupParticipants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Group_Program" Association="PlatformModel.FK_Group_Program">
+      <End Role="Program" EntitySet="Programs" />
+      <End Role="Group" EntitySet="Groups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GroupEmail_Group" Association="PlatformModel.FK_GroupEmail_Group">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="GroupEmail" EntitySet="GroupEmails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GroupParticipant_Group" Association="PlatformModel.FK_GroupParticipant_Group">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="GroupParticipant" EntitySet="GroupParticipants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonGroupEmail_GroupEmail" Association="PlatformModel.FK_PersonGroupEmail_GroupEmail">
+      <End Role="GroupEmail" EntitySet="GroupEmails" />
+      <End Role="PersonGroupEmail" EntitySet="PersonGroupEmails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GroupParticipant_Participant" Association="PlatformModel.FK_GroupParticipant_Participant">
+      <End Role="Participant" EntitySet="Participants" />
+      <End Role="GroupParticipant" EntitySet="GroupParticipants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SurveyGroupParticipant_GroupParticipant" Association="PlatformModel.FK_SurveyGroupParticipant_GroupParticipant">
+      <End Role="GroupParticipant" EntitySet="GroupParticipants" />
+      <End Role="SurveyGroupParticipant" EntitySet="SurveyGroupParticipants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Participant_Person" Association="PlatformModel.FK_Participant_Person">
+      <End Role="Person" EntitySet="People" />
+      <End Role="Participant" EntitySet="Participants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PersonGroupEmail_Person" Association="PlatformModel.FK_PersonGroupEmail_Person">
+      <End Role="Person" EntitySet="People" />
+      <End Role="PersonGroupEmail" EntitySet="PersonGroupEmails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rater_Person" Association="PlatformModel.FK_Rater_Person">
+      <End Role="Person" EntitySet="People" />
+      <End Role="Rater" EntitySet="Raters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PluginAction_RegisteredPlugins" Association="PlatformModel.FK_PluginAction_RegisteredPlugins">
+      <End Role="RegisteredPlugin" EntitySet="RegisteredPlugins" />
+      <End Role="PluginAction" EntitySet="PluginActions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Program_Site" Association="PlatformModel.FK_Program_Site">
+      <End Role="Site" EntitySet="Sites" />
+      <End Role="Program" EntitySet="Programs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResourceValue_Resource" Association="PlatformModel.FK_ResourceValue_Resource">
+      <End Role="Resource" EntitySet="Resources" />
+      <End Role="ResourceValue" EntitySet="ResourceValues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SurveyGroupParticipant_Survey" Association="PlatformModel.FK_SurveyGroupParticipant_Survey">
+      <End Role="Survey" EntitySet="Surveys" />
+      <End Role="SurveyGroupParticipant" EntitySet="SurveyGroupParticipants" />
+    </AssociationSet>
+    <EntitySet Name="AspNetUsers" EntityType="PlatformModel.AspNetUser" />
+  </EntityContainer>
+  <EntityType Name="Culture">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ResourceValues" Relationship="PlatformModel.FK_ResourceValue_Culture" FromRole="Culture" ToRole="ResourceValue" />
+  </EntityType>
+  <EntityType Name="Dashboard">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RegisteredPluginsId" Type="Int32" Nullable="false" />
+    <Property Name="PartialViewName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Role" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RegisteredPlugin" Relationship="PlatformModel.FK_Dashboard_RegisteredPlugins" FromRole="Dashboard" ToRole="RegisteredPlugin" />
+  </EntityType>
+  <EntityType Name="Email">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmailGenericTypeValueId" Type="Int32" Nullable="false" />
+    <Property Name="DefaultFrom" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Subject" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Introduction" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Closing" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Template" Type="Boolean" Nullable="false" />
+    <Property Name="TemplateName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="EmailGenericTypeValue" Relationship="PlatformModel.FK_Email_EmailGenericTypeValue" FromRole="Email" ToRole="GenericTypeValue" />
+    <NavigationProperty Name="GroupEmails" Relationship="PlatformModel.FK_GroupEmail_Email" FromRole="Email" ToRole="GroupEmail" />
+  </EntityType>
+  <EntityType Name="GenericType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="GenericTypeValues" Relationship="PlatformModel.FK_GenericTypeValue_GenericType" FromRole="GenericType" ToRole="GenericTypeValue" />
+  </EntityType>
+  <EntityType Name="GenericTypeValue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GenericTypeId" Type="Int32" Nullable="false" />
+    <Property Name="ResourceId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Emails" Relationship="PlatformModel.FK_Email_EmailGenericTypeValue" FromRole="GenericTypeValue" ToRole="Email" />
+    <NavigationProperty Name="GenericType" Relationship="PlatformModel.FK_GenericTypeValue_GenericType" FromRole="GenericTypeValue" ToRole="GenericType" />
+    <NavigationProperty Name="PersonGroupEmails" Relationship="PlatformModel.FK_Email_SendStatusGenericTypeValue" FromRole="GenericTypeValue" ToRole="PersonGroupEmail" />
+    <NavigationProperty Name="Resource" Relationship="PlatformModel.FK_GenericTypeValue_Resource" FromRole="GenericTypeValue" ToRole="Resource" />
+    <NavigationProperty Name="PluginActions" Relationship="PlatformModel.FK_Group_Action" FromRole="GenericTypeValue" ToRole="PluginAction" />
+    <NavigationProperty Name="Groups" Relationship="PlatformModel.FK_Group_Status" FromRole="GenericTypeValue" ToRole="Group" />
+    <NavigationProperty Name="Groups1" Relationship="PlatformModel.FK_Group_Type" FromRole="GenericTypeValue" ToRole="Group" />
+    <NavigationProperty Name="SurveyGroupParticipants" Relationship="PlatformModel.FK_SurveyGroupParticipant_GenericTypeValue" FromRole="GenericTypeValue" ToRole="SurveyGroupParticipant" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProgramId" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Administrator" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="7" Nullable="false" />
+    <Property Name="EndDate" Type="DateTime" Precision="7" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="7" />
+    <Property Name="StatusGenericTypeValueId" Type="Int32" />
+    <Property Name="TypeGenericTypeValueId" Type="Int32" />
+    <NavigationProperty Name="StatusGenericTypeValue" Relationship="PlatformModel.FK_Group_Status" FromRole="Group" ToRole="GenericTypeValue" />
+    <NavigationProperty Name="TypeGenericTypeValue1" Relationship="PlatformModel.FK_Group_Type" FromRole="Group" ToRole="GenericTypeValue" />
+    <NavigationProperty Name="Program" Relationship="PlatformModel.FK_Group_Program" FromRole="Group" ToRole="Program" />
+    <NavigationProperty Name="GroupEmails" Relationship="PlatformModel.FK_GroupEmail_Group" FromRole="Group" ToRole="GroupEmail" />
+    <NavigationProperty Name="GroupParticipants" Relationship="PlatformModel.FK_GroupParticipant_Group" FromRole="Group" ToRole="GroupParticipant" />
+    <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="GroupEmail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupId" Type="Int32" Nullable="false" />
+    <Property Name="EmailId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Email" Relationship="PlatformModel.FK_GroupEmail_Email" FromRole="GroupEmail" ToRole="Email" />
+    <NavigationProperty Name="Group" Relationship="PlatformModel.FK_GroupEmail_Group" FromRole="GroupEmail" ToRole="Group" />
+    <NavigationProperty Name="PersonGroupEmails" Relationship="PlatformModel.FK_PersonGroupEmail_GroupEmail" FromRole="GroupEmail" ToRole="PersonGroupEmail" />
+  </EntityType>
+  <EntityType Name="GroupParticipant">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupId" Type="Int32" Nullable="false" />
+    <Property Name="ParticipantId" Type="Int32" Nullable="false" />
+    <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="7" />
+    <NavigationProperty Name="Group" Relationship="PlatformModel.FK_GroupParticipant_Group" FromRole="GroupParticipant" ToRole="Group" />
+    <NavigationProperty Name="Participant" Relationship="PlatformModel.FK_GroupParticipant_Participant" FromRole="GroupParticipant" ToRole="Participant" />
+    <NavigationProperty Name="SurveyGroupParticipants" Relationship="PlatformModel.FK_SurveyGroupParticipant_GroupParticipant" FromRole="GroupParticipant" ToRole="SurveyGroupParticipant" />
+  </EntityType>
+  <EntityType Name="Participant">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PersonId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="GroupParticipants" Relationship="PlatformModel.FK_GroupParticipant_Participant" FromRole="Participant" ToRole="GroupParticipant" />
+    <NavigationProperty Name="Person" Relationship="PlatformModel.FK_Participant_Person" FromRole="Participant" ToRole="Person" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Prefix" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="First_Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Last_Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Middle_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Suffix" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AspNetUsersId" Type="String" MaxLength="50" Unicode="true" FixedLength="false" Nullable="true" />
+    <NavigationProperty Name="Participants" Relationship="PlatformModel.FK_Participant_Person" FromRole="Person" ToRole="Participant" />
+    <NavigationProperty Name="PersonGroupEmails" Relationship="PlatformModel.FK_PersonGroupEmail_Person" FromRole="Person" ToRole="PersonGroupEmail" />
+    <NavigationProperty Name="Raters" Relationship="PlatformModel.FK_Rater_Person" FromRole="Person" ToRole="Rater" />
+  </EntityType>
+  <EntityType Name="PersonGroupEmail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PersonId" Type="Int32" Nullable="false" />
+    <Property Name="GroupEmailId" Type="Int32" Nullable="false" />
+    <Property Name="SendDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="SendStatusGenericTypeValueId" Type="Int32" />
+    <Property Name="OrginalToAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RetryCount" Type="Int32" />
+    <Property Name="ErrorMessage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SendGenericTypeValue" Relationship="PlatformModel.FK_Email_SendStatusGenericTypeValue" FromRole="PersonGroupEmail" ToRole="GenericTypeValue" />
+    <NavigationProperty Name="GroupEmail" Relationship="PlatformModel.FK_PersonGroupEmail_GroupEmail" FromRole="PersonGroupEmail" ToRole="GroupEmail" />
+    <NavigationProperty Name="Person" Relationship="PlatformModel.FK_PersonGroupEmail_Person" FromRole="PersonGroupEmail" ToRole="Person" />
+  </EntityType>
+  <EntityType Name="PluginAction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RegisteredPluginsId" Type="Int32" Nullable="false" />
+    <Property Name="ForView" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ActionGenericTypeIValueId" Type="Int32" Nullable="false" />
+    <Property Name="Action" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Controller" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RoutingData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ActionGenericTypeValue" Relationship="PlatformModel.FK_Group_Action" FromRole="PluginAction" ToRole="GenericTypeValue" />
+    <NavigationProperty Name="RegisteredPlugin" Relationship="PlatformModel.FK_PluginAction_RegisteredPlugins" FromRole="PluginAction" ToRole="RegisteredPlugin" />
+  </EntityType>
+  <EntityType Name="Program">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SiteId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Groups" Relationship="PlatformModel.FK_Group_Program" FromRole="Program" ToRole="Group" />
+    <NavigationProperty Name="Site" Relationship="PlatformModel.FK_Program_Site" FromRole="Program" ToRole="Site" />
+  </EntityType>
+  <EntityType Name="Rater">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PersonId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Person" Relationship="PlatformModel.FK_Rater_Person" FromRole="Rater" ToRole="Person" />
+  </EntityType>
+  <EntityType Name="RegisteredPlugin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Version" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Custom" Type="Boolean" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="InstallationDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="FullPath" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Dashboards" Relationship="PlatformModel.FK_Dashboard_RegisteredPlugins" FromRole="RegisteredPlugin" ToRole="Dashboard" />
+    <NavigationProperty Name="PluginActions" Relationship="PlatformModel.FK_PluginAction_RegisteredPlugins" FromRole="RegisteredPlugin" ToRole="PluginAction" />
+  </EntityType>
+  <EntityType Name="Resource">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TableName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="GenericTypeValues" Relationship="PlatformModel.FK_GenericTypeValue_Resource" FromRole="Resource" ToRole="GenericTypeValue" />
+    <NavigationProperty Name="ResourceValues" Relationship="PlatformModel.FK_ResourceValue_Resource" FromRole="Resource" ToRole="ResourceValue" />
+  </EntityType>
+  <EntityType Name="ResourceValue">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ResourceId" Type="Int32" Nullable="false" />
+    <Property Name="CultureId" Type="Int32" Nullable="false" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Culture" Relationship="PlatformModel.FK_ResourceValue_Culture" FromRole="ResourceValue" ToRole="Culture" />
+    <NavigationProperty Name="Resource" Relationship="PlatformModel.FK_ResourceValue_Resource" FromRole="ResourceValue" ToRole="Resource" />
+  </EntityType>
+  <EntityType Name="Site">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Programs" Relationship="PlatformModel.FK_Program_Site" FromRole="Site" ToRole="Program" />
+  </EntityType>
+  <EntityType Name="Survey">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SurveyGroupParticipants" Relationship="PlatformModel.FK_SurveyGroupParticipant_Survey" FromRole="Survey" ToRole="SurveyGroupParticipant" />
+  </EntityType>
+  <EntityType Name="SurveyGroupParticipant">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SurveyId" Type="Int32" Nullable="false" />
+    <Property Name="GroupParticipantId" Type="Int32" Nullable="false" />
+    <Property Name="StatusGenericTypeValueId" Type="Int32" />
+    <NavigationProperty Name="StatusGenericTypeValue" Relationship="PlatformModel.FK_SurveyGroupParticipant_GenericTypeValue" FromRole="SurveyGroupParticipant" ToRole="GenericTypeValue" />
+    <NavigationProperty Name="GroupParticipant" Relationship="PlatformModel.FK_SurveyGroupParticipant_GroupParticipant" FromRole="SurveyGroupParticipant" ToRole="GroupParticipant" />
+    <NavigationProperty Name="Survey" Relationship="PlatformModel.FK_SurveyGroupParticipant_Survey" FromRole="SurveyGroupParticipant" ToRole="Survey" />
+  </EntityType>
+  <Association Name="FK_ResourceValue_Culture">
+    <End Type="PlatformModel.Culture" Role="Culture" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="PlatformModel.ResourceValue" Role="ResourceValue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Culture">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ResourceValue">
+        <PropertyRef Name="CultureId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dashboard_RegisteredPlugins">
+    <End Type="PlatformModel.RegisteredPlugin" Role="RegisteredPlugin" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="PlatformModel.Dashboard" Role="Dashboard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RegisteredPlugin">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Dashboard">
+        <PropertyRef Name="RegisteredPluginsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Email_EmailGenericTypeValue">
+    <End Type="PlatformModel.GenericTypeValue" Role="GenericTypeValue" Multiplicity="1" />
+    <End Type="PlatformModel.Email" Role="Email" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GenericTypeValue">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Email">
+        <PropertyRef Name="EmailGenericTypeValueId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupEmail_Email">
+    <End Type="PlatformModel.Email" Role="Email" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="PlatformModel.GroupEmail" Role="GroupEmail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Email">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GroupEmail">
+        <PropertyRef Name="EmailId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GenericTypeValue_GenericType">
+    <End Type="PlatformModel.GenericType" Role="GenericType" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="PlatformModel.GenericTypeValue" Role="GenericTypeValue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GenericType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GenericTypeValue">
+        <PropertyRef Name="GenericTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Email_SendStatusGenericTypeValue">
+    <End Type="PlatformModel.GenericTypeValue" Role="GenericTypeValue" Multiplicity="0..1" />
+    <End Type="PlatformModel.PersonGroupEmail" Role="PersonGroupEmail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GenericTypeValue">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonGroupEmail">
+        <PropertyRef Name="SendStatusGenericTypeValueId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GenericTypeValue_Resource">
+    <End Type="PlatformModel.Resource" Role="Resource" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="PlatformModel.GenericTypeValue" Role="GenericTypeValue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Resource">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GenericTypeValue">
+        <PropertyRef Name="ResourceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Action">
+    <End Type="PlatformModel.GenericTypeValue" Role="GenericTypeValue" Multiplicity="1" />
+    <End Type="PlatformModel.PluginAction" Role="PluginAction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GenericTypeValue">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PluginAction">
+        <PropertyRef Name="ActionGenericTypeIValueId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Status">
+    <End Type="PlatformModel.GenericTypeValue" Role="GenericTypeValue" Multiplicity="0..1" />
+    <End Type="PlatformModel.Group" Role="Group" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GenericTypeValue">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Group">
+        <PropertyRef Name="StatusGenericTypeValueId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Type">
+    <End Type="PlatformModel.GenericTypeValue" Role="GenericTypeValue" Multiplicity="0..1" />
+    <End Type="PlatformModel.Group" Role="Group" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GenericTypeValue">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Group">
+        <PropertyRef Name="TypeGenericTypeValueId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SurveyGroupParticipant_GenericTypeValue">
+    <End Type="PlatformModel.GenericTypeValue" Role="GenericTypeValue" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="PlatformModel.SurveyGroupParticipant" Role="SurveyGroupParticipant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GenericTypeValue">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SurveyGroupParticipant">
+        <PropertyRef Name="StatusGenericTypeValueId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Group_Program">
+    <End Type="PlatformModel.Program" Role="Program" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="PlatformModel.Group" Role="Group" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Program">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Group">
+        <PropertyRef Name="ProgramId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupEmail_Group">
+    <End Type="PlatformModel.Group" Role="Group" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="PlatformModel.GroupEmail" Role="GroupEmail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GroupEmail">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupParticipant_Group">
+    <End Type="PlatformModel.Group" Role="Group" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="PlatformModel.GroupParticipant" Role="GroupParticipant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GroupParticipant">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonGroupEmail_GroupEmail">
+    <End Type="PlatformModel.GroupEmail" Role="GroupEmail" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="PlatformModel.PersonGroupEmail" Role="PersonGroupEmail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupEmail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonGroupEmail">
+        <PropertyRef Name="GroupEmailId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupParticipant_Participant">
+    <End Type="PlatformModel.Participant" Role="Participant" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="PlatformModel.GroupParticipant" Role="GroupParticipant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Participant">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GroupParticipant">
+        <PropertyRef Name="ParticipantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SurveyGroupParticipant_GroupParticipant">
+    <End Type="PlatformModel.GroupParticipant" Role="GroupParticipant" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="PlatformModel.SurveyGroupParticipant" Role="SurveyGroupParticipant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupParticipant">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SurveyGroupParticipant">
+        <PropertyRef Name="GroupParticipantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Participant_Person">
+    <End Type="PlatformModel.Person" Role="Person" Multiplicity="1" />
+    <End Type="PlatformModel.Participant" Role="Participant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Participant">
+        <PropertyRef Name="PersonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PersonGroupEmail_Person">
+    <End Type="PlatformModel.Person" Role="Person" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="PlatformModel.PersonGroupEmail" Role="PersonGroupEmail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonGroupEmail">
+        <PropertyRef Name="PersonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rater_Person">
+    <End Type="PlatformModel.Person" Role="Person" Multiplicity="1" />
+    <End Type="PlatformModel.Rater" Role="Rater" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rater">
+        <PropertyRef Name="PersonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PluginAction_RegisteredPlugins">
+    <End Type="PlatformModel.RegisteredPlugin" Role="RegisteredPlugin" Multiplicity="1" />
+    <End Type="PlatformModel.PluginAction" Role="PluginAction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RegisteredPlugin">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PluginAction">
+        <PropertyRef Name="RegisteredPluginsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Program_Site">
+    <End Type="PlatformModel.Site" Role="Site" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="PlatformModel.Program" Role="Program" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Site">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Program">
+        <PropertyRef Name="SiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResourceValue_Resource">
+    <End Type="PlatformModel.Resource" Role="Resource" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="PlatformModel.ResourceValue" Role="ResourceValue" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Resource">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ResourceValue">
+        <PropertyRef Name="ResourceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SurveyGroupParticipant_Survey">
+    <End Type="PlatformModel.Survey" Role="Survey" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="PlatformModel.SurveyGroupParticipant" Role="SurveyGroupParticipant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Survey">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SurveyGroupParticipant">
+        <PropertyRef Name="SurveyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

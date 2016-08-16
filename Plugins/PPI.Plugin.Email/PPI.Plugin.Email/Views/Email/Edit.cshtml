@@ -1,0 +1,126 @@
+﻿@using PPI.Plugin.Email.Properties
+@model PPI.Plugin.Email.Models.EmailEditViewModel
+@section AddToHead{
+
+}
+@{
+    ViewBag.Title = Resources_Email_Web.Email_Index_Title;
+    int i = 0;
+    int j = 0;
+}
+<div class="row">
+    <div class="col-lg-12">
+        <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+            @foreach (var item in Model.Emails)
+            {
+
+                <li class=@(@i == 0 ? "active" : "")>
+                    <a href="#@item.EmailGenericTypeValue.Resource.ResourceValues.FirstOrDefault(m => m.CultureId == ViewBag.CultureId).Value" data-toggle="tab" aria-expanded="true">@item.EmailGenericTypeValue.Resource.ResourceValues.FirstOrDefault(m => m.CultureId == ViewBag.CultureId).Value</a>
+                </li>
+                i++;
+            }
+        </ul>
+        <div id="my-tab-content" class="tab-content margint10 paddinglr20">
+            @foreach (var email in Model.Emails)
+            {
+                <div class="tab-pane @(j == 0 ? "active" : "")" id="@email.EmailGenericTypeValue.Resource.ResourceValues.FirstOrDefault(m => m.CultureId == ViewBag.CultureId).Value">
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.HiddenFor(m => email.Id)
+                        @Html.HiddenFor(m => email.EmailGenericTypeValueId)
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Group.Name)
+                            <p>
+                                @Html.DisplayFor(model => model.Group.Name, new { htmlAttributes = new { @class = "form-control" } })
+                            </p>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => email.DefaultFrom)
+                            @Html.EditorFor(m => email.DefaultFrom, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(m => email.DefaultFrom, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(m => email.Subject)
+                            @Html.EditorFor(m => email.Subject, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(m => email.Subject, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group" id="email_Introduction_Editor">
+                            @Html.LabelFor(m => email.Introduction)
+                            @Html.TextAreaFor(m => email.Introduction, new { @class = "form-control ckeditor" })
+                            @Html.ValidationMessageFor(m => email.Introduction, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <div class="alert alert-warning" role="alert">
+                                <p><strong>The following system generated text will be inserted here.</strong></p>
+
+                                <p>To begin the survey, click on the registration link below. You will be required to enter the unique username provided in this email, and to create a password. <font color="red"><u>This username and link are unique to you, so please do not forward or share.</u></font></p>
+                                <p>We recommend that you write down your username and password, as you will need these in order to return to the survey if you exit at any point. </p>
+                                <p>If you have already registered, the link below will automatically redirect you to the login page.</p>
+                                <p><strong>User Name:</strong> HBS123</p>
+                                <p>Registration/Login: <a href="#">Click here</a></p>
+
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => email.Closing)
+                            @Html.TextAreaFor(m => email.Closing, new { @class = "form-control ckeditor" })
+                            @Html.ValidationMessageFor(m => email.Closing, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <div class="text-right margint10">
+                                <input type="submit" value="Save" class="btn btn-primary btn200" />
+                                @Html.ActionLink("Preview", "PreviewEmail", new { @emailid = email.Id },new { @class="btn btn-primary btn200"})
+                            </div>
+                        </div>
+                    }
+                </div>
+                    j++;
+            }
+        </div>
+
+
+    </div>
+</div>
+@section scripts{
+    <script src="~/Scripts/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.config.toolbar = [
+	{ name: 'clipboard', groups: ['clipboard', 'undo'], items: ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo'] },
+	{ name: 'links', items: ['Link', 'Unlink'] },
+	//{ name: 'insert', items: ['Image', 'Table', 'HorizontalRule', 'SpecialChar'] },
+	{ name: 'tools', items: ['Maximize'] },
+    { name: 'editing', groups: ['find', 'selection', 'spellchecker'], items: ['Scayt'] },
+	{ name: 'document', groups: ['mode', 'document', 'doctools'], items: ['Source'] },
+	{ name: 'others', items: ['-'] },
+	'/',
+	{ name: 'basicstyles', groups: ['basicstyles', 'cleanup'], items: ['Font', 'FontSize', 'TextColor', 'Bold', 'Italic', 'Strike', 'Underline', '-', 'RemoveFormat'] },
+	{ name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi'], items: ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'Blockquote'] },
+	{ name: 'styles', items: ['Styles', 'Format'] }
+        ];
+
+        // Toolbar groups configuration.
+        config.toolbarGroups = [
+            { name: 'clipboard', groups: ['clipboard', 'undo'] },
+            { name: 'editing', groups: ['find', 'selection', 'spellchecker'] },
+            { name: 'links' },
+            { name: 'insert' },
+            { name: 'forms' },
+            { name: 'tools' },
+            { name: 'document', groups: ['mode', 'document', 'doctools'] },
+            { name: 'others' },
+            '/',
+            { name: 'basicstyles', groups: ['basicstyles', 'cleanup'] },
+            { name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi'] },
+            { name: 'styles' },
+            { name: 'colors' },
+            { name: 'about' }
+        ];
+
+    </script>
+
+}

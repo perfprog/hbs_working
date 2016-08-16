@@ -1,0 +1,47 @@
+﻿@using PPI.Plugin.Administration.Properties
+@using PPI.Plugin.Administration.Models
+@using PPI.Platform.Core.Entities
+@model PPI.Platform.Core.Entities.GroupParticipant
+@{
+    
+}
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-12">
+            @Html.HiddenFor(m => m.Id)
+            @Html.HiddenFor(m => m.ParticipantId)
+            <div class="form-group">
+                @Html.LabelFor(model => model.GroupId, htmlAttributes: new { @class = "control-label col-md-2" })                
+                @Html.DropDownListFor(model => model.GroupId, (SelectList)ViewBag.GroupId, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.GroupId, "", new { @class = "text-danger" })                
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Participant.Person.First_Name)
+                @Html.EditorFor(m => m.Participant.Person.First_Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.Participant.Person.First_Name, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Participant.Person.Last_Name)
+                @Html.EditorFor(m => m.Participant.Person.Last_Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.Participant.Person.Last_Name, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Participant.Person.Email)
+                @Html.EditorFor(m => m.Participant.Person.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.Participant.Person.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-7">
+            <div class="marginlr20" data-fade="3000" data-ids="myid" data-titles="{'success': 'Save Data!'}" data-alerts="alerts"></div>
+        </div>
+        <div class="col-md-5 text-right margint10">
+            <a class="btn btn-default btn200" role="button" href="@Url.Action("Index")">Cancel</a>
+            <input type="submit" class="btn btn-primary btn200" value="Save" />
+        </div>
+    </div>
+}

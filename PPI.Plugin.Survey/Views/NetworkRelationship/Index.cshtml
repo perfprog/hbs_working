@@ -1,0 +1,134 @@
+﻿@model PPI.Plugin.Survey.Models.NwrkRelationship
+           @using PPI.Plugin.Survey.Properties;
+@{
+    ViewBag.Title = @Resources_Survey_Web.NetworkRelationship_Index_Title;
+}           
+
+@using (Html.BeginForm("Save", "NetworkRelationship", FormMethod.Post, new { @class = "margint10 paddinglr20", @id = "formsubmit" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.ParticipantID)
+    <div class="form-group">
+        <p>@Resources_Survey_Web.NetworkRelationship_Paragraph</p>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <tr>
+
+                    <th class="col-md-4">
+                        @* @Html.DisplayNameFor(model.Relatioship[0] => model.Relatioship[0].co)*@
+                        @Resources_Survey_Web.NetworkRelationShip_Index_ContactName
+                    </th>
+                    <th class="col-md-2 text-center">
+                        @*@Html.DisplayNameFor(model => model.VeryClose)*@
+                        @Resources_Survey_Web.NetworkRelationship_Index_VeryClose
+                    </th>
+                    <th class="col-md-2 text-center">
+                        @*@Html.DisplayNameFor(model => model.Close)*@
+                        @Resources_Survey_Web.NetworkRelationship_Index_Close
+                    </th>
+                    <th class="col-md-2 text-center">
+                        @*@Html.DisplayNameFor(model => model.NotVeryClose)*@
+                        @Resources_Survey_Web.NetworkRelationship_Index_NotVeryClose
+                    </th>
+                    <th class="col-md-2 text-center">
+                        @*@Html.DisplayNameFor(model => model.Distant)*@
+                        @Resources_Survey_Web.NetworkRelationship_Index_Distant
+                    </th>
+
+                </tr>
+                @{ int i = 1; }
+                @foreach (var item in Model.Relationship)
+                {
+                    <tr>
+                        <td>
+                            @*@Html.DisplayFor(modelItem => item.UserID)*@
+
+                            <input type="text" id="Relationship[@i].UserID" name="Relationship[@i].UserID" hidden="hidden" value="@item.ParticipantId">
+                            <input type="text" id="Relationship[@i].ID" name="Relationship[@i].ID" hidden="hidden" value="@item.Id">
+                            <input type="text" id="Relationship[@i].NetworkContactID" name="Relationship[@i].NetworkContactID" hidden="hidden" value="@item.NetworkContactID">
+                            <input type="text" id="Relationship[@i].ContactName" name="Relationship[@i].ContactName" hidden="hidden" value="@item.ContactName">
+                            <label>@item.ContactName</label>
+                            <span class="field-validation-valid text-danger pull-right" data-valmsg-for="Relationship[@i].relation" data-valmsg-replace="true"></span>
+                        </td>
+                        <td class="text-center">                                                        
+                            <input type="radio" name="Relationship[@i].relation" data-val="true" data-val-required="Please choose one of these options:" id="Relationship[@i].relation" value="VeryClose" checked=@item.VeryClose>                                                                                    
+                        </td>
+                        <td class="text-center">
+                            @*@Html.RadioButton("Relationship[" + @i + "].Relation", "Close", item.Close)*@
+                            <input type="radio" name="Relationship[@i].relation" id="Relationship[@i].relation" value="Close" checked=@item.Close>                            
+                        </td>
+                        <td class="text-center">
+                            @*@Html.RadioButton("Relationship[" + @i + "].Relation", "NotVeryClose", item.NotVeryClose)*@
+                            <input type="radio" name="Relationship[@i].relation" id="Relationship[@i].relation" value="NotVeryClose" checked=@item.NotVeryClose>                            
+                        </td>
+                        <td class="text-center">
+                            @*@Html.RadioButton("Relationship[" + @i + "].Relation", "Distant", item.Distant)*@
+                            <input type="radio" name="Relationship[@i].relation" id="Relationship[@i].relation" value="Distant" checked=@item.Distant>
+                            @*@Html.DisplayFor(modelItem => item.Distant)*@
+                            <input type="text" id="Relationship[@i].Createdby" name="Relationship[@i].Createdby" hidden="hidden" value="@item.CreaterBy">
+                            <input type="text" id="Relationship[@i].CreatedOn" name="Relationship[@i].CreatedOn" hidden="hidden" value="@item.CreatedOn">
+                        </td>
+                    </tr>
+                    i++;
+                }
+
+            </table>
+            <input type="text" id="rowcount" name="RowCount" hidden="hidden" value="@i" />
+        </div>
+    </div>
+    @Html.Hidden("Direction")
+}
+    
+    <div class="row">
+        <div class="col-md-6">            
+        </div>
+        
+        @if (Model.SurveyReadOnly)
+        {
+            <div class="col-md-6 text-right margint10">
+                <a class="btn btn-default btn200 AdminButton" href="@Url.Action("Index", "Network", new { participantId = @Model.ParticipantID, admin = "True" })" role="button"><span class=" glyphicon glyphicon-menu-left"></span>Admin @Resources_Survey_Web.View_Actions_Previous</a>
+                <a class="btn btn-primary btn200 AdminButton" href="@Url.Action("Index", "RelationshipDemo", new { id = @Model.ParticipantID, admin = "True" })" role="button">Admin @Resources_Survey_Web.View_Actions_Next <span class=" glyphicon glyphicon-menu-right"></span></a>                
+            </div>
+        }
+        else
+        {
+            <div class="col-md-6 text-right margint10">
+                <a class="btn btn-default btn200 buttonsubmit" id="buttonPrev" role="button"><span class=" glyphicon glyphicon-menu-left"></span> @Resources_Survey_Web.View_Actions_Previous</a>
+                <a class="btn btn-primary btn200 buttonsubmit" id="buttonNext" role="button">@Resources_Survey_Web.View_Actions_Next <span class=" glyphicon glyphicon-menu-right"></span></a>
+                <!--<input type="submit" value="@Resources_Survey_Web.View_Actions_Next" class="btn btn-primary btn200" id="buttonsubmit" />-->
+            </div>
+        }
+    </div>        
+@section scripts{
+
+
+    <script type="text/javascript">
+        var canExit = false;
+
+        $(window).on('beforeunload', function () {
+            if (canExit) {
+
+            }
+            else {
+                return "*** INCOMPLETE SURVEY ***\n\nYou have not completed the survey. If you leave your survey, it will retain the status of ‘In Progress’ and it will not be marked as ‘Complete’. If you wish to leave the page, click ‘Leave this Page’. If you want to stay and complete the survey, click ‘Stay on this Page’.” ";
+            }
+        });
+        $(".AdminButton").click(function (e) {
+            canExit = true;
+            return;
+        });
+
+        $(".buttonsubmit").click(function () {
+            $("#Direction").val($(this).attr("ID"));
+            canExit = true;
+            $("#formsubmit").submit();
+        });
+
+        //var $radio = $('input:radio[name="Relationship[1].relation"]');
+        //$radio.addClass("validate[required]");
+
+    function back() {
+        location.href = '@Url.Action("Index", "Network", new {@participantId= Model.ParticipantID })';
+    }
+</script>
+    }

@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Dashboard_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Dashboard_Id_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Dashboard_PartialViewName" xml:space="preserve">
+    <value>zPartialViewName</value>
+  </data>
+  <data name="Dashboard_PartialViewName_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Dashboard_RegisteredPluginsId" xml:space="preserve">
+    <value>zRegisteredPluginsId</value>
+  </data>
+  <data name="Dashboard_RegisteredPluginsId_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Dashboard_Role" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="Email_Closing" xml:space="preserve">
+    <value>Closing</value>
+  </data>
+  <data name="Email_Closing_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Email_DefaultFrom" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="Email_DefaultFrom_EmailAddressError" xml:space="preserve">
+    <value>{0} Required not a valid email address format</value>
+  </data>
+  <data name="Email_DefaultFrom_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Email_EmailGenericTypeValueId" xml:space="preserve">
+    <value>zvId</value>
+  </data>
+  <data name="Email_EmailGenericTypeValueId_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Email_Id" xml:space="preserve">
+    <value>zEmail Id</value>
+  </data>
+  <data name="Email_Id_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Email_Introduction" xml:space="preserve">
+    <value>Introduction</value>
+  </data>
+  <data name="Email_Introduction_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Email_Subject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="Email_Subject_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Email_Template" xml:space="preserve">
+    <value>Template</value>
+  </data>
+  <data name="Email_TemplateName" xml:space="preserve">
+    <value>zTemplate Name</value>
+  </data>
+  <data name="Email_Template_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="GroupEmail_EmailId" xml:space="preserve">
+    <value>zGroup Email Email Id</value>
+  </data>
+  <data name="GroupEmail_EmailId_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="GroupEmail_GroupId" xml:space="preserve">
+    <value>zGroup Email Group Id</value>
+  </data>
+  <data name="GroupEmail_GroupId_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="GroupEmail_Id" xml:space="preserve">
+    <value>zGroup Email Id</value>
+  </data>
+  <data name="GroupEmail_Id_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="GroupParticipant_AddedDate" xml:space="preserve">
+    <value>Added Date</value>
+  </data>
+  <data name="GroupParticipant_AddedDate_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="GroupParticipant_GroupId" xml:space="preserve">
+    <value>Program Name</value>
+  </data>
+  <data name="GroupParticipant_GroupId_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="GroupParticipant_Id" xml:space="preserve">
+    <value>zz</value>
+  </data>
+  <data name="GroupParticipant_Id_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="GroupParticipant_ParticipantId" xml:space="preserve">
+    <value>zz</value>
+  </data>
+  <data name="GroupParticipant_ParticipantId_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Group_Administrator" xml:space="preserve">
+    <value>Administrator</value>
+  </data>
+  <data name="Group_Administrator_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Group_CreateDate" xml:space="preserve">
+    <value>CreateDate</value>
+  </data>
+  <data name="Group_CreatedBy" xml:space="preserve">
+    <value>Created By</value>
+  </data>
+  <data name="Group_CreatedBy_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Group_DefaultPassword" xml:space="preserve">
+    <value>Participants Default Password</value>
+  </data>
+  <data name="Group_DefaultPassword_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Group_DefaultPassword_RegExError" xml:space="preserve">
+    <value>Password Must have AtLeast:  Total of 6 Characters &lt;br&gt;
+ 1 Numeric (0 through 9) &lt;br&gt;
+ 1 English uppercase character (A through Z) &lt;br&gt;
+ 1 English lowercase characters (a through z) &lt;br&gt;
+ 1 Non-alphabetic characters (such as !, $, #, %) &lt;br&gt;
+Ex.  hbs@Sur1</value>
+  </data>
+  <data name="Group_EmailAddress" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="Group_EmailAddress_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Group_EndDate" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="Group_EndDate_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Group_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Group_Id_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Group_Name" xml:space="preserve">
+    <value>Program</value>
+  </data>
+  <data name="Group_Name_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Group_ProgramId" xml:space="preserve">
+    <value>zProgram Id</value>
+  </data>
+  <data name="Group_StartDate" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="Group_StartDate_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Group_StatusGenericTypeId" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Group_TypeGenericTypeId" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="Participant_Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Participant_IsDeleted" xml:space="preserve">
+    <value>is Deleted</value>
+  </data>
+  <data name="Participant_IsDeleted_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Participant_PersonId" xml:space="preserve">
+    <value>Person Id</value>
+  </data>
+  <data name="PasswordValidationRegex" xml:space="preserve">
+    <value>^(?=(.*\d){1})(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z\d]).{6,}$</value>
+  </data>
+  <data name="PersonGroupEmail_Body" xml:space="preserve">
+    <value>zz</value>
+  </data>
+  <data name="PersonGroupEmail_ErrorMessage" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="PersonGroupEmail_GroupEmailId" xml:space="preserve">
+    <value>zz</value>
+  </data>
+  <data name="PersonGroupEmail_GroupEmailId_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="PersonGroupEmail_Id" xml:space="preserve">
+    <value>zz</value>
+  </data>
+  <data name="PersonGroupEmail_Id_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="PersonGroupEmail_OrginalToAddress" xml:space="preserve">
+    <value>zz</value>
+  </data>
+  <data name="PersonGroupEmail_PersonId" xml:space="preserve">
+    <value>zz</value>
+  </data>
+  <data name="PersonGroupEmail_PersonId_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="PersonGroupEmail_RetryCount" xml:space="preserve">
+    <value>zz</value>
+  </data>
+  <data name="PersonGroupEmail_SendDate" xml:space="preserve">
+    <value>Last Email Date</value>
+  </data>
+  <data name="PersonGroupEmail_SendDate_Error" xml:space="preserve">
+    <value>{0} must be a date format MM/DD/YY</value>
+  </data>
+  <data name="PersonGroupEmail_SendStatusGenericTypeValueId" xml:space="preserve">
+    <value>zz</value>
+  </data>
+  <data name="Person_AspNetUsersId" xml:space="preserve">
+    <value>User id</value>
+  </data>
+  <data name="Person_AspNetUsersId_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Person_Email" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="Person_Email_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Person_First_Name" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="Person_First_Name_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Person_Id" xml:space="preserve">
+    <value>zId</value>
+  </data>
+  <data name="Person_Id_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Person_Last_Name" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="Person_Last_Name_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Person_Middle_Name" xml:space="preserve">
+    <value>zMiddle Name</value>
+  </data>
+  <data name="Person_Prefix" xml:space="preserve">
+    <value>zPrefix</value>
+  </data>
+  <data name="Person_Suffix" xml:space="preserve">
+    <value>zSuffix</value>
+  </data>
+  <data name="RegisteredPlugin_Custom" xml:space="preserve">
+    <value>Custom Plugin ?</value>
+  </data>
+  <data name="RegisteredPlugin_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="RegisteredPlugin_FullPath" xml:space="preserve">
+    <value>Full Path</value>
+  </data>
+  <data name="RegisteredPlugin_FullPath_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="RegisteredPlugin_Id" xml:space="preserve">
+    <value>zId</value>
+  </data>
+  <data name="RegisteredPlugin_Id_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="RegisteredPlugin_InstallationDate" xml:space="preserve">
+    <value>Installation Date</value>
+  </data>
+  <data name="RegisteredPlugin_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="RegisteredPlugin_Name_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="RegisteredPlugin_Version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="SurveyGroupParticipant_GroupParticipantId" xml:space="preserve">
+    <value>zz</value>
+  </data>
+  <data name="SurveyGroupParticipant_Id" xml:space="preserve">
+    <value>zz</value>
+  </data>
+  <data name="SurveyGroupParticipant_Id_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="SurveyGroupParticipant_ParticipantId_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="SurveyGroupParticipant_StatusGenericTypeValueId" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="SurveyGroupParticipant_SurveyId" xml:space="preserve">
+    <value>zz</value>
+  </data>
+  <data name="SurveyGroupParticipant_SurveyId_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Survey_Id" xml:space="preserve">
+    <value>zzID</value>
+  </data>
+  <data name="Survey_Id_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Survey_Name" xml:space="preserve">
+    <value>Survey Name</value>
+  </data>
+  <data name="Survey_Name_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+</root>

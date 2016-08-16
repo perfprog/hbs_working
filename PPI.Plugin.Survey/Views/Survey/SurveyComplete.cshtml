@@ -1,0 +1,25 @@
+﻿@using PPI.Plugin.Survey.Properties
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="jumbotron">
+            <h1>@Resources_Survey_Web.Survey_SurveyComplete_CompleteHeader</h1>
+            <p>@Resources_Survey_Web.Survey_SurveyComplete_CompleteSubHeader</p>
+            <p>@Resources_Survey_Web.Survey_SurveyComplete_CompleteSubFooter</p>
+            <p><a class="btn btn-primary btn-lg btn200" role="button" id="A1"> @Resources_Survey_Web.View_Actions_Logout</a></p>
+        </div>
+
+    </div>
+
+    <!-- /.row -->
+
+</div>
+
+@section scripts{
+    <script>
+        $("#A1").click(function () {
+            $("#logoutForm").submit();
+        });
+        
+    </script>
+}

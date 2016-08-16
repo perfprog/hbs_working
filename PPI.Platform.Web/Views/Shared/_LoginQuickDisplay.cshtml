@@ -1,0 +1,10 @@
+﻿@using PPI.Platform.Web.Properties
+<div class="nav navbar-right top-nav padding-top paddinglr20" style="color:#ffffff; margin-top:15px;">    
+    @if (Request.IsAuthenticated)
+    {
+    <i class="fa fa-user"></i><span> @User.Identity.Name</span>
+    <a style="color:#ffffff" class="paddinglr10"  href="@Url.Action("Index","Manage")"><i class="fa fa-fw fa-gear"></i> @Resources_Web.Layout_Settings</a>
+    @Html.AntiForgeryToken()
+    <a style="color:#FFF;" class="paddinglr10" href="#" onclick="$(this).closest('form').submit()"><i class="fa fa-power-off"></i> @Resources_Web.Layout_Logout</a>
+    }
+</div>

@@ -1,0 +1,19 @@
+﻿@model IEnumerable<PPI.Platform.Core.Entities.Dashboard>
+@using PPI.Platform.Mvc.HtmlHelpers
+@using PPI.Platform.Web.Properties
+@{    
+    ViewBag.Title = Resources_Web.Home_Index_MenuTitle;    
+    
+}
+
+@foreach (var item in Model)
+{
+    foreach (var Roleitem in item.Role.Split(','))
+    {
+        if (User.IsInRole(Roleitem))
+        {
+            @Html.Partial(item.PartialViewName)
+        }
+    }
+
+}

@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Account_Code" xml:space="preserve">
+    <value>zCode</value>
+  </data>
+  <data name="Account_Code_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Account_ConfirmPassword" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="Account_Email" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="Account_Email_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="old_Account_login_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\images\account_login_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Account_Login_SignInError" xml:space="preserve">
+    <value>UserName Or Password Is Incorrect</value>
+  </data>
+  <data name="Account_Login_Submit" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Account_Login_Title" xml:space="preserve">
+    <value>Please Sign In</value>
+  </data>
+  <data name="Account_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Account_PasswordCompareError" xml:space="preserve">
+    <value>The password and confirmation password do not match.</value>
+  </data>
+  <data name="Account_Provider_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Account_RememberBrowser" xml:space="preserve">
+    <value>zRemeber This Browser ?</value>
+  </data>
+  <data name="Account_RememberMe" xml:space="preserve">
+    <value>Remember me?</value>
+  </data>
+  <data name="Account_StringLengthError" xml:space="preserve">
+    <value>The {0} must be at least {2} characters long.</value>
+  </data>
+  <data name="Home_Index_MenuTitle" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="Layout_BrandName" xml:space="preserve">
+    <value>Harvard Business School</value>
+  </data>
+  <data name="old_Layout_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\images\layout_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Layout_Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="Layout_Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Layout_ToggleNavigation" xml:space="preserve">
+    <value>Toggle navigation</value>
+  </data>
+  <data name="RegisteredPlugin_Index_MenuTitle" xml:space="preserve">
+    <value>Plugins</value>
+  </data>
+  <data name="RegisteredPlugin_Index_Title" xml:space="preserve">
+    <value>Current Registered Plugins</value>
+  </data>
+  <data name="Setup_Index_MenuTitle" xml:space="preserve">
+    <value>Setup</value>
+  </data>
+  <data name="Group_Administrator" xml:space="preserve">
+    <value>zAdmin</value>
+  </data>
+  <data name="Group_EmailAddress" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="Group_EndDate" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="Group_Id" xml:space="preserve">
+    <value>zId</value>
+  </data>
+  <data name="Group_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Group_StartDate" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="View_Partial_ValidationSummaryError" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Account_Id" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="Account_login_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\images\leadership_intitiative_horiz_shield_4c_800px - copy.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Layout_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\content\images\leadership_intitiative_horiz_shield_4c_800px.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Roles_GroupAdmin" xml:space="preserve">
+    <value>Program Admin</value>
+  </data>
+  <data name="Account_Role" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="Account_Role_Error" xml:space="preserve">
+    <value>{0} Required</value>
+  </data>
+  <data name="Roles_Admin" xml:space="preserve">
+    <value>Admininstrator</value>
+  </data>
+  <data name="Roles_Participant" xml:space="preserve">
+    <value>Participant</value>
+  </data>
+  <data name="Roles_Rater" xml:space="preserve">
+    <value>Rater</value>
+  </data>
+  <data name="Roles_SiteAdmin" xml:space="preserve">
+    <value>Site Admin</value>
+  </data>
+  <data name="Roles_SuperAdmin" xml:space="preserve">
+    <value>Super Admin</value>
+  </data>
+  <data name="Roles_SystemIT" xml:space="preserve">
+    <value>System IT</value>
+  </data>
+  <data name="Account_Login_Img" xml:space="preserve">
+    <value>../Content/images/leadership_intitiative_horiz_shield_4C_800px.jpg</value>
+  </data>
+  <data name="Layout_Img" xml:space="preserve">
+    <value>../Content/images/Layout_Logo.png</value>
+  </data>
+  <data name="Setup_Encryp_Decrypt_Error" xml:space="preserve">
+    <value>The Text And/Or Section Is invalid to perform the requested action Please Check the Values and Try Again</value>
+  </data>
+  <data name="View_Actions_PageSetAll" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="View_Actions_ResultsPerPage" xml:space="preserve">
+    <value>Results Per Page</value>
+  </data>
+</root>

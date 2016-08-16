@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="89de8289-6857-4e70-ae1b-649ab5c22a5d" ChangeDateTime="02/10/2015 20:42:25">
+    <Property Name="ElementName" Value="[dbo].[NetworkInfoContacts].[ContactType]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[NetworkInfoContacts]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ContactName1" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="80ebb55c-ee3e-4343-8dd9-eb8ce89292e4" ChangeDateTime="02/10/2015 20:42:45">
+    <Property Name="ElementName" Value="[dbo].[NetworkInfoContacts].[ContactName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[NetworkInfoContacts]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ContactName2" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6655e7bb-c251-4e39-a57b-e3671071f040" ChangeDateTime="02/17/2015 17:11:20">
+    <Property Name="ElementName" Value="[dbo].[NetworkRelationshipDemo].[DiffBsnUnit]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[NetworkRelationshipDemo]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DiffFuncArea" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2504013d-f953-4d63-a061-fd52b129d163" ChangeDateTime="02/23/2015 14:31:52">
+    <Property Name="ElementName" Value="[survey].[NetworkInfoContacts].[UserID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[survey].[NetworkInfoContacts]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ParticipantId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="09992d8a-4c9b-43be-b6c5-451bbab2f40d" ChangeDateTime="02/23/2015 14:32:31">
+    <Property Name="ElementName" Value="[survey].[NetworkRelationship].[UserID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[survey].[NetworkRelationship]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ParticipantId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8239c6fb-0f21-4096-9b15-674335dfff61" ChangeDateTime="02/23/2015 14:33:15">
+    <Property Name="ElementName" Value="[survey].[NetworkRelationshipDemo].[UserID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[survey].[NetworkRelationshipDemo]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ParticipantId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1753cd6f-e956-4545-b643-4b5b84d42d92" ChangeDateTime="02/27/2015 18:00:34">
+    <Property Name="ElementName" Value="[survey].[ParticipantProfile].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[survey].[ParticipantProfile]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ParticipantID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b57d4564-b88e-4a17-8425-6edb20bbf9a6" ChangeDateTime="02/27/2015 18:00:40">
+    <Property Name="ElementName" Value="[survey].[ParticipantProfile].[ParticipantID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[survey].[ParticipantProfile]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ed321b83-ac77-4281-b6d1-520937256a4e" ChangeDateTime="02/27/2015 18:33:39">
+    <Property Name="ElementName" Value="[survey].[ParticipantProfile].[ParticipantDI]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[survey].[ParticipantProfile]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ParticipantID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="bd321a9a-f391-45ba-88f6-3cc1b349774f" ChangeDateTime="03/02/2015 18:28:16">
+    <Property Name="ElementName" Value="[survey].[FK_ParticipantProfile_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[survey].[ParticipantProfile]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_ParticipantProfile_ParticipantID]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="48c809f6-f99a-47a5-8c39-26ac0979284c" ChangeDateTime="05/11/2015 00:55:32">
+    <Property Name="ElementName" Value="[survey].[NetworkRelationshipDemo].[SameGender]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[survey].[NetworkRelationshipDemo]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Gender" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="bc8967b7-f057-4bda-921f-549c733732b9" ChangeDateTime="05/11/2015 00:55:42">
+    <Property Name="ElementName" Value="[survey].[NetworkRelationshipDemo].[SameAgeGrp]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[survey].[NetworkRelationshipDemo]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="AgeGroup" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a54993e8-0adc-4fe3-a194-6141a10609a1" ChangeDateTime="05/11/2015 00:57:08">
+    <Property Name="ElementName" Value="[survey].[NetworkRelationshipDemo].[SameNationality]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[survey].[NetworkRelationshipDemo]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Region" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="683f8be6-d816-4f56-b59d-1b5f08c3db26" ChangeDateTime="05/11/2015 15:00:15">
+    <Property Name="ElementName" Value="[survey].[ParticipantProfile].[NationalityID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[survey].[ParticipantProfile]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="RegionId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="95e824d7-9aba-4ca8-91c4-b45eba206af5" ChangeDateTime="05/11/2015 15:00:23">
+    <Property Name="ElementName" Value="[survey].[ParticipantProfile].[Gender]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[survey].[ParticipantProfile]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="GenderId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="fa0e93c5-706d-4b66-b4b0-960f52f67f09" ChangeDateTime="05/11/2015 15:00:26">
+    <Property Name="ElementName" Value="[survey].[ParticipantProfile].[AgeGroupID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[survey].[ParticipantProfile]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="AgeGroupId" />
+  </Operation>
+</Operations>

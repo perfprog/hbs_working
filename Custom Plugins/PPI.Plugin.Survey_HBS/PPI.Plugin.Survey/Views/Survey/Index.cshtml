@@ -1,0 +1,291 @@
+﻿@using PPI.Plugin.Survey.Properties
+@using PPI.Platform.Core.Entities
+@using PPI.Plugin.Survey.HtmlHelpers
+@section AddToHead{
+<style>
+    .progress-bar.animate {
+        width: 100%;
+    }
+</style>
+
+
+}
+@model PPI.Plugin.Survey.Models.SurveyIndexViewModel
+@{    
+    ViewBag.Title = Resources_Survey_Web.Survey_Index_Title;
+    var meta = Model.SurveyGroupParticipants.FirstOrDefault().GroupParticipant.Group;
+}
+
+@Html.Partial("_ValidationSummary", ViewData.ModelState)
+
+<div class="row marginb10">
+    <div class="col-md-6">
+        @using (Html.BeginForm("Index", "Survey", FormMethod.Get))
+        {
+        <div class="form-inline">
+            @Html.DropDownList("programsearch", (SelectList)ViewBag.GroupIdList, Resources_Survey_Web.Survey_Index_SearchDropDown, new { @class = "form-control" })
+            <a class="btn btn-sm btn-primary" role="button" href="@Url.Action("Index", "Survey", new {group="clear" })">
+                <span class="glyphicon glyphicon glyphicon-stop" aria-hidden="true">
+                </span> Clear
+            </a>
+        </div>
+        }
+    </div>
+    <div class="col-md-6 text-right">
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="table-responsive">
+            <table class="tablesorter table table-bordered table-hover table-striped" id="suverytable">
+                <thead>
+                    <tr>
+                        <th class="">
+                            @if (!Model.LockSendAllButtons)
+                            {
+                                <div class="checkbox-nice">
+                                    <input type="checkbox" class="" id="checkAll" )>
+                                    <label for="checkAll"></label>
+                                </div>
+                            }
+
+                        </th>
+                        <th class="col-md-2">@Html.DisplayNameFor(m => meta.Name)</th>
+                        <th class="col-md-2">@Html.DisplayNameFor(m => meta.GroupParticipants.FirstOrDefault().Participant.Person.First_Name)</th>
+                        <th class="col-md-2">@Html.DisplayNameFor(m => meta.GroupParticipants.FirstOrDefault().Participant.Person.Last_Name)</th>
+                        <th class="col-md-2">@Html.DisplayNameFor(m => meta.GroupParticipants.FirstOrDefault().Participant.Person.Email)</th>
+                        <th class="col-md-1">
+                            @Html.DisplayNameFor(m => meta.GroupParticipants.FirstOrDefault()
+                            .Participant.Person.PersonGroupEmails.FirstOrDefault().SendDate)
+                        </th>
+                        <th class="col-md-2">
+                            @Html.DisplayNameFor(m => m.SurveyGroupParticipants.FirstOrDefault().StatusGenericTypeValueId)
+                        </th>
+                        <th class="col-md-1">@Resources_Survey_Web.View_Actions_Label</th>
+                    </tr>
+                </thead>
+                <tbody id="surveytablebody">
+                    @foreach (var item in Model.SurveyGroupParticipants)
+                    {
+                        if (item.GroupParticipant.Participant == null)
+                        { continue; }
+                        <tr>
+                            <td>
+                                @if (item.StatusGenericTypeValueId != 1009)
+                                {
+                                <div class="checkbox-nice">
+                                    <input type="checkbox" data-value="@item.GroupParticipant.ParticipantId;@item.GroupParticipant.Participant.Person.Id" class="checkGroupParticipant" id="checkGroupParticipant-@item.Id">
+                                    <label for="checkGroupParticipant-@item.Id"></label>
+                                </div>
+                                }
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m => item.GroupParticipant.Group.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m => item.GroupParticipant.Participant.Person.First_Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m => item.GroupParticipant.Participant.Person.Last_Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m => item.GroupParticipant.Participant.Person.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m => item.GroupParticipant.Participant.Person.PersonGroupEmails.LastOrDefault().SendDate)
+                            </td>
+                            <td>
+                                @Html.SurveyStatus(m => item.StatusGenericTypeValueId, @item.StatusGenericTypeValue.Resource.ResourceValues.FirstOrDefault(t => t.CultureId == ViewBag.CultureId).Value)
+
+                            </td>
+                            <td>
+                                <!--
+                        <a class="btn btn-sm btn-default" role="button" aria-label="Left Align" href="">
+                            <span class="glyphicon glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                        </a>
+                        -->
+                                <a class="emailbutton btn btn-sm btn-default" href="#basicModel" data-value="@item.GroupParticipant.Group.GroupEmails.FirstOrDefault(t => t.Email.EmailGenericTypeValueId == 8).Id" role="button" id="inviteEmail" alt="Send Invitation" title="Send Invitation" @(item.StatusGenericTypeValueId != 1010 ? "disabled" : string.Empty)>
+                                    <span class="glyphicon glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                                </a>
+                                <!--
+                        <a href="#email" role="button" class="btn btn-sm btn-default" aria-label="Left Align">
+                            <span class="glyphicon glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                        </a>
+                        -->
+
+                                <a role="button" class="emailbutton btn btn-sm btn-default" href="#basicModel" data-value="@item.GroupParticipant.Group.GroupEmails.FirstOrDefault(t => t.Email.EmailGenericTypeValueId == 9).Id" id="reminderEmail" aria-label="Left Align" alt="Send Reminder" title="Send Reminder" @(item.StatusGenericTypeValueId == 1009 || item.StatusGenericTypeValueId == 1010 ? "disabled" : string.Empty)>
+                                    <span class="glyphicon glyphicon glyphicon-repeat" aria-hidden="true"></span>
+                                </a>
+                                <a role="button" class="btn btn-sm btn-default" href="@Url.Action("Index", "Network", new { @participantId = item.GroupParticipant.Participant.Id,@admin="true" })" id="AdminView" aria-label="Left Align" alt="Review Participant Survey" title="Review Participant Survey" @(item.StatusGenericTypeValueId == 1010 || item.StatusGenericTypeValueId == 1012 ? "disabled" : string.Empty)>
+                                    <span class="glyphicon glyphicon glyphicon-eye-open"></span>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8 margint10">
+        <!--Widget Paging-->
+        @Html.Partial("_PagingPartial", Model.PagingInfo)
+
+        <!--End Widget Paging-->
+    </div>
+    <div class="col-md-4 text-right">
+        <a class="emailbuttonall btn btn-primary btn200" data-value="invite" href="#basicModel" role="button" @(@Model.LockSendAllButtons ? "disabled" : "")>
+            <span class="glyphicon glyphicon glyphicon-envelope" aria-hidden="true">
+            </span> @Resources_Survey_Web.Survey_Index_SendInvites
+        </a>
+        <a class="emailbuttonall btn btn-primary btn200" data-value="remind" href="#basicModel" role="button" @(@Model.LockSendAllButtons ? "disabled" : "")>
+            <span class="glyphicon glyphicon glyphicon-repeat" aria-hidden="true"></span> @Resources_Survey_Web.Survey_Index_SendReminders
+        </a>
+    </div>
+</div>
+
+<!-- email Pop Up -->
+<div class="modal js-loading-bar fade in" id="basicModel" tabindex="-1" role="dialog" aria-labelledby="basicModel" aria-hidden="false" style="display : none">
+    <div class="modal-backdrop fade in" style="height: 869px;"></div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" href="#basicModel" id="closeModel" class="close closeModel" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="H1"><span class="glyphicon glyphicon glyphicon-upload" aria-hidden="true"></span> Email Results</h4>
+            </div>
+            <div class="modal-body" id="SendEmailReturn">
+                <h3>Emails currently being sent</h3>
+                <div class="progress progress-popup">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default btn200 closeModel" type="button" data-dismiss="modal">Refresh</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- email Pop Up -->
+
+
+
+@section scripts{
+<script src="~/Scripts/jquery.tablesorter.js"></script>
+
+<script>      
+        $(function ($) {            
+            
+            $("#suverytable").tablesorter({
+                headers: {
+                    0: {
+                        sorter:false
+                    }
+                }
+            });
+           
+            $("#programsearch").change(function () {
+                var _self = $(this);
+                var current = _self.val();
+                _self.find("option:selected").val("GroupParticipant.GroupId=" + current);
+                _self.attr('name', 'search');
+                $(this).closest('form').submit();
+            });
+            //Check All Function
+            $("#checkAll").click(function () {
+                $(".checkGroupParticipant").prop('checked', $(this).prop('checked'));
+            });
+
+            //launch the model and do the work.
+            $('.emailbuttonall').click(function () {
+                var _self = $(this);
+                //check the box in your row                
+                $(_self.attr('href')).modal('show');
+                var emailType = _self.attr("data-value");
+                alert(emailType)
+                var emailId;
+                if (emailType == "invite"){
+                    emailId = $("#inviteEmail").attr("data-value");
+                }
+                else if ((emailType == "remind")) {
+                    emailId = $("#reminderEmail").attr("data-value");
+                }                   
+                var recipients = $("#suverytable input:checkbox:checked").map(function () {
+                    return $(this).attr("data-value");
+                }).get();
+                SendEmails(recipients, emailId);
+
+
+            });
+
+            //launch the model and do the work.
+            $('.emailbutton').click(function () {
+                var _self = $(this);
+                //check the box in your row
+                $(this).closest('tr').find(':checkbox').prop('checked', true);                
+                $(_self.attr('href')).modal('show');
+                var $modal = $('.js-loading-bar'),
+                $bar = $modal.find('.progress-bar');                               
+                $bar.addClass('animate');
+                var emailId = _self.attr("data-value");
+                var recipients = $("#suverytable input:checkbox:checked").map(function () {
+                    return $(this).attr("data-value");
+                }).get();
+                SendEmails(recipients, emailId);
+                
+
+            });
+
+            function SendEmails(recipients, groupEmailId) {
+                var personrecipients = [];
+                var Participants = [];
+                recipients.forEach(function (item) {
+                    //second ID is person ID
+                    personrecipients.push(item.split(";")[1]);
+                    Participants.push(item.split(";")[0]);
+                    //Set everyone to Invited regardless of the Email Result
+                    //trying not to tie survey to email
+                });
+                // Mail Call
+                $.ajax({
+                    cache: false,                    
+                    asyc: true,
+                    url: "@Url.Action("SendEmail", "Email")",
+                    type: 'Post',
+                    data: { "recipients": personrecipients, "groupEmailId": groupEmailId },
+                    success: function (response) {
+                    $('#SendEmailReturn').html(response);
+                    }
+                });
+                //Survey Status Call
+                $.ajax({
+                    cache: false,                    
+                    asyc: true,
+                    url: "@Url.Action("SurveySetStatus", "Survey")",
+                    type: 'Post',
+                    data: { "participantId": Participants, "statusId": 1012 },
+                    success: function (response) {
+                    //done                    
+                }
+                });
+            }
+            
+            //reset the model to the orginal
+            $('.closeModel').click(function () {
+                location.reload();               
+            })
+
+            // Setup
+            $('.js-loading-bar').modal({
+                backdrop: 'static',
+                show: false
+            });
+
+        });
+
+</script>
+}

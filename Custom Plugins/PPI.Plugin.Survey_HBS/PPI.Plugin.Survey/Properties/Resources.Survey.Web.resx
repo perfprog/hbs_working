@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="NetworkRelationship_Index_Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="NetworkRelationShip_Index_ContactName" xml:space="preserve">
+    <value>Contact Name</value>
+  </data>
+  <data name="NetworkRelationship_Index_Distant" xml:space="preserve">
+    <value>Distant</value>
+  </data>
+  <data name="NetworkRelationship_Index_NotVeryClose" xml:space="preserve">
+    <value>Not Very Close</value>
+  </data>
+  <data name="NetworkRelationship_Index_Title" xml:space="preserve">
+    <value>Network Characteristics: Closeness of Relationships</value>
+  </data>
+  <data name="NetworkRelationship_Index_VeryClose" xml:space="preserve">
+    <value>Very Close</value>
+  </data>
+  <data name="NetworkRelationship_Paragraph" xml:space="preserve">
+    <value>Please assess the quality of each relationship in your network. 
+
+Rate the closeness of your relationship with each person along a scale from “very close” to “distant,” noting that “very close” relationships are characterized by high degrees of mutual trust and commitment, while “distant” relationships are characterized by not knowing the person very well.</value>
+  </data>
+  <data name="Network_Index_Clear" xml:space="preserve">
+    <value>Start Over</value>
+  </data>
+  <data name="Network_Index_Title" xml:space="preserve">
+    <value>List Your Network Contacts</value>
+  </data>
+  <data name="Network_Paragraph1" xml:space="preserve">
+    <value>Who helps keep you abreast of key trends (priorities, constraints, or capabilities) in your organization?
+
+Who helps you understand the strategic landscape or competitive environment (opportunities and challenges) that impact your area of responsibility?</value>
+  </data>
+  <data name="Network_Paragraph1_Title" xml:space="preserve">
+    <value>Your Strategic Network: Scanning and Sensing</value>
+  </data>
+  <data name="Network_Paragraph2" xml:space="preserve">
+    <value>Who do you rely upon to get your job done? Consider people who have provided you and your team with key advice, information, support, or resources pertaining to your current job.</value>
+  </data>
+  <data name="Network_Paragraph2_Title" xml:space="preserve">
+    <value>Your Operational Network: Getting the Work Done</value>
+  </data>
+  <data name="Network_Paragraph3" xml:space="preserve">
+    <value>Who has contributed to your professional development in the last couple of years (e.g., provided coaching, protection, exposure, social support)?</value>
+  </data>
+  <data name="Network_Paragraph3_Title" xml:space="preserve">
+    <value>Your Developmental Network: Professional &amp; Career Development</value>
+  </data>
+  <data name="Profile_Index_AgeGroup" xml:space="preserve">
+    <value>Age Group</value>
+  </data>
+  <data name="Profile_Index_CompleteSurvey" xml:space="preserve">
+    <value>Complete Survey</value>
+  </data>
+  <data name="Profile_Index_Gender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="Profile_Index_Nationality" xml:space="preserve">
+    <value>Nationality</value>
+  </data>
+  <data name="Profile_Index_Paragraph" xml:space="preserve">
+    <value>Answering the questions below can help us provide you with a more personalized analysis of your network. Although we may use the data to conduct group analyses to establish norms for this diagnostic tool, should you choose to respond, your answers will remain strictly confidential.</value>
+  </data>
+  <data name="Profile_Index_SpeakNative" xml:space="preserve">
+    <value>Do you work in your native Language</value>
+  </data>
+  <data name="Profile_Index_Title" xml:space="preserve">
+    <value>Personal and Demographic Questions (Optional)</value>
+  </data>
+  <data name="RelationShipDemo_Index_AgeGroup" xml:space="preserve">
+    <value>Age Group</value>
+  </data>
+  <data name="RelationShipDemo_Index_BusinessUnit" xml:space="preserve">
+    <value>Business Unit or Division</value>
+  </data>
+  <data name="RelationShipDemo_Index_Firm" xml:space="preserve">
+    <value>Company or Organization</value>
+  </data>
+  <data name="RelationShipDemo_Index_FunctionArea" xml:space="preserve">
+    <value>Product or Service Area</value>
+  </data>
+  <data name="RelationShipDemo_Index_Gender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="RelationShipDemo_Index_Language" xml:space="preserve">
+    <value>Native Language</value>
+  </data>
+  <data name="RelationShipDemo_Index_Nationality" xml:space="preserve">
+    <value>Same Nationality</value>
+  </data>
+  <data name="RelationShipDemo_Index_Paragraph" xml:space="preserve">
+    <value>Using the drop-down menus, select the responses that best describe each person in your network. Answer to the best of your knowledge.</value>
+  </data>
+  <data name="RelationShipDemo_Index_Race" xml:space="preserve">
+    <value>Same Race</value>
+  </data>
+  <data name="RelationShipDemo_Index_RelationShip" xml:space="preserve">
+    <value>Relationship to Me</value>
+  </data>
+  <data name="RelationshipDemo_Index_Title" xml:space="preserve">
+    <value>Network Characteristics: Breadth &amp; Diversity</value>
+  </data>
+  <data name="RelDensity_Index_Paragraph" xml:space="preserve">
+    <value>Indicate who knows whom, by placing a checkmark in the cells corresponding to each acquainted pair. Leave a cell blank if the pair do not know each other, or if you do not know whether they know each other.</value>
+  </data>
+  <data name="RelDensity_Index_Title" xml:space="preserve">
+    <value>Who Knows Whom</value>
+  </data>
+  <data name="SurveyDashBoard_SurveyCount" xml:space="preserve">
+    <value>Network Assessment Surveys</value>
+  </data>
+  <data name="SurveyDashBoard_SurveyLink" xml:space="preserve">
+    <value>View Details</value>
+  </data>
+  <data name="SurveyParticipantDashboard_Header" xml:space="preserve">
+    <value>Self Surveys</value>
+  </data>
+  <data name="Survey_Index_NoEmail" xml:space="preserve">
+    <value>You have projects without emails setup, please visit Email Section</value>
+  </data>
+  <data name="Survey_Index_SearchDropDown" xml:space="preserve">
+    <value>-Program-</value>
+  </data>
+  <data name="Survey_Index_SendInvites" xml:space="preserve">
+    <value>Send Invites</value>
+  </data>
+  <data name="Survey_Index_SendReminders" xml:space="preserve">
+    <value>Send Reminders</value>
+  </data>
+  <data name="Survey_Index_Title" xml:space="preserve">
+    <value>Survey</value>
+  </data>
+  <data name="View_Actions_Label" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="View_Actions_Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="View_Actions_PageSetAll" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="View_Actions_Previous" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="View_Actions_Results" xml:space="preserve">
+    <value>Results</value>
+  </data>
+  <data name="View_Actions_ResultsPerPage" xml:space="preserve">
+    <value>Results Per Page</value>
+  </data>
+  <data name="View_Actions_SearchError" xml:space="preserve">
+    <value>Bad Search Term</value>
+  </data>
+  <data name="Profile_Index_CompletePopUp" xml:space="preserve">
+    <value>You are about to complete your survey. Once submitted, you will no longer be able to view or edit your answers. Do you wish to submit your survey?</value>
+  </data>
+  <data name="Survey_SurveyComplete_CompleteHeader" xml:space="preserve">
+    <value>Thank you</value>
+  </data>
+  <data name="Survey_SurveyComplete_CompleteSubHeader" xml:space="preserve">
+    <value>Thank you for taking the time to complete the Network Diagnostic Survey. You will be contacted with your results. If you have any questions, please contact li@hbs.edu.</value>
+  </data>
+  <data name="View_Actions_Alert" xml:space="preserve">
+    <value>Alert</value>
+  </data>
+  <data name="View_Actions_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="View_Actions_Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="View_Actions_Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="View_Action_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="View_Actions_Required" xml:space="preserve">
+    <value>Required</value>
+  </data>
+  <data name="Network_Index_ClearMessage" xml:space="preserve">
+    <value>You have chosen to clear all entered data. You will have to restart the survey from the beginning. Do you wish to start over?</value>
+  </data>
+  <data name="RelationShipDemo_Index_NextMessage" xml:space="preserve">
+    <value>After this point, you should not add to or edit your network contacts. Do you wish to continue?</value>
+  </data>
+  <data name="Survey_SurveyComplete_CompleteSubFooter" xml:space="preserve">
+    <value>This instrument is based on Herminia Ibarra’s “Network Assessment Exercise: Executive Version” (Harvard Business School Publishing, product #9-497-003), and the works of R. S. Burt, Tiziana Casciaro, Morten Hansen, Monica Higgins, Linda Hill, and David Thomas.</value>
+  </data>
+  <data name="RelationShipDemo_Index_RegionFrom" xml:space="preserve">
+    <value>Region They Are From</value>
+  </data>
+</root>

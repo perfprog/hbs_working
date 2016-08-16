@@ -1,0 +1,25 @@
+﻿@model PPI.Platform.Web.Models.AccountCreateViewModel
+@using PPI.Platform.Web.Properties
+
+
+@if (Model.ModelErrors.SelectMany(keyValuePair => keyValuePair.Value.Errors).Count() > 0)
+{
+    <div class="@(Html.ViewData.ModelState.IsValid ? "validation-summary-valid" : "validation-summary-errors") panel panel-danger"
+         data-valmsg-summary="true">
+        <div class="panel-heading">
+            @Resources_Web.View_Partial_ValidationSummaryError
+        </div>
+        <div class="panel-body">
+            <ul>
+                @foreach (var modelError in Model.ModelErrors.SelectMany(keyValuePair => keyValuePair.Value.Errors))
+                {
+                    <li>@modelError.ErrorMessage</li>
+                }
+            </ul>
+        </div>
+    </div>
+}
+else
+{
+    <input name="Participant.Person.AspNetUsersId" id="Participant.Person.AspNetUsersId" type="hidden" value=@Model.AspNetUsersId>
+}

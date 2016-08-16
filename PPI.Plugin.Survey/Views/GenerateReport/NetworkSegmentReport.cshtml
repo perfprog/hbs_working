@@ -1,0 +1,830 @@
+﻿@model PPI.Plugin.Survey.Models.NetworkSegmentReportViewModel
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" href="~/Content/jquery.jqplot.css" />
+    <script language="javascript" type="text/javascript" src="~/Scripts/jquery-2.1.3.js"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>HBS - Network Diagnostic Report</title>
+    <style>
+        * {
+            font-family: arial, verdana, san-serif;
+            color: #000;
+        }
+
+        .content {
+            margin-left: 30px;
+        }
+
+        .wrapper {
+            width: 1110px;
+            height: 800px;
+            margin-top: 50px;
+            padding-top: 30px;
+            border: 0px solid black;
+            page-break-after: avoid;
+            page-break-before: always;
+        }
+
+        h2 {
+            color: #a41034;
+            text-transform: uppercase;
+            font-size: 1.75em;
+        }
+
+        h3 {
+            color: #000 !important;
+            text-transform: uppercase;
+            font-size: 1em;
+            background: transparent;
+        }
+
+            h3.white {
+                color: #FFF !important;
+                margin-top: -5px;
+            }
+
+            h3.red {
+                color: #a41034 !important;
+            }
+
+            h3.black {
+                color: #000 !important;
+                margin-top: -5px;
+            }
+
+            h3.cover {
+                font-size: 1.75em;
+                margin: 0px;
+            }
+
+        #cover {
+            width: 535px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            padding: 15px;
+        }
+
+        .covername {
+            margin: 20px;
+            line-height: 22px;
+        }
+
+        p {
+            color: #000 !important;
+            font-size: 1em;
+            line-height: 2em;
+        }
+
+        .graph {
+            width: 1090px;
+            height: 475px;
+            border: 0px solid black;
+            background-color: #fff;
+            margin-left: 5px;
+            margin-bottom: 10px;
+        }
+
+        #reflect {
+            width: 750px;
+            float: left;
+            color: #000 !important;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            padding: 10 0 20 20px;
+            border: 0px solid black;
+            margin-left: 20px;
+        }
+
+        #key {
+            width: 300px;
+            float: left;
+            color: #000 !important;
+            position: absolute;
+            top: 0px;
+            left: 770px;
+            padding: 10px;
+            border: 0px solid black;
+        }
+
+        #references {
+            padding: 20px;
+            font-size: .8em;
+            line-height: 1.8em;
+            height: 440px;
+        }
+
+        #pageno {
+            width: 1110px;
+            padding-top: 20px;
+            margin-left: -20px;
+            text-align: center;
+        }
+
+        li {
+            color: #000 !important;
+        }
+
+        p.white {
+            color: #FFF !important;
+        }
+
+        p.black {
+            color: #000 !important;
+        }
+
+        #copyright {
+            text-align: left;
+            padding-top: 20px;
+            padding-left: 10px;
+        }
+
+        .footnote {
+            width: 1110px;
+            font-size: .8em;
+            margin-top: 385px;
+        }
+
+        .footnotekey {
+            color: #FFF !important;
+            ;
+            font-size: .85em;
+            line-height: 1em;
+        }
+
+        #foursquare {
+            background: transparent;
+            width: 1180px;
+        }
+
+        #topleft {
+            background: #fff;
+            width: 517px;
+            height: 401px;
+            margin: 2px;
+            padding-left: 20px;
+            display: block;
+            float: left;
+            border: 2px solid #a4e0da;
+        }
+
+        #topright {
+            background: #fff;
+            width: 517px;
+            height: 301px;
+            margin: 2px;
+            padding-left: 20px;
+            display: block;
+            float: left;
+            border: 2px solid #a4e0da;
+        }
+
+        #bottomleft {
+            background: #fff;
+            width: 517px;
+            height: 301px;
+            margin: 2px;
+            padding-left: 20px;
+            display: block;
+            float: left;
+            clear: left;
+            border: 2px solid #a4e0da;
+        }
+
+        #bottomright {
+            background: #fff;
+            width: 517px;
+            height: 401px;
+            margin: 2px;
+            padding-left: 20px;
+            margin-top: -100px;
+            display: block;
+            float: left;
+            border: 2px solid #a4e0da;
+        }
+
+        ul.nobullet {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .inside {
+            background: url('../Plugins/PPI.Plugin.Survey/Content/images/inside_key.png') no-repeat left top;
+            height: 30px;
+            padding-left: 35px;
+            padding-top: 2px;
+            color: #000 !important;
+        }
+
+        .outside {
+            background: url('../Plugins/PPI.Plugin.Survey/Content/images/outside_key.png') no-repeat left top;
+            height: 30px;
+            padding-left: 35px;
+            padding-top: 2px;
+            color: #000 !important;
+        }
+
+        .senior {
+            background: url('../Plugins/PPI.Plugin.Survey/Content/images/senior_key.png') no-repeat left top;
+            height: 30px;
+            padding-left: 35px;
+            padding-top: 2px;
+            color: #000 !important;
+        }
+
+        .junior {
+            background: url('../Plugins/PPI.Plugin.Survey/Content/images/junior_key.png') no-repeat left top;
+            height: 30px;
+            padding-left: 35px;
+            padding-top: 2px;
+            color: #000 !important;
+        }
+
+        .peer {
+            background: url('../Plugins/PPI.Plugin.Survey/Content/images/peer_key.png') no-repeat left top;
+            height: 30px;
+            padding-left: 35px;
+            padding-top: 2px;
+            color: #000 !important;
+            margin-left: 120px;
+            margin-top: -65px;
+        }
+
+        .other {
+            background: url('../Plugins/PPI.Plugin.Survey/Content/images/other_key.png') no-repeat left top;
+            height: 30px;
+            padding-left: 35px;
+            padding-top: 2px;
+            color: #000 !important;
+            margin-left: 120px;
+        }
+
+        .actionplanitems {
+            color: #a41034 !important;
+            margin-bottom: 50px;
+        }
+
+        .ndblock {
+            width: 250px;
+            float: right;
+            margin-top: -50px;
+            padding: 5px;
+            background-color: #b6b6b6;
+        }
+
+        .ndtext {
+            width: 100px;
+            margin: 5px;
+            padding: 5px;
+            float: left;
+            color: #FFF;
+            text-transform: uppercase;
+            font-weight: bold;
+            line-height: 22px;
+        }
+
+        .ndno {
+            width: 100px;
+            height: 60px;
+            background-color: #fff;
+            margin: 5px;
+            padding: 5px;
+            padding-top: 10px;
+            float: right;
+            text-align: center;
+            font-size: 45px;
+            color: #a41034;
+        }
+
+        ndp {
+            width: 800px;
+            float: left;
+        }
+
+        dl {
+            width: 200px;
+            display: inline;
+            float: left;
+        }
+
+        dt {
+            width: 80px;
+            float: left;
+            padding: 4px;
+        }
+
+        .bar {
+            margin-bottom: 10px;
+            margin-left: 60px;
+            color: #fff;
+            padding: 4px;
+            text-align: center;
+            background-color: #FDBF6F;
+        }
+
+        .democontainer {
+            border: 0px solid black;
+            margin-left: -40px;
+            font-family: Helvetica, Arial;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .demotitle {
+            width: 250px;
+            text-align: center;
+            padding: 10px;
+            color: #900;
+            font-size: 1.25em;
+        }
+
+        .show {
+            background-image: url(../Plugins/PPI.Plugin.Survey/Content/images/self_arrow.png);
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+
+        .hide {
+            background-image: url(../Plugins/PPI.Plugin.Survey/Content/images/hide.png);
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+
+        .indent {
+            padding-left: 1.5em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+
+        <!-- PAGE 1 - COVER -->
+        <div class="wrapper" style="height:800px; margin-top:20px; page-break-before: avoid;">
+            <div style="float:left;">
+                <img src="../Plugins/PPI.Plugin.Survey/Content/images/cover_red_block.jpg" width="535" height="800">
+            </div>
+            <div style="float:left; margin-left:40px;">
+                <div style="margin-top:520px;">
+                    <div style="position: relative;">
+                        <img src="../Plugins/PPI.Plugin.Survey/Content/images/cover_teal_block.jpg" width="535" height="100">
+                        <div id="cover">
+                            <h3 class="cover black">HBS Leadership Initiative</h3>
+                            <h3 class="cover white">Network Diagnostic Survey</h3>
+                        </div>
+                    </div>
+                    <div class="covername">
+                        REPORT PREPARED FOR @Model.FullName<br />
+                        @Model.CreateDate
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="clear:both;"></div>
+
+        <!-- PAGE 2 - INTRODUCTION -->
+        <div class="wrapper">
+            <h2>Introduction</h2>
+            <p>
+                Welcome to your individualized network diagnostic report. This report was created using data from your responses to the Network Diagnostic Survey.* The goal of the diagnostic report is to help you gain insight into the effectiveness of your <b>core</b> professional network.
+            </p>
+            <h2>IN THIS REPORT</h2>
+            <p>
+                In the following pages, you will find diagrams of your network created from your self-reported data. The diagrams are designed to help you visualize your core network—the people you identified as key members of your network.  You were asked to identify up to 24 people within your network—those individuals you rely on most consistently. It is not always easy to decipher network data. A facilitator or coach will take you through the report to help you interpret your results and develop a personalized action plan for making your network as effective as it can be. On your own, please review the report and reflect on the questions posed throughout it. Suggested readings are also provided.
+            </p>
+            <div class="footnote">
+                *This instrument is based on Herminia Ibarra's "Network Diagnostic Exercise: Executive Version" (Harvard Business School Publishing, product #9-497-003), and the works of R. S. Burt, Tiziana Casciaro, Morten Hansen, Monica Higgins, Linda Hill, and David Thomas.
+            </div>
+            <div id="pageno">2</div>
+        </div>
+
+        <!-- PAGE 3 - YOUR STRATEGIC NETWORK -->
+        <div class="wrapper">
+            <h2>YOUR STRATEGIC NETWORK: SCANNING AND SENSING</h2>
+            <p>
+                The nodes in the diagram below represent the individuals who help you  keep abreast of key trends (priorities, constraints, or capabilities) in your organization, and/or help you to understand the strategic landscape or competitive environment (opportunities and challenges) that impact your area of responsibility.
+            </p>
+            <div class="graph" id="graph3">
+                <!-- ********************** GRAPH HERE ********************** -->
+                <img src="@Model.SourcePath/tempimage.bmp" />
+            </div>
+            <div style="position: relative;">
+                <img src="../Plugins/PPI.Plugin.Survey/Content/images/cover_teal_block.jpg" width="1110" height="150">
+                <div id="reflect">
+                    <h3>REFLECT</h3>
+                    <ul>
+                        <li>What individuals or groups do you rely on to keep abreast of key trends in your organization?</li>
+                        <li>What individuals or groups do you rely on to understand the strategic landscape?</li>
+                        <li>Are you under- or over-utilizing some of those individuals or groups? </li>
+                    </ul>
+                </div>
+                <div id="key">
+                    <h3 class="red">KEY</h3>
+                    <ul class="nobullet">
+                        <li class="inside">Individuals inside your organization</li>
+                        <li class="outside">Individuals outside your organization</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="pageno">3</div>
+        </div>
+
+        <!-- PAGE 4 - YOUR OPERATIONAL NETWORK -->
+        <div class="wrapper">
+            <h2>YOUR OPERATIONAL NETWORK: GETTING THE WORK DONE</h2>
+            <p>
+                The nodes in the diagram below represent the individuals who you rely on to get your job done—who provide you and your team with key advice, information, support, or resources pertaining to your current job.
+            </p>
+            <div class="graph" style="height:455px" id="graph4">
+                <!-- ********************** GRAPH HERE ********************** -->
+                <img src="@Model.SourcePath/tempimage2.bmp" />
+            </div>
+            <div style="position: relative;">
+                <img src="../Plugins/PPI.Plugin.Survey/Content/images/cover_teal_block.jpg" width="1110" height="170">
+                <div id="reflect">
+                    <h3>REFLECT</h3>
+                    <ul>
+                        <li>Who are you really dependent on to get your job done? Are all those individuals or groups included in your operational network?</li>
+                        <li>What individuals or groups (including those not shown here) might be particularly critical six months to a year from now, given your organizational strategy?</li>
+                    </ul>
+                </div>
+                <div id="key">
+                    <h3 class="red">KEY</h3>
+                    <ul class="nobullet">
+                        <li class="inside">Individuals inside your organization</li>
+                        <li class="outside">Individuals outside your organization</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="pageno">4</div>
+        </div>
+
+        <!-- PAGE 5 - YOUR DEVELOPMENTAL NETWORK: -->
+        <div class="wrapper">
+            <h2>YOUR DEVELOPMENTAL NETWORK: PROFESSIONAL & CAREER DEVELOPMENT</h2>
+            <p>
+                The nodes in the diagram below represent the individuals who have contributed to your professional and career development in the last couple of years. They are the people you rely on, e.g., for coaching, protection, exposure, and social support.
+            </p>
+            <div class="graph" id="graph5">
+                <!-- ********************** GRAPH HERE ********************** -->
+                <img src="@Model.SourcePath/tempimage3.bmp" />
+            </div>
+            <div style="position: relative;">
+                <img src="../Plugins/PPI.Plugin.Survey/Content/images/cover_teal_block.jpg" width="1110" height="150">
+                <div id="reflect">
+                    <h3>REFLECT</h3>
+                    <ul>
+                        <li>Who do you rely on for professional and career development?</li>
+                        <li>How are you different from them? How are you similar?</li>
+                    </ul>
+                </div>
+                <div id="key">
+                    <h3 class="red">KEY</h3>
+                    <ul class="nobullet">
+                        <li class="inside">Individuals inside your organization</li>
+                        <li class="outside">Individuals outside your organization</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="pageno">5</div>
+        </div>
+
+        <!-- PAGE 6 - YOUR COMPOSITE NETWORK -->
+        <div class="wrapper">
+            <h2>YOUR COMPOSITE NETWORK: BY LEVEL</h2>
+            <p>
+                This is your composite network—your Strategic, Operational, and Developmental Networks combined. The different colored nodes represent <u>an individual's relationship to you</u>. The lines between nodes indicate who knows whom.
+            </p>
+            <div class="graph" id="graph6">
+                <!-- ********************** GRAPH HERE ********************** -->
+                <img src="@Model.SourcePath/tempimage4.bmp" />
+            </div>
+            <div style="position: relative;">
+                <img src="../Plugins/PPI.Plugin.Survey/Content/images/cover_teal_block.jpg" width="1110" height="150">
+                <div id="reflect">
+                    <h3>REFLECT</h3>
+                    <ul>
+                        <li>Who do you tend to build relationships with (superiors, peers, juniors)?</li>
+                        <li>Are you leaving any group out?  Why?</li>
+                        <li>Do you have the right mix of superiors, peers, and juniors in your network?</li>
+                    </ul>
+                </div>
+                <div id="key">
+                    <h3 class="red">KEY</h3>
+                    <ul class="nobullet">
+                        <li class="senior">Senior</li>
+                        <li class="junior">Junior</li>
+                        <li class="peer">Peer</li>
+                        <li class="other">Other</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="pageno">6</div>
+        </div>
+
+        <!-- PAGE 7 - YOUR COMPOSITE NETWORK: INSIDE OR OUTSIDE   -->
+        <div class="wrapper">
+            <h2>YOUR COMPOSITE NETWORK: INSIDE OR OUTSIDE</h2>
+            <div class="ndblock">
+                <div class="ndtext">Your Network Density*</div>
+                <div class="ndno">@Model.NetworkDensity</div>
+            </div>
+            <div class="ndp">
+                In this composite view of your network, different colored nodes indicate whether an individual is <u>inside or outside your organization</u>.
+            </div>
+
+
+            <div class="graph" style="height:462px" id="graph7">
+                <!-- ********************** GRAPH HERE ********************** -->
+                <img src="@Model.SourcePath/tempimage5.bmp" />
+            </div>
+            <div style="position: relative;">
+                <img src="../Plugins/PPI.Plugin.Survey/Content/images/cover_teal_block.jpg" width="1110" height="205">
+                <div id="reflect">
+                    <h3>REFLECT</h3>
+                    <ul>
+                        <li>What do you find surprising or most interesting about your network?</li>
+                        <li>Do you have the right mix of contacts inside and outside your organization?</li>
+                        <li>What does the overlap among your three networks tell you?</li>
+                        <li>How dense (cohesive) is your network? Is your network made up of "friends who know friends?"</li>
+                        <li>Do you see opportunities for you to connect individuals? (e.g., Are there individuals you could introduce who would benefit from knowing each other?) </li>
+                    </ul>
+                </div>
+                <div id="key">
+                    <p class="footnotekey black">*A value from 0 (low density) to 1 (high density) that describes the extent to which your network contacts know one another (the cohesiveness of your network). </p>
+                    <h3 class="red">KEY</h3>
+                    <ul class="nobullet">
+                        <li class="inside">Individuals inside your organization</li>
+                        <li class="outside">Individuals outside your organization</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="pageno">7</div>
+        </div>
+
+        <!-- PAGE 8 - NETWORK CHARACTERISTICS: BREADTH & DIVERSITY  -->
+        <div class="wrapper">
+            <h2>NETWORK CHARACTERISTICS: BREADTH & DIVERSITY</h2>
+            <p>
+                The charts below illustrate the breadth and diversity of your network on a variety of dimensions. The bars capture the percentage of your network contacts in a given category. The triangles <img src="../Plugins/PPI.Plugin.Survey/Content/images/self_arrow.png"> indicate the categories you used to describe yourself when completing the Network Diagnostic Survey. (Note: If you chose not provide your personal data when completing the survey, no triangle will be shown.)
+            </p>
+            <div class="graph" style="height:443px;" id="graph8">
+
+                <!-- ********************** GRAPH HERE ********************** -->
+
+                <div class="democontainer" style="margin-left:30px;">
+
+                    <dl style="border:0px solid black">
+                        <div class="demotitle">Company or Organization</div>
+                        <dt>Same</dt>
+                        <dd><div class="bar @(Model.Company.Same ? "show" : Model.Company.Different ? "hide" : "")" style="width:@Model.Company.SamePercent.ToString("0.00")%;">&nbsp;</div></dd>
+                        <dt>Different</dt>
+                        <dd><div class="bar @(Model.Company.Same ? "hide" : Model.Company.Different ? "show" : "")" style="width:@Model.Company.DifferentPercent.ToString("0.00")%;">&nbsp;</div></dd>
+                    </dl>
+
+                    <dl style="margin-left:50px;border:0px solid black">
+                        <div class="demotitle">Business Unit or Division</div>
+                        <dt>Same</dt>
+                        <dd><div class="bar @(Model.BusinessUnit.Same ? "show" : Model.BusinessUnit.Different ? "hide" : "")" style="width:@Model.BusinessUnit.SamePercent.ToString("0.00")%;">&nbsp;</div></dd>
+                        <dt>Different</dt>
+                        <dd><div class="bar @(Model.BusinessUnit.Same ? "hide" : Model.BusinessUnit.Different ? "show" : "")" style="width:@Model.BusinessUnit.DifferentPercent.ToString("0.00")%;">&nbsp;</div></dd>
+                    </dl>
+
+
+                    <dl style="margin-left:85px;border:0px solid black">
+                        <div class="demotitle">Region From</div>
+                        @foreach (var item in Model.Regions)
+                        {
+                            <dt style="width:100px;">@item.Text</dt>
+                            <dd><div class="bar @(item.Selected?"show":"hide")" style="width:@item.Value%; margin-left:75px;">&nbsp;</div></dd>
+                        }
+                    </dl>
+
+                    <dl class="democontainer" style="margin-left:40px;border:0px solid black">
+                        <div class="demotitle">Age Group</div>
+                        @foreach (var item in Model.AgeGroup)
+                        {
+                            <dt style="width:100px;">@item.Text</dt>
+                            <dd><div class="bar @(item.Selected?"show":"hide")" style="width:@item.Value%; margin-left:75px;">&nbsp;</div></dd>
+                        }
+                    </dl>
+
+
+                    <div style="clear:both"></div>
+
+                    <dl style="margin-top: 50px; margin-top:-125px; border:0px solid black">
+                        <div class="demotitle">Product or Service Area</div>
+                        <dt>Same</dt>
+                        <dd><div class="bar @(Model.FunctionArea.Same ? "show" : Model.FunctionArea.Different ? "hide" : "")" style="width:@Model.FunctionArea.SamePercent.ToString("0.00")%;">&nbsp;</div></dd>
+                        <dt>Different</dt>
+                        <dd><div class="bar @(Model.FunctionArea.Same ? "hide" : Model.FunctionArea.Different ? "show" : "")" style="width:@Model.FunctionArea.DifferentPercent.ToString("0.00")%;">&nbsp;</div></dd>
+                    </dl>
+
+                    <dl style="margin-left:250px; margin-top:-125px; border:0px solid black">
+                        <div class="demotitle">Native Language</div>
+                        <dt>Same</dt>
+                        <dd><div class="bar @(Model.NativeLanguage.Same ? "show" : Model.NativeLanguage.Different ? "hide" : "")" style="width:@Model.NativeLanguage.SamePercent.ToString("0.00")%;">&nbsp;</div></dd>
+                        <dt>Different</dt>
+                        <dd><div class="bar @(Model.NativeLanguage.Same ? "hide" : Model.NativeLanguage.Different ? "show" : "")" style="width:@Model.NativeLanguage.DifferentPercent.ToString("0.00")%;">&nbsp;</div></dd>
+                    </dl>
+
+                </div>
+
+            </div>
+            <div style="position: relative; float:left;">
+                <img src="../Plugins/PPI.Plugin.Survey/Content/images/cover_teal_block.jpg" width="580" height="150">
+                <div id="reflect">
+                    <h3>REFLECT</h3>
+                    <ul>
+                        <li>Do you see any patterns in who is in your network?</li>
+                        <li>What individuals or groups are underrepresented? Overrepresented? </li>
+                    </ul>
+                </div>
+            </div>
+
+            <dl class="democontainer" style="margin-top:-50px; margin-left:15px;">
+                <div class="demotitle">Gender</div>
+                @foreach (var item in Model.Gender)
+                {
+                    <dt style="width:100px;">@item.Text</dt>
+                    <dd><div class="bar @(item.Selected?"show":"hide")" style="width:@item.Value%; margin-left:75px;">&nbsp;</div></dd>
+                }
+            </dl>
+
+            <dl class="democontainer" style="margin-top:-50px; margin-left:45px;">
+                <div class="demotitle">Relationship to You</div>
+                @foreach (var item in Model.RelationShipType)
+                {
+                    <dt style="width:100px;">@item.Text</dt>
+                    <dd><div class="bar @(item.Selected?"show":"hide")" style="width:@item.Value%; margin-left:75px;">&nbsp;</div></dd>
+                }
+            </dl>
+
+            <div style="clear:both;"></div>
+            <div id="pageno">8</div>
+        </div>
+
+
+        <!-- PAGE 9 - NETWORK CHARACTERISTICS: CLOSENESS OF RELATIONSHIPS -->
+        <div class="wrapper">
+            <h2>NETWORK CHARACTERISTICS: CLOSENESS OF RELATIONSHIPS</h2>
+            <p>
+                The chart below describes how close or distant you are (as reported by you) to your key network contacts.
+            </p>
+            <div class="graph" style="height:507px;">
+                <!-- ********************** GRAPH HERE ********************** -->
+                <div id="chart1" style="height:500px; width:1090px;"></div>
+
+            </div>
+            <div style="position: relative;">
+                <img src="../Plugins/PPI.Plugin.Survey/Content/images/cover_teal_block.jpg" width="1110" height="150">
+                <div id="reflect">
+                    <h3>REFLECT</h3>
+                    <ul>
+                        <li>In a typical week, what percentage of your time do you spend managing your network?</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="pageno">9</div>
+        </div>
+
+
+
+        <!-- PAGE 10 - ACTION PLANNING - TO BE COMPLETED IN SESSION -->
+        <div class="wrapper">
+            <h2>ACTION PLANNING - TO BE COMPLETED IN SESSION</h2>
+            <div id="foursquare">
+                <div id="topleft">
+                    <h3 class="red">STRENGTHS OF YOUR NETWORK</h3>
+                    <h3 class="red" style="padding-top:130px;">WEAKNESSES OF YOUR NETWORK</h3>
+                </div>
+                <div id="topright">
+                    <h3 class="red">SPEND MORE TIME</h3>
+                    <h3 class="red" style="padding-top:80px;">SPEND LESS TIME</h3>
+                </div>
+                <div id="bottomleft">
+                    <h3 class="red">KEY RELATIONSHIPS TO ADD</h3>
+                    <ul class="nobullet">
+                        <li class="actionplanitems">Strategic</li>
+                        <li class="actionplanitems">Operational</li>
+                        <li class="actionplanitems">Developmental</li>
+                    </ul>
+                </div>
+                <div id="bottomright">
+                    <h3 class="red">CURRENT KEY RELATIONSHIPS TO CULTIVATE AND/OR REPAIR</h3>
+                    <div style="height:40px;"></div>
+                    <ul class="nobullet">
+                        <li class="actionplanitems">Strategic</li>
+                        <li class="actionplanitems">Operational</li>
+                        <li class="actionplanitems">Developmental</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+            <div id="pageno">10</div>
+        </div>
+
+        <!-- PAGE 11 - ACTION PLANNING - CONTINUED -->
+        <!-- Removed 02/11/2016 -->
+        <!-- <div class="wrapper">
+            <h2>NOTES</h2>
+            <div style="height:25px;"></div>
+            <div style="position: relative;">
+                <img src="../Plugins/PPI.Plugin.Survey/Content/images/cover_teal_block.jpg" width="1110" height="689">
+                <div id="reflect">
+                </div>
+            </div>
+            <div id="pageno">11</div>
+        </div>-->
+        <!-- PAGE 12 - SELECTED REFERENCES -->
+        <div class="wrapper">
+            <h2>SELECTED REFERENCES</h2>
+            <p>
+                To learn more about managing your network, we recommend the following publications, on which this diagnostic tool is based:
+            </p>
+            <div style="height:0px;"></div>
+            <div id="references">
+                Battilana, Julie, and Tiziana Casciaro. "Overcoming Resistance to Organizational Change: Strong Ties and Affective Cooptation." <i>Management Science</i> 59, no. 4 (April 2013): 819-836. <br />
+                Burt, Ronald S. "Network Items and the General Social Survey." <i>Social Networks</i> 6 (1984): 293-339.<br />
+                Burt, Ronald S. "Structural Holes and Good Ideas." <i>The American Journal of Sociology</i> 110, no. 2 (September 2004): 349-399.<br />
+                Casciaro, Tiziana, Francesca Gino, and Maryam Kouchaki. "The Contaminating Effects of Building Instrumental Ties: How Networking Can Make Us Feel Dirty." <br /><span class="indent"><i>Administrative Science Quarterly</i> 59, no. 4 (December 2014): 705-735.</span><br />
+                Casciaro, Tiziana, and Miguel Sousa Lobo. "Competent Jerks, Lovable Fools, and the Formation of Social Networks." <i>Harvard Business Review</i> 83, no. 6 (June 2005): 92-99. <br />
+                Granovetter, Mark S. "The Strength of Weak Ties." <i>American Journal of Sociology</i> 78, no. 6 (May 1973): 1360-1380.<br />
+                Hansen, Morten T. <i>Collaboration: How Leaders Avoid the Traps, Build Common Ground, and Reap Big Results.</i> (Boston: Harvard Business Review Press, 2009).<br />
+                Hewlett, Sylvia Ann. <i>Forget a Mentor, Find a Sponsor: The New Way to Fast-Track Your Career.</i> (Boston: Harvard Business Review Press, 2013).<br />
+                Higgins, Monica, and Kathy E. Kram. "Reconceptualizing Mentoring at Work: A Developmental Network Perspective." <i>Academy of Management Review</i> 26 (April 2001): 264-288.<br />
+                Groysberg, Boris. "How Star Women Build Portable Skills." <i>Harvard Business Review</i> 86, no. 2 (February 2008): 74-81.<br />
+                Hill, Linda A. "Beyond the Myth of the Perfect Mentor: Building a Network of Developmental Relationships." <i>Harvard Business School Background Note</i> 491-096, March 1991. <br /><span class="indent">(Revised June 1998.)</span><br />
+                Hill, Linda A., and Kent Lineback. "Are You a Good Boss-Or a Great One?" <i>Harvard Business Review</i> 89, nos. 1-2 (January-February 2011): 124-131.<br />
+                Ibarra, Herminia, and Morten T. Hansen. "Are You a Collaborative Leader?" <i>Harvard Business Review</i> 89, nos. 7-8 (July-August 2011): 68-74.<br />
+                Ibarra, Herminia, and Mark Hunter. "How Leaders Create and Use Networks." <i>Harvard Business Review</i> 85, no. 1 (January 2007): 40-47. <br />
+                Krackhardt, David, and J. R. Hanson. "Informal Networks: The Company Behind the Chart." <i>Harvard Business Review</i> 71, no. 4 (July-August 1993): 104-111.<br />
+                Thomas, David A. "Diversity As Strategy." <i>Harvard Business Review</i> 82, no. 9 (September 2004): 98-108.<br />
+                Thomas, David A. "The Truth About Mentoring Minorities: Race Matters." <i>Harvard Business Review</i> 79, no. 4 (April 2001): 98-112.<br />
+                Uzzi, Brian, and Shannon Dunlap. "How to Build Your Network." <i>Harvard Business Review</i> 83, no. 12 (December 2005): 53-60.
+            </div>
+            <div style="height:35px;"></div>
+            <div style="position: relative;">
+                <img src="../Plugins/PPI.Plugin.Survey/Content/images/cover_teal_block.jpg" width="1110" height="70">
+                <div style="position: absolute; top: 0px; left: 0px; padding: 10 0 20 20px; color:#FFF; margin-left:20px;">
+                    <h3 style="margin-bottom:0px;padding-bottom:0px;">Thank You</h3>
+                    <span class="black">We hope you have enjoyed completing the Network Diagnostic Survey. If you have questions about your diagnostic report, please contact li@hbs.edu.</span>
+                </div>
+                <div id="copyright">&copy; 2015-2016, HBS Leadership Initiative</div>
+                <img src="../Plugins/PPI.Plugin.Survey/Content/images/hbs_footer_logo.jpg" width="410" height="36">
+            </div>
+            <div id="pageno">11</div>
+        </div>
+
+        <!-- PAGE 13 - BACK COVER -->
+        <!-- <div class="wrapper" style="padding-top:50px;">
+            <div>
+                <img src="../Plugins/PPI.Plugin.Survey/Content/images/cover_red_block.jpg" width="1110" height="730">
+            </div>
+            <div id="copyright">&copy; 2015-2016, HBS Leadership Initiative</div>
+            <img src="../Plugins/PPI.Plugin.Survey/Content/images/hbs_footer_logo.jpg" width="410" height="36">
+        </div>-->
+
+
+    </div> <!-- /content -->
+
+    <script>
+        $(document).ready(function () {
+            var data = [
+              ['Very Close',@Model.VeryClosePercent], ['Distant',@Model.DistantPercent], ['Close', @Model.ClosePercent],
+              ['Somewhat Close', @Model.NotVeryClosePercent]
+            ];
+            var plot1 = jQuery.jqplot('chart1', [data],
+              {
+                  seriesDefaults: {
+                      // Make this a pie chart.
+                      renderer: jQuery.jqplot.PieRenderer,
+                      rendererOptions: {
+                          // Put data labels on the pie slices.
+                          // By default, labels show the percentage of the slice.
+                          showDataLabels: true
+                      }
+                  },
+                  legend: { show: true, location: 'e' }
+              }
+            );
+        });
+
+    </script>
+
+    <script class="include" type="text/javascript" src="~/Scripts/jquery.jqplot.min.js"></script>
+    <script class="include" language="javascript" type="text/javascript" src="~/Scripts/jqplot.donutRenderer.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jqplot.pieRenderer.min.js"></script>
+
+    <script type="text/javascript" src="~/Scripts/jqplot.barRenderer.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jqplot.categoryAxisRenderer.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jqplot.pointLabels.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+﻿@using PPI.Platform.Mvc.HtmlHelpers
+@using PPI.Plugin.Survey.Properties
+@using PPI.Platform.Mvc.HtmlHelpers.Model
+@model PPI.Platform.Mvc.HtmlHelpers.Model.PagingInfo
+<!--Start of Paging Widget-->
+<div class="row">
+    <div class="col-md-12">
+        <ul class="list-inline">
+            @Resources_Survey_Web.View_Actions_ResultsPerPage
+            @Html.PageSizeList(new List
+                     <string>() { "10", "20", "50", Resources_Survey_Web.View_Actions_PageSetAll }, (string)ViewBag.PageSize, x => Url.Action("SetPageSize", new { pageSize = x, redirectTo = "Index" }))
+        </ul>
+    </div>
+</div>
+<div class="row marginb10">
+
+</div>
+<div class="pagination">
+    <ul class="pagination">
+        @Html.PageLinks(Model, x => Url.Action("Index", new { page = x }))
+    </ul>
+</div>
+<!--End of Paging Widget-->

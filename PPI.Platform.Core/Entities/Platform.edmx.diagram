@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="07d117118f32461790e5379599cdba3c" Name="Diagram1" >
+        <EntityTypeShape EntityType="PlatformModel.Culture" Width="1.5" PointX="3.75" PointY="20" />
+        <EntityTypeShape EntityType="PlatformModel.Dashboard" Width="1.5" PointX="8.25" PointY="19.75" />
+        <EntityTypeShape EntityType="PlatformModel.Email" Width="1.5" PointX="5.25" PointY="15.375" />
+        <EntityTypeShape EntityType="PlatformModel.GenericType" Width="1.5" PointX="0.75" PointY="5" />
+        <EntityTypeShape EntityType="PlatformModel.GenericTypeValue" Width="1.5" PointX="3" PointY="7.125" />
+        <EntityTypeShape EntityType="PlatformModel.Group" Width="1.5" PointX="5.375" PointY="2.25" />
+        <EntityTypeShape EntityType="PlatformModel.GroupEmail" Width="1.5" PointX="7.5" PointY="11.5" />
+        <EntityTypeShape EntityType="PlatformModel.GroupParticipant" Width="1.5" PointX="7.5" PointY="3.625" />
+        <EntityTypeShape EntityType="PlatformModel.Participant" Width="1.5" PointX="5.25" PointY="11.875" />
+        <EntityTypeShape EntityType="PlatformModel.Person" Width="1.5" PointX="3" PointY="11.125" />
+        <EntityTypeShape EntityType="PlatformModel.PersonGroupEmail" Width="1.5" PointX="10.75" PointY="8.75" />
+        <EntityTypeShape EntityType="PlatformModel.PluginAction" Width="1.5" PointX="8.25" PointY="7.375" />
+        <EntityTypeShape EntityType="PlatformModel.Program" Width="1.5" PointX="3" PointY="1.75" />
+        <EntityTypeShape EntityType="PlatformModel.Rater" Width="1.5" PointX="5.25" PointY="23" />
+        <EntityTypeShape EntityType="PlatformModel.RegisteredPlugin" Width="1.5" PointX="6" PointY="19.375" />
+        <EntityTypeShape EntityType="PlatformModel.Resource" Width="1.5" PointX="0.75" PointY="7.875" />
+        <EntityTypeShape EntityType="PlatformModel.ResourceValue" Width="1.5" PointX="6" PointY="7.625" />
+        <EntityTypeShape EntityType="PlatformModel.Site" Width="1.5" PointX="0.75" PointY="2" />
+        <EntityTypeShape EntityType="PlatformModel.Survey" Width="1.5" PointX="8.5" PointY="1.125" />
+        <EntityTypeShape EntityType="PlatformModel.SurveyGroupParticipant" Width="2.375" PointX="10.75" PointY="4.75" />
+        <AssociationConnector Association="PlatformModel.FK_ResourceValue_Culture" />
+        <AssociationConnector Association="PlatformModel.FK_Dashboard_RegisteredPlugins" />
+        <AssociationConnector Association="PlatformModel.FK_Email_EmailGenericTypeValue" />
+        <AssociationConnector Association="PlatformModel.FK_GroupEmail_Email" />
+        <AssociationConnector Association="PlatformModel.FK_GenericTypeValue_GenericType" />
+        <AssociationConnector Association="PlatformModel.FK_Email_SendStatusGenericTypeValue" />
+        <AssociationConnector Association="PlatformModel.FK_GenericTypeValue_Resource" />
+        <AssociationConnector Association="PlatformModel.FK_Group_Action" />
+        <AssociationConnector Association="PlatformModel.FK_Group_Status" />
+        <AssociationConnector Association="PlatformModel.FK_Group_Type" />
+        <AssociationConnector Association="PlatformModel.FK_SurveyGroupParticipant_GenericTypeValue" />
+        <AssociationConnector Association="PlatformModel.FK_Group_Program" />
+        <AssociationConnector Association="PlatformModel.FK_GroupEmail_Group" />
+        <AssociationConnector Association="PlatformModel.FK_GroupParticipant_Group" />
+        <AssociationConnector Association="PlatformModel.FK_PersonGroupEmail_GroupEmail" />
+        <AssociationConnector Association="PlatformModel.FK_GroupParticipant_Participant" />
+        <AssociationConnector Association="PlatformModel.FK_SurveyGroupParticipant_GroupParticipant" />
+        <AssociationConnector Association="PlatformModel.FK_Participant_Person" />
+        <AssociationConnector Association="PlatformModel.FK_PersonGroupEmail_Person" />
+        <AssociationConnector Association="PlatformModel.FK_Rater_Person" />
+        <AssociationConnector Association="PlatformModel.FK_PluginAction_RegisteredPlugins" />
+        <AssociationConnector Association="PlatformModel.FK_Program_Site" />
+        <AssociationConnector Association="PlatformModel.FK_ResourceValue_Resource" />
+        <AssociationConnector Association="PlatformModel.FK_SurveyGroupParticipant_Survey" />
+        <EntityTypeShape EntityType="PlatformModel.AspNetUser" Width="1.5" PointX="13.375" PointY="8.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

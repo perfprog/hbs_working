@@ -1,0 +1,60 @@
+﻿@{
+    
+}
+
+
+
+    <div class="container">
+        @Html.AntiForgeryToken()
+        <div class=" row">
+            <label>Text</label>
+            @Html.TextBox("ValueText", "", new { @class = "form-control"})
+            <label>Section</label>
+            @Html.TextBox("Section", "", new { @class = "form-control" })
+            <a href="#" class="btn btn-sm btn-default" role="button" id="Encrypt" aria-label="Left Align">
+                <span class="glyphicon glyphicon glyphicon-check" aria-hidden="true"></span>Encrypt
+            </a>
+            <a href="#" class="btn btn-sm btn-default" role="button" id="Decrypt" aria-label="Left Align">
+                <span class="glyphicon glyphicon glyphicon-check" aria-hidden="true"></span>Decrypt
+            </a>
+        </div>
+        <div class="row" id="returnData">
+
+        </div>
+    </div>
+
+
+@section scripts
+{
+    <script>
+
+    $(function ($) {
+    
+        $('.btn').click(function () {
+            var form = $('.container');            
+            var token = $('input[name="__RequestVerificationToken"]', form).val();
+            var valueText = $('input[name="ValueText"]').val();
+            var section = $('input[name="Section"]').val();
+            var button = $(this).attr("id");            
+            $.ajax({
+                cache: false,
+                asyc: true,
+                url: "../Setup/EncyptionKeys?valueText=" + valueText + "&section=" + section + "&button=" + button,
+                type: 'post',
+                data: { __RequestVerificationToken: token },
+                success: function (response) {
+                    $('#returnData').html(response)
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(textStatus, errorThrown);
+                }
+
+            });
+            
+        });
+
+    });
+    
+    </script>
+}

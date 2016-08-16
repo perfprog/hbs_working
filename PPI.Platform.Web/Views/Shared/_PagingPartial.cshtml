@@ -1,0 +1,24 @@
+﻿@using PPI.Platform.Mvc.HtmlHelpers
+@using PPI.Platform.Web.Properties
+@using PPI.Platform.Mvc.HtmlHelpers.Model
+@model PPI.Platform.Mvc.HtmlHelpers.Model.PagingInfo
+
+<div class="col-md-4">
+    <ul class="list-inline">
+        @Resources_Web.View_Actions_ResultsPerPage
+        @Html.PageSizeList(new List<string>() { "10", "20", "50", Resources_Web.View_Actions_PageSetAll }, (string)ViewBag.PageSize, x => Url.Action("SetPageSize", new { pageSize = x, redirectTo = "Index" }))
+    </ul>
+</div>
+<div class="col-md-offset-6">
+    <ul class="pagination" style="overflow: hidden; padding-top: 0px; margin-top: -5px;">
+        @if (String.IsNullOrWhiteSpace(Model.search))
+        {
+            @Html.PageLinks(Model, x => Url.Action("Index", new { page = x }))
+        }
+        else
+        {
+            @Html.PageLinks(Model, x => Url.Action("Index", new { page = x, search = Model.search }))
+        }
+    </ul>
+</div>
+

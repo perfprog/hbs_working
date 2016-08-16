@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="adb635a5481c4edfa94ac9d75284a7b4" Name="Diagram1" >
+        <EntityTypeShape EntityType="Model.NetworkContacts_V" Width="2.125" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.NetworkInfoContact" Width="2.625" PointX="0.75" PointY="10.625" />
+        <EntityTypeShape EntityType="Model.NetworkRelationship" Width="2.625" PointX="4.125" PointY="7.125" />
+        <EntityTypeShape EntityType="Model.RelationshipDensity" Width="2.375" PointX="4.125" PointY="15.5" />
+        <AssociationConnector Association="Model.FK_NetworkRelationship_NetworkInfoContacts" />
+        <AssociationConnector Association="Model.FK_RelationshipDensity_NetworkInfoContacts" />
+        <EntityTypeShape EntityType="Model.ParticipantProfile" Width="1.5" PointX="4.125" PointY="11.375" />
+        <AssociationConnector Association="Model.FK_ParticipantProfile_NetworkInfoContacts" />
+        <EntityTypeShape EntityType="Model.vWhoKnowWho" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.NetworkRelationshipDemo" Width="1.5" PointX="4.125" PointY="1.25" />
+        <AssociationConnector Association="Model.FK_NetworkRelationshipDemo__NetworkInfoContacts" />
+        <EntityTypeShape EntityType="Model.vCompositeReport" Width="1.5" PointX="7.375" PointY="0.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

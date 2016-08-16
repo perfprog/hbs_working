@@ -1,0 +1,700 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbols xmlns="http://schemas.postsharp.org/2.0/symbols">
+  <Class Class="#1=T:[PPI.Platform.Core]PPI.Platform.Core.Attributes.LoggingAttribute">
+    <Instance Declaration="#2=A:PPI.Platform.Web" Id="856b1bac286c2dbb">
+      <Target Target="#3=M:[PPI.Platform.Web]PPI.Platform.Web.EmailService::SendAsync(Microsoft.AspNet.Identity.IdentityMessage)">
+        <JoinPoint Advising="#1" Description="#4=Wrapped by advice(s) OnEntry, OnSuccess, OnException, OnExit" />
+      </Target>
+      <Target Target="#5=M:[PPI.Platform.Web]PPI.Platform.Web.EmailService::configSendGridasync(Microsoft.AspNet.Identity.IdentityMessage)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#6=M:[PPI.Platform.Web]PPI.Platform.Web.EmailService::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#7=M:[PPI.Platform.Web]PPI.Platform.Web.SmsService::SendAsync(Microsoft.AspNet.Identity.IdentityMessage)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#8=M:[PPI.Platform.Web]PPI.Platform.Web.SmsService::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#9=M:[PPI.Platform.Web]PPI.Platform.Web.ApplicationUserManager::#ctor(Microsoft.AspNet.Identity.IUserStore{[PPI.Platform.Web]PPI.Platform.Web.Models.ApplicationUser})">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#10=M:[PPI.Platform.Web]PPI.Platform.Web.ApplicationUserManager::Create(Microsoft.AspNet.Identity.Owin.IdentityFactoryOptions{[PPI.Platform.Web]PPI.Platform.Web.ApplicationUserManager}, Microsoft.Owin.IOwinContext)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#11=M:[PPI.Platform.Web]PPI.Platform.Web.ApplicationSignInManager::#ctor([PPI.Platform.Web]PPI.Platform.Web.ApplicationUserManager, Microsoft.Owin.Security.IAuthenticationManager)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#12=M:[PPI.Platform.Web]PPI.Platform.Web.ApplicationSignInManager::CreateUserIdentityAsync([PPI.Platform.Web]PPI.Platform.Web.Models.ApplicationUser)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#13=M:[PPI.Platform.Web]PPI.Platform.Web.ApplicationSignInManager::Create(Microsoft.AspNet.Identity.Owin.IdentityFactoryOptions{[PPI.Platform.Web]PPI.Platform.Web.ApplicationSignInManager}, Microsoft.Owin.IOwinContext)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#14=M:[PPI.Platform.Web]PPI.Platform.Web.Startup::Configuration(Owin.IAppBuilder)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#15=M:[PPI.Platform.Web]PPI.Platform.Web.Startup::ConfigureAuth(Owin.IAppBuilder)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#16=M:[PPI.Platform.Web]PPI.Platform.Web.Startup::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#17=M:[PPI.Platform.Web]PPI.Platform.Web.Models.AccountCreateViewModel::get_AspNetUsersId()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#18=M:[PPI.Platform.Web]PPI.Platform.Web.Models.AccountCreateViewModel::set_AspNetUsersId(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#19=M:[PPI.Platform.Web]PPI.Platform.Web.Models.AccountCreateViewModel::get_ModelErrors()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#20=M:[PPI.Platform.Web]PPI.Platform.Web.Models.AccountCreateViewModel::set_ModelErrors(System.Web.Mvc.ModelStateDictionary)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#21=M:[PPI.Platform.Web]PPI.Platform.Web.Models.AccountCreateViewModel::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#22=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ExternalLoginConfirmationViewModel::get_Email()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#23=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ExternalLoginConfirmationViewModel::set_Email(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#24=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ExternalLoginConfirmationViewModel::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#25=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ExternalLoginListViewModel::get_ReturnUrl()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#26=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ExternalLoginListViewModel::set_ReturnUrl(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#27=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ExternalLoginListViewModel::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#28=M:[PPI.Platform.Web]PPI.Platform.Web.Models.SendCodeViewModel::get_SelectedProvider()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#29=M:[PPI.Platform.Web]PPI.Platform.Web.Models.SendCodeViewModel::set_SelectedProvider(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#30=M:[PPI.Platform.Web]PPI.Platform.Web.Models.SendCodeViewModel::get_Providers()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#31=M:[PPI.Platform.Web]PPI.Platform.Web.Models.SendCodeViewModel::set_Providers(System.Collections.Generic.ICollection{[System.Web.Mvc]System.Web.Mvc.SelectListItem})">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#32=M:[PPI.Platform.Web]PPI.Platform.Web.Models.SendCodeViewModel::get_ReturnUrl()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#33=M:[PPI.Platform.Web]PPI.Platform.Web.Models.SendCodeViewModel::set_ReturnUrl(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#34=M:[PPI.Platform.Web]PPI.Platform.Web.Models.SendCodeViewModel::get_RememberMe()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#35=M:[PPI.Platform.Web]PPI.Platform.Web.Models.SendCodeViewModel::set_RememberMe(System.Boolean)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#36=M:[PPI.Platform.Web]PPI.Platform.Web.Models.SendCodeViewModel::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#37=M:[PPI.Platform.Web]PPI.Platform.Web.Models.VerifyCodeViewModel::get_Provider()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#38=M:[PPI.Platform.Web]PPI.Platform.Web.Models.VerifyCodeViewModel::set_Provider(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#39=M:[PPI.Platform.Web]PPI.Platform.Web.Models.VerifyCodeViewModel::get_Code()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#40=M:[PPI.Platform.Web]PPI.Platform.Web.Models.VerifyCodeViewModel::set_Code(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#41=M:[PPI.Platform.Web]PPI.Platform.Web.Models.VerifyCodeViewModel::get_ReturnUrl()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#42=M:[PPI.Platform.Web]PPI.Platform.Web.Models.VerifyCodeViewModel::set_ReturnUrl(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#43=M:[PPI.Platform.Web]PPI.Platform.Web.Models.VerifyCodeViewModel::get_RememberBrowser()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#44=M:[PPI.Platform.Web]PPI.Platform.Web.Models.VerifyCodeViewModel::set_RememberBrowser(System.Boolean)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#45=M:[PPI.Platform.Web]PPI.Platform.Web.Models.VerifyCodeViewModel::get_RememberMe()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#46=M:[PPI.Platform.Web]PPI.Platform.Web.Models.VerifyCodeViewModel::set_RememberMe(System.Boolean)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#47=M:[PPI.Platform.Web]PPI.Platform.Web.Models.VerifyCodeViewModel::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#48=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ForgotViewModel::get_Email()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#49=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ForgotViewModel::set_Email(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#50=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ForgotViewModel::get_UserName()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#51=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ForgotViewModel::set_UserName(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#52=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ForgotViewModel::get_Link()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#53=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ForgotViewModel::set_Link(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#54=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ForgotViewModel::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#55=M:[PPI.Platform.Web]PPI.Platform.Web.Models.LoginViewModel::get_Email()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#56=M:[PPI.Platform.Web]PPI.Platform.Web.Models.LoginViewModel::set_Email(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#57=M:[PPI.Platform.Web]PPI.Platform.Web.Models.LoginViewModel::get_Password()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#58=M:[PPI.Platform.Web]PPI.Platform.Web.Models.LoginViewModel::set_Password(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#59=M:[PPI.Platform.Web]PPI.Platform.Web.Models.LoginViewModel::get_RememberMe()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#60=M:[PPI.Platform.Web]PPI.Platform.Web.Models.LoginViewModel::set_RememberMe(System.Boolean)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#61=M:[PPI.Platform.Web]PPI.Platform.Web.Models.LoginViewModel::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#62=M:[PPI.Platform.Web]PPI.Platform.Web.Models.RegisterViewModel::get_Email()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#63=M:[PPI.Platform.Web]PPI.Platform.Web.Models.RegisterViewModel::set_Email(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#64=M:[PPI.Platform.Web]PPI.Platform.Web.Models.RegisterViewModel::get_Password()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#65=M:[PPI.Platform.Web]PPI.Platform.Web.Models.RegisterViewModel::set_Password(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#66=M:[PPI.Platform.Web]PPI.Platform.Web.Models.RegisterViewModel::get_ConfirmPassword()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#67=M:[PPI.Platform.Web]PPI.Platform.Web.Models.RegisterViewModel::set_ConfirmPassword(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#68=M:[PPI.Platform.Web]PPI.Platform.Web.Models.RegisterViewModel::get_Role()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#69=M:[PPI.Platform.Web]PPI.Platform.Web.Models.RegisterViewModel::set_Role(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#70=M:[PPI.Platform.Web]PPI.Platform.Web.Models.RegisterViewModel::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#71=M:[PPI.Platform.Web]PPI.Platform.Web.Models.RegisterParticipantViewModel::get_UserName()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#72=M:[PPI.Platform.Web]PPI.Platform.Web.Models.RegisterParticipantViewModel::set_UserName(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#73=M:[PPI.Platform.Web]PPI.Platform.Web.Models.RegisterParticipantViewModel::get_Email()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#74=M:[PPI.Platform.Web]PPI.Platform.Web.Models.RegisterParticipantViewModel::set_Email(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#75=M:[PPI.Platform.Web]PPI.Platform.Web.Models.RegisterParticipantViewModel::get_Password()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#76=M:[PPI.Platform.Web]PPI.Platform.Web.Models.RegisterParticipantViewModel::set_Password(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#77=M:[PPI.Platform.Web]PPI.Platform.Web.Models.RegisterParticipantViewModel::get_ConfirmPassword()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#78=M:[PPI.Platform.Web]PPI.Platform.Web.Models.RegisterParticipantViewModel::set_ConfirmPassword(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#79=M:[PPI.Platform.Web]PPI.Platform.Web.Models.RegisterParticipantViewModel::get_ParticipantId()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#80=M:[PPI.Platform.Web]PPI.Platform.Web.Models.RegisterParticipantViewModel::set_ParticipantId(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#81=M:[PPI.Platform.Web]PPI.Platform.Web.Models.RegisterParticipantViewModel::get_Token()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#82=M:[PPI.Platform.Web]PPI.Platform.Web.Models.RegisterParticipantViewModel::set_Token(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#83=M:[PPI.Platform.Web]PPI.Platform.Web.Models.RegisterParticipantViewModel::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#84=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ResetPasswordViewModel::get_UserName()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#85=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ResetPasswordViewModel::set_UserName(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#86=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ResetPasswordViewModel::get_Email()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#87=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ResetPasswordViewModel::set_Email(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#88=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ResetPasswordViewModel::get_Password()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#89=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ResetPasswordViewModel::set_Password(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#90=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ResetPasswordViewModel::get_ConfirmPassword()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#91=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ResetPasswordViewModel::set_ConfirmPassword(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#92=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ResetPasswordViewModel::get_Code()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#93=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ResetPasswordViewModel::set_Code(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#94=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ResetPasswordViewModel::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#95=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ForgotPasswordViewModel::get_Email()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#96=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ForgotPasswordViewModel::set_Email(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#97=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ForgotPasswordViewModel::get_UserName()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#98=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ForgotPasswordViewModel::set_UserName(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#99=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ForgotPasswordViewModel::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#100=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ApplicationUser::GenerateUserIdentityAsync(Microsoft.AspNet.Identity.UserManager{[PPI.Platform.Web]PPI.Platform.Web.Models.ApplicationUser})">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#101=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ApplicationUser::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#102=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ApplicationDbContext::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#103=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ApplicationDbContext::Create()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#104=M:[PPI.Platform.Web]PPI.Platform.Web.Models.IndexViewModel::get_HasPassword()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#105=M:[PPI.Platform.Web]PPI.Platform.Web.Models.IndexViewModel::set_HasPassword(System.Boolean)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#106=M:[PPI.Platform.Web]PPI.Platform.Web.Models.IndexViewModel::get_Logins()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#107=M:[PPI.Platform.Web]PPI.Platform.Web.Models.IndexViewModel::set_Logins(System.Collections.Generic.IList{[Microsoft.AspNet.Identity.Core]Microsoft.AspNet.Identity.UserLoginInfo})">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#108=M:[PPI.Platform.Web]PPI.Platform.Web.Models.IndexViewModel::get_PhoneNumber()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#109=M:[PPI.Platform.Web]PPI.Platform.Web.Models.IndexViewModel::set_PhoneNumber(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#110=M:[PPI.Platform.Web]PPI.Platform.Web.Models.IndexViewModel::get_TwoFactor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#111=M:[PPI.Platform.Web]PPI.Platform.Web.Models.IndexViewModel::set_TwoFactor(System.Boolean)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#112=M:[PPI.Platform.Web]PPI.Platform.Web.Models.IndexViewModel::get_BrowserRemembered()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#113=M:[PPI.Platform.Web]PPI.Platform.Web.Models.IndexViewModel::set_BrowserRemembered(System.Boolean)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#114=M:[PPI.Platform.Web]PPI.Platform.Web.Models.IndexViewModel::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#115=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ManageLoginsViewModel::get_CurrentLogins()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#116=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ManageLoginsViewModel::set_CurrentLogins(System.Collections.Generic.IList{[Microsoft.AspNet.Identity.Core]Microsoft.AspNet.Identity.UserLoginInfo})">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#117=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ManageLoginsViewModel::get_OtherLogins()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#118=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ManageLoginsViewModel::set_OtherLogins(System.Collections.Generic.IList{[Microsoft.Owin]Microsoft.Owin.Security.AuthenticationDescription})">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#119=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ManageLoginsViewModel::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#120=M:[PPI.Platform.Web]PPI.Platform.Web.Models.FactorViewModel::get_Purpose()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#121=M:[PPI.Platform.Web]PPI.Platform.Web.Models.FactorViewModel::set_Purpose(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#122=M:[PPI.Platform.Web]PPI.Platform.Web.Models.FactorViewModel::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#123=M:[PPI.Platform.Web]PPI.Platform.Web.Models.SetPasswordViewModel::get_NewPassword()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#124=M:[PPI.Platform.Web]PPI.Platform.Web.Models.SetPasswordViewModel::set_NewPassword(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#125=M:[PPI.Platform.Web]PPI.Platform.Web.Models.SetPasswordViewModel::get_ConfirmPassword()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#126=M:[PPI.Platform.Web]PPI.Platform.Web.Models.SetPasswordViewModel::set_ConfirmPassword(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#127=M:[PPI.Platform.Web]PPI.Platform.Web.Models.SetPasswordViewModel::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#128=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ChangePasswordViewModel::get_OldPassword()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#129=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ChangePasswordViewModel::set_OldPassword(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#130=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ChangePasswordViewModel::get_NewPassword()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#131=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ChangePasswordViewModel::set_NewPassword(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#132=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ChangePasswordViewModel::get_ConfirmPassword()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#133=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ChangePasswordViewModel::set_ConfirmPassword(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#134=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ChangePasswordViewModel::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#135=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ChangeEmailViewModel::get_OrginalEmail()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#136=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ChangeEmailViewModel::set_OrginalEmail(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#137=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ChangeEmailViewModel::get_Email()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#138=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ChangeEmailViewModel::set_Email(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#139=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ChangeEmailViewModel::get_ConfirmEmail()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#140=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ChangeEmailViewModel::set_ConfirmEmail(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#141=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ChangeEmailViewModel::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#142=M:[PPI.Platform.Web]PPI.Platform.Web.Models.AddPhoneNumberViewModel::get_Number()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#143=M:[PPI.Platform.Web]PPI.Platform.Web.Models.AddPhoneNumberViewModel::set_Number(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#144=M:[PPI.Platform.Web]PPI.Platform.Web.Models.AddPhoneNumberViewModel::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#145=M:[PPI.Platform.Web]PPI.Platform.Web.Models.VerifyPhoneNumberViewModel::get_Code()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#146=M:[PPI.Platform.Web]PPI.Platform.Web.Models.VerifyPhoneNumberViewModel::set_Code(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#147=M:[PPI.Platform.Web]PPI.Platform.Web.Models.VerifyPhoneNumberViewModel::get_PhoneNumber()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#148=M:[PPI.Platform.Web]PPI.Platform.Web.Models.VerifyPhoneNumberViewModel::set_PhoneNumber(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#149=M:[PPI.Platform.Web]PPI.Platform.Web.Models.VerifyPhoneNumberViewModel::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#150=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ConfigureTwoFactorViewModel::get_SelectedProvider()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#151=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ConfigureTwoFactorViewModel::set_SelectedProvider(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#152=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ConfigureTwoFactorViewModel::get_Providers()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#153=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ConfigureTwoFactorViewModel::set_Providers(System.Collections.Generic.ICollection{[System.Web.Mvc]System.Web.Mvc.SelectListItem})">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#154=M:[PPI.Platform.Web]PPI.Platform.Web.Models.ConfigureTwoFactorViewModel::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#155=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#156=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::#ctor([PPI.Platform.Web]PPI.Platform.Web.ApplicationUserManager, [PPI.Platform.Web]PPI.Platform.Web.ApplicationSignInManager)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#157=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::get_UserManager()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#158=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::set_UserManager([PPI.Platform.Web]PPI.Platform.Web.ApplicationUserManager)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#159=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::Login(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#160=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::get_SignInManager()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#161=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::set_SignInManager([PPI.Platform.Web]PPI.Platform.Web.ApplicationSignInManager)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#162=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::Login([PPI.Platform.Web]PPI.Platform.Web.Models.LoginViewModel, System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#163=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::VerifyCode(System.String, System.String, System.Boolean)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#164=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::VerifyCode([PPI.Platform.Web]PPI.Platform.Web.Models.VerifyCodeViewModel)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#165=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::Register()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#166=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::RegisterParticipant(System.Int32, System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#167=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::RegisterParticipant([PPI.Platform.Web]PPI.Platform.Web.Models.RegisterParticipantViewModel)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#168=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::Register([PPI.Platform.Web]PPI.Platform.Web.Models.RegisterViewModel)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#169=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::ConfirmEmail(System.String, System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#170=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::ForgotPassword()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#171=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::ForgotPassword([PPI.Platform.Web]PPI.Platform.Web.Models.ForgotPasswordViewModel)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#172=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::ForgotPasswordConfirmation([PPI.Platform.Web]PPI.Platform.Web.Models.ForgotPasswordViewModel)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#173=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::RegisterResetPasswordConfirmation()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#174=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::ResetPassword(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#175=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::ResetPassword([PPI.Platform.Web]PPI.Platform.Web.Models.ResetPasswordViewModel)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#176=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::ResetPasswordConfirmation()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#177=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::ExternalLogin(System.String, System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#178=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::SendCode(System.String, System.Boolean)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#179=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::SendCode([PPI.Platform.Web]PPI.Platform.Web.Models.SendCodeViewModel)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#180=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::ExternalLoginCallback(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#181=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::ExternalLoginConfirmation([PPI.Platform.Web]PPI.Platform.Web.Models.ExternalLoginConfirmationViewModel, System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#182=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::LogOff()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#183=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::ExternalLoginFailure()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#184=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::get_AuthenticationManager()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#185=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::AddErrors(Microsoft.AspNet.Identity.IdentityResult)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#186=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController::RedirectToLocal(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#187=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ErrorController::Http404()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#188=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ErrorController::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#189=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.HomeController::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#190=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.HomeController::Index()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#191=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#192=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::#ctor([PPI.Platform.Web]PPI.Platform.Web.ApplicationUserManager)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#193=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::get_UserManager()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#194=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::set_UserManager([PPI.Platform.Web]PPI.Platform.Web.ApplicationUserManager)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#195=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::Index(System.Nullable{[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController+ManageMessageId})">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#196=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::RemoveLogin()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#197=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::RemoveLogin(System.String, System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#198=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::AddPhoneNumber()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#199=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::AddPhoneNumber([PPI.Platform.Web]PPI.Platform.Web.Models.AddPhoneNumberViewModel)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#200=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::EnableTwoFactorAuthentication()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#201=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::DisableTwoFactorAuthentication()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#202=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::VerifyPhoneNumber(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#203=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::VerifyPhoneNumber([PPI.Platform.Web]PPI.Platform.Web.Models.VerifyPhoneNumberViewModel)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#204=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::RemovePhoneNumber()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#205=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::ChangePassword()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#206=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::ChangePassword([PPI.Platform.Web]PPI.Platform.Web.Models.ChangePasswordViewModel)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#207=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::ChangeEmail()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#208=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::ChangeEmail([PPI.Platform.Web]PPI.Platform.Web.Models.ChangeEmailViewModel)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#209=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::SetPassword()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#210=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::SetPassword([PPI.Platform.Web]PPI.Platform.Web.Models.SetPasswordViewModel)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#211=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::ManageLogins(System.Nullable{[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController+ManageMessageId})">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#212=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::LinkLogin(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#213=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::LinkLoginCallback()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#214=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::get_AuthenticationManager()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#215=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::SignInAsync([PPI.Platform.Web]PPI.Platform.Web.Models.ApplicationUser, System.Boolean)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#216=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::AddErrors(Microsoft.AspNet.Identity.IdentityResult)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#217=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::HasPassword()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#218=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.ManageController::HasPhoneNumber()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#219=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.RegisteredPluginsController::Index()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#220=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.RegisteredPluginsController::Dispose(System.Boolean)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#221=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.RegisteredPluginsController::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#222=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.SetupController::Index()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#223=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.SetupController::EncyptionKeys()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#224=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.SetupController::EncyptionKeys(System.String, System.String, System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#225=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.SetupController::#ctor()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#226=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController+ChallengeResult::#ctor(System.String, System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#227=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController+ChallengeResult::#ctor(System.String, System.String, System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#228=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController+ChallengeResult::get_LoginProvider()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#229=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController+ChallengeResult::set_LoginProvider(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#230=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController+ChallengeResult::get_RedirectUri()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#231=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController+ChallengeResult::set_RedirectUri(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#232=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController+ChallengeResult::get_UserId()">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#233=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController+ChallengeResult::set_UserId(System.String)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#234=M:[PPI.Platform.Web]PPI.Platform.Web.Controllers.AccountController+ChallengeResult::ExecuteResult(System.Web.Mvc.ControllerContext)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+    </Instance>
+  </Class>
+</Symbols>

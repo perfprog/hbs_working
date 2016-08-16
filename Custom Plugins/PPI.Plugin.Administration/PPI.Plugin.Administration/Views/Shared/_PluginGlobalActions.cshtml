@@ -1,0 +1,9 @@
+﻿
+@model IEnumerable<PPI.Platform.Core.Entities.PluginAction>
+@using PPI.Platform.Mvc.HtmlHelpers
+@foreach (var item in Model)
+{
+    <a class="btn btn-sm btn-default" role="button" aria-label="Left Align" href="@Url.ActionJsonRoute(item.Action, item.Controller, @item.RoutingData)">
+        <span class="glyphicon glyphicon glyphicon-pencil" aria-hidden="true"></span>
+    </a>    
+}

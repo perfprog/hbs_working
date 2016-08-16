@@ -1,0 +1,49 @@
+﻿@using PPI.Plugin.Survey.Properties
+@using Forloop.HtmlHelpers;
+
+<div class="col-lg-3 col-md-6">
+    <div class="panel panel-yellow">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-xs-3">
+                    <i class="fa fa-check fa-5x"></i>
+                </div>
+                <div class="col-xs-9 text-right">
+                    <div id="surveyreturnCount" class="huge"><i class="fa fa-spinner fa-spin"></i></div>
+                    <div>@Resources_Survey_Web.SurveyDashBoard_SurveyCount</div>
+                </div>
+            </div>
+        </div>
+        <!-- HBS Only 1 Survey-->
+        <a href="\Survey\CheckIndex?survey=1">
+            <div class="panel-footer">
+                <span class="pull-left">@Resources_Survey_Web.SurveyDashBoard_SurveyLink</span>
+                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="clearfix"></div>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+@using (Html.BeginScriptContext())
+{
+    Html.AddScriptBlock(
+        @<script type="text/javascript">
+            $(document).ready(function () {
+                $.ajax({
+                    cache: false,
+                    asyc: true,
+                    url: "../Survey/DashboardCount?type=surveyreturnCount",
+                    type: 'get',
+                    data: $(this).serialize(),
+                    success: function (response) {
+                        $('#surveyreturnCount').html(response);
+                    }
+                });
+                return false;
+            });
+        </script>
+);    
+}
+
